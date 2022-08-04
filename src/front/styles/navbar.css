@@ -51,7 +51,7 @@ body{
     transition: 0.5s;
     color: var(--clr);
 }
-.navigation ul li.active a .icon{
+.navigation ul li:hover a .icon{
     transform: translateY(-32px);
 }
 .navigation ul li a .text{
@@ -64,7 +64,7 @@ body{
     opacity: 0;
     transform: translateY(20px);
 }
-.navigation ul li.active a .text{
+.navigation ul li:hover a .text{
     opacity: 1;
     transform: translateY(10px);
 }
@@ -100,18 +100,18 @@ body{
     border-top-left-radius: 20px;
     box-shadow: -1px -10px 0 0 var(--clr);
 }
-.navigation ul li:nth-child(1).active ~ .indicator{
+.navigation ul li:nth-child(1):hover ~ .indicator{
     transform: translateX(calc(70px * 0));
 }
-.navigation ul li:nth-child(2).active ~ .indicator{
+.navigation ul li:nth-child(2):hover ~ .indicator{
     transform: translateX(calc(70px * 1));
 }
-.navigation ul li:nth-child(3).active ~ .indicator{
+.navigation ul li:nth-child(3):hover ~ .indicator{
     transform: translateX(calc(70px * 2));
 }
-.navigation ul li:nth-child(4).active ~ .indicator{
-    transform: translateX(calc(70px * 3));
+.navigation ul li:nth-child(4):hover ~ .indicator{
+    transform: translateX(calc(65px * 3));
 }
-.navigation ul li:nth-child(5).active ~ .indicator{
+.navigation ul li:nth-child(5):hover ~ .indicator{
     transform: translateX(calc(70px * 4));
 }

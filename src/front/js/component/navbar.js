@@ -3,57 +3,53 @@ import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
 
 
+
 export const Navbar = () => {
 	return (
-		<div class="navigation">
+		<div className="navigation">
         <ul>
-            <li class="list active">
-                <a href="#">
-                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <span class="text">Home</span>
-                </a>
+            <li className="list active">
+				<Link to="/">
+                    <span className="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span className="text">Home</span>
+                </Link>
             </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                    <span class="text">Profile</span>
-                </a>
+            <li className="list">
+			<Link to="/demo">
+                    <span className="icon"><ion-icon name="bicycle-outline"></ion-icon></span>
+                    <span className="text">Services</span>
+                </Link>
             </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
-                    <span class="text">Message</span>
-                </a>
+            <li className="list">
+			<Link to="/">
+                    <span className="icon"><ion-icon name="locate-outline"></ion-icon></span>
+                    <span className="text">Locations</span>
+                </Link>
             </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
-                    <span class="text">Photos</span>
-                </a>
+            <li className="list">
+			<Link to="/">
+                    <span className="icon"><ion-icon name="call-outline"></ion-icon></span>
+                    <span className="text">Contact us</span>
+                </Link>
             </li>
-            <li class="list">
-                <a href="#">
-                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                    <span class="text">Settings</span>
-                </a>
+            <li className="list">
+				<Link to="/">
+                    <span className="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
+                    <span className="text">About us</span>
+                </Link>
             </li>
-            <div class="indicator"></div>
+            <div className="indicator"></div>
         </ul>
 		</div>
-    	
+		
+		  
 		
 		
-
 	);
 };
-const list = document.querySelectorAll('.list');
-		function activeLink(){
-			list.forEach((item) =>
-			item.classList.remove('active'));
-			this.classList.add('active');
-		}
-		list.forEach((item) =>
-		item.addEventListener('click', activeLink));
+
+ 
+
 
 
 //servicios 
