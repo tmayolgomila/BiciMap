@@ -1,117 +1,51 @@
+/* From uiverse.io by @WhiteNervosa */
+.navButton {
+    font-size: 18px;
+    color: #e1e1e1;
+    font-family: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+  }
+  .navButton a{
+    text-decoration: none;
+    color: white;
+    margin: 20px;
 
-:root{
-    --clr: rgb(19, 2, 24);
-
-}
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: var(--clr);
-}
-.navigation{
-    margin-top: 100px;
-    width: 400px;
-    height: 70px;
-    background: #fff;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-}
-.navigation ul{
-    display: flex;
-    width: 350px;
-}
-.navigation ul li{
-    position: relative;
-    list-style: none;
-    width: 70px;
-    height: 70px;
-    z-index: 1;
-}
-.navigation ul li a {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  }
+  .navigation{
+    text-align: right;
+    margin: 30px;
+    
+  }
+  
+  .navButton:focus,
+  .navButton:hover {
+    color: #fff;
+  }
+  
+  .navButton:focus:after,
+  .navButton:hover:after {
     width: 100%;
-    text-align: center;
-    font-weight: 500;
-}
-.navigation ul li a .icon{
-    position: relative;
-    display: block;
-    line-height: 75px;
-    font-size: 1.5em;
-    text-align: center;
-    transition: 0.5s;
-    color: var(--clr);
-}
-.navigation ul li:hover a .icon{
-    transform: translateY(-32px);
-}
-.navigation ul li a .text{
+    left: 0%;
+  }
+  
+  .navButton:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
     position: absolute;
-    color: var(--clr);
-    font-weight: 400;
-    font-size: 0.75em;
-    letter-spacing: 0.05em;
-    transition: 0.5s;
-    opacity: 0;
-    transform: translateY(20px);
-}
-.navigation ul li:hover a .text{
-    opacity: 1;
-    transform: translateY(10px);
-}
-.indicator{
-    position: absolute;
-    top: -50%;
-    width: 70px;
-    height: 70px;
-    background: rgb(70, 208, 246);
-    border-radius: 50%;
-    border: 6px solid var(--clr);
-    transition: 0.5s;
-}
-.indicator::before{
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -22px;
-    width: 20px;
-    height: 20px;
-    background: transparent;
-    border-top-right-radius: 20px;
-    box-shadow: 1px -10px 0 0 var(--clr);
-}
-.indicator::after{
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -22px;
-    width: 20px;
-    height: 20px;
-    background: transparent;
-    border-top-left-radius: 20px;
-    box-shadow: -1px -10px 0 0 var(--clr);
-}
-.navigation ul li:nth-child(1):hover ~ .indicator{
-    transform: translateX(calc(70px * 0));
-}
-.navigation ul li:nth-child(2):hover ~ .indicator{
-    transform: translateX(calc(70px * 1));
-}
-.navigation ul li:nth-child(3):hover ~ .indicator{
-    transform: translateX(calc(70px * 2));
-}
-.navigation ul li:nth-child(4):hover ~ .indicator{
-    transform: translateX(calc(65px * 3));
-}
-.navigation ul li:nth-child(5):hover ~ .indicator{
-    transform: translateX(calc(70px * 4));
-}
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+  }

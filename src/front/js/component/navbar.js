@@ -7,39 +7,33 @@ import "../../styles/navbar.css";
 export const Navbar = () => {
 	return (
 		<div className="navigation">
-        <ul>
-            <li className="list active">
+        
+            <button className="navButton">
 				<Link to="/">
-                    <span className="icon"><ion-icon name="home-outline"></ion-icon></span>
-                    <span className="text">Home</span>
+                    <a><span><ion-icon name="home-outline"></ion-icon> Home</span></a>
                 </Link>
-            </li>
-            <li className="list">
+            </button>
+            <button className="navButton">
 			<Link to="/demo">
-                    <span className="icon"><ion-icon name="bicycle-outline"></ion-icon></span>
-                    <span className="text">Services</span>
+                    <a><span><ion-icon name="bicycle-outline"></ion-icon> Services</span></a>
                 </Link>
-            </li>
-            <li className="list">
+            </button>
+            <button className="navButton">
 			<Link to="/">
-                    <span className="icon"><ion-icon name="locate-outline"></ion-icon></span>
-                    <span className="text">Locations</span>
+                    <a><span><ion-icon name="locate-outline"></ion-icon> Locations</span></a>
                 </Link>
-            </li>
-            <li className="list">
+            </button>
+            <button className="navButton">
 			<Link to="/">
-                    <span className="icon"><ion-icon name="call-outline"></ion-icon></span>
-                    <span className="text">Contact us</span>
+                   <a><span><ion-icon name="call-outline"></ion-icon> Contact</span></a> 
                 </Link>
-            </li>
-            <li className="list">
+            </button>
+            <button className="navButton">
 				<Link to="/">
-                    <span className="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
-                    <span className="text">About us</span>
+                    <a><span><ion-icon name="information-circle-outline"></ion-icon> About us</span></a>
                 </Link>
-            </li>
-            <div className="indicator"></div>
-        </ul>
+            </button>
+        
 		</div>
 		
 		  
@@ -52,8 +46,3 @@ export const Navbar = () => {
 
 
 
-//servicios 
-//location
-//about us
-//contact us
-//Imagen perfil
