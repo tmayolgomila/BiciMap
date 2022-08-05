@@ -16,12 +16,13 @@
   .navButton a{
     text-decoration: none;
     color: white;
-    margin: 20px;
+    padding: 10px;
 
   }
   .navigation{
+    font-family: 'Poppins', sans-serif;
     text-align: right;
-    margin: 30px;
+    margin: 25px;
     
   }
   

@@ -10,27 +10,27 @@ export const Navbar = () => {
         
             <button className="navButton">
 				<Link to="/">
-                    <a><span><ion-icon name="home-outline"></ion-icon> Home</span></a>
+                    <a><span><ion-icon size="large" name="home-outline"></ion-icon> Home</span></a>
                 </Link>
             </button>
             <button className="navButton">
 			<Link to="/demo">
-                    <a><span><ion-icon name="bicycle-outline"></ion-icon> Services</span></a>
+                    <a><span><ion-icon size="large" name="bicycle-outline"></ion-icon> Services</span></a>
                 </Link>
             </button>
             <button className="navButton">
 			<Link to="/">
-                    <a><span><ion-icon name="locate-outline"></ion-icon> Locations</span></a>
+                    <a><span><ion-icon size="large" name="locate-outline"></ion-icon> Locations</span></a>
                 </Link>
             </button>
             <button className="navButton">
-			<Link to="/">
-                   <a><span><ion-icon name="call-outline"></ion-icon> Contact</span></a> 
+			<Link to="/footer">
+                   <a><span><ion-icon size="large" name="call-outline"></ion-icon> Contact</span></a> 
                 </Link>
             </button>
             <button className="navButton">
 				<Link to="/">
-                    <a><span><ion-icon name="information-circle-outline"></ion-icon> About us</span></a>
+                    <a><span><ion-icon size="large" name="information-circle-outline"></ion-icon> About us</span></a>
                 </Link>
             </button>
         
