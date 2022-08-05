@@ -8,11 +8,9 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-<<<<<<< HEAD
-			
-=======
+
 			<img src="https://img.huffingtonpost.com/asset/61890c40200000fd798d217f.png?ops=1778_1000" />
->>>>>>> refs/remotes/origin/desarrollo
+
 		</div>
 	);
 };
