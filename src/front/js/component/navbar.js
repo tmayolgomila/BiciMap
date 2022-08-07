@@ -7,6 +7,11 @@ import "../../styles/navbar.css";
 export const Navbar = () => {
 	return (
 		<div className="navigation">
+            <button className="logo">
+				<Link to="/">
+                    <a>BiciMap</a>
+                </Link>
+            </button>
 		
             <button className="navButton">
 			<Link to="/demo">
