@@ -8,6 +8,7 @@ import { Context } from "../store/appContext";
 function LoginForm() {
   const{store, actions}= useContext(Context)
   const [username, setUsername] = useState("")
+  const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
   
@@ -16,6 +17,9 @@ function LoginForm() {
   <div className="mb-3">
     <label>Email</label>
     <input onChange={(e)=>setUsername(e.target.value)} type="text" placeholder="Enter email" />
+    <label>email</label>
+    <input onChange={(e)=>setEmail(e.target.value)} type="text" placeholder="Enter email" />
+
   </div>
   <div className="mb-3">
         <label>Password</label>
@@ -25,7 +29,11 @@ function LoginForm() {
     if(email === "" || password === ""){
       alert("campos vacios, rellenar")
     }else{
+
       actions.login(username,password, navigate)
+
+      actions.login(email,password, navigate)
+
     };
   }}>
     Login
