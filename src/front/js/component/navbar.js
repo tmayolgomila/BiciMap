@@ -14,7 +14,7 @@ export const Navbar = () => {
             </button>
 		
             <button className="navButton">
-			<Link to="/demo">
+			<Link to="/login">
                     <a><span><ion-icon size="large" name="bicycle-outline"></ion-icon> Services</span></a>
                 </Link>
             </button>
