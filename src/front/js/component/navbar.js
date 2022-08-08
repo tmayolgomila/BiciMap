@@ -7,12 +7,12 @@ import "../../styles/navbar.css";
 export const Navbar = () => {
 	return (
 		<div className="navigation">
-        
-            <button className="navButton">
+            <button className="logo">
 				<Link to="/">
-                    <a><span><ion-icon size="large" name="home-outline"></ion-icon> Home</span></a>
+                    <a>BiciMap</a>
                 </Link>
             </button>
+		
             <button className="navButton">
 			<Link to="/demo">
                     <a><span><ion-icon size="large" name="bicycle-outline"></ion-icon> Services</span></a>
@@ -33,6 +33,8 @@ export const Navbar = () => {
                     <a><span><ion-icon size="large" name="information-circle-outline"></ion-icon> About us</span></a>
                 </Link>
             </button>
+			
+			
         
 		</div>
 		
