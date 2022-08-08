@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import rigoImageUrl from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
+import { Maps } from "../component/maps";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -9,7 +9,7 @@ export const Home = () => {
 	return (
 		<div className="text-center mt-5">
 
-			<img src="https://img.huffingtonpost.com/asset/61890c40200000fd798d217f.png?ops=1778_1000" />
+			<Maps></Maps>
 
 		</div>
 	);
