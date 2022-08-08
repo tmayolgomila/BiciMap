@@ -1,14 +1,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-<<<<<<< HEAD
 			
 		},
 		actions: {
-			
 
-		
-=======
 			message: null,
 			auth: false,
 			token: "bienvenido",
@@ -16,12 +12,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			
 		},
 		actions: {
-			signup: async (nombre, apellidos, email, dni,telefono, password) => {
+			signup: async (nombre, apellidos, email, telefono, password) => {
 				try{
 					const resp = await fetch(process.env.BACKEND_URL + "/signup", {
 					  method: "POST",
 					  headers: { "Content-Type": "application/json" },
-					  body: JSON.stringify({nombre, apellidos, email, dni,telefono, password }),
+					  body: JSON.stringify({nombre, apellidos, email, telefono, password }),
 					});
 			
 					if (!resp.ok) throw Error("There was a problem in the login request");
@@ -35,7 +31,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ nombre: nombre });
 					setStore({ apellidos: apellidos });
 					setStore({ email: email });
-					setStore({ dni: dni });
 					setStore({ telefono: telefono });
 					setStore({ password: password });
 			
@@ -77,7 +72,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ auth: false });
 				setStore({ email: null });
 			  },
->>>>>>> login
+
 		}
 	};
 };
