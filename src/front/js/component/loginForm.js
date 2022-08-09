@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React,{ useContext, useState } from 'react';
 import { Context } from "../store/appContext";
+import "../../styles/formularioLogin.css";
 
 
 
@@ -16,35 +17,35 @@ function LoginForm() {
   const navigate = useNavigate()
   
   return (
-    <>
-  <div className="mb-3">
+      <div id="cuerpoForm">
+      
+      <div className="mb-3" id="formularioLogin">
 
-    <label>Email</label>
-    <input onChange={(e)=>setUsername(e.target.value)} type="text" placeholder="Enter email" />
-
-    <label>email</label>
-    <input onChange={(e)=>setEmail(e.target.value)} type="text" placeholder="Enter email" />
-
-  </div>
-  <div className="mb-3">
-        <label>Password</label>
-        <input onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="Password" />
-      </div>
-  <button variant="primary" type="submit" onClick={()=>{
-    if(email === "" || password === ""){
+        <label>Email</label>
+        <input onChange={(e)=>setUsername(e.target.value)} type="text" placeholder="Enter email" />
+     </div>
+      <div className="mb-3" id="formularioLogin">
+       <label>Password</label>
+       <input onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="Password" />
+    </div>
+      <button id="botonForm" variant="primary" type="submit" onClick={()=>{
+      if(email === "" || password === ""){
       alert("campos vacios, rellenar")
-    }else{
+      }else{
 
-      actions.login(username,password, navigate)
+       actions.login(username,password, navigate)
 
-      actions.login(email,password, navigate)
+       actions.login(email,password, navigate)
 
-    };
-  }}>
-    Login
-  </button>
-</>
+};
+}}>
+Login
+</button>
+      
+      </div>
+  
   );
 }
 
 export default LoginForm;
+
