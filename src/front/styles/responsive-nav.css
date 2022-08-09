@@ -86,8 +86,6 @@
 .logo:hover{
   transform: scale(1.3);
 }
-
-
-#burger {
- background-color: black;
+#burger{
+  background: none !important;
 }
