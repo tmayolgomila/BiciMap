@@ -79,12 +79,12 @@ def signup():
 @app.route("/login", methods = ["POST"])
 def login():
     body = request.get_json()
-    username= body["username"]
+    email= body["email"]
     password=body["password"]
-    comprobando = User.query.filter_by(username = body["username"]).first()
+    comprobando = User.query.filter_by(email = body["email"]).first()
     psw = User.query.filter_by(password = body["password"]).first()
     if comprobando == None:
-       raise APIException('Usuario no encontrado')
+       raise APIException('Email no encontrado')
     if psw == None:
        raise APIException('Contraseña incorrecta') 
     if comprobando.password != psw.password:
@@ -99,17 +99,16 @@ def private():
     current_user_id = get_jwt_identity()
     user = User.filter.get(current_user_id)
     
-    return jsonify({"id": user.id, "username": user.username }), 200
+    return jsonify({"id": user.id, "email": user.email }), 200
 
 @app.route('/token', methods=['POST'])
 def create_token():
-    username = request.json.get("username", None)
     email = request.json.get("email", None)
     password = request.json.get("password", None)
     #Consultamos base de datos por email y contraseña
-    user = User.filter.query(username=username, email=email, password=password).first()
+    user = User.filter.query(email=email, password=password).first()
     if user is None:
-        return jsonify({"msg":"error in the username, email or password"}), 401
+        return jsonify({"msg":"error in the email or password"}), 401
     #Creamos un nuevo token con el id del usuario
     access_token = create_access_token( identity=user.id)
     return jsonify({"token":access_token, "user_id":user.id}), 200
