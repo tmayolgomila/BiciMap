@@ -1,14 +1,14 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-<<<<<<< HEAD
+
 			
 		},
 		actions: {
 			
 
 		
-=======
+
 			message: null,
 			auth: false,
 			token: "bienvenido",
@@ -77,7 +77,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ auth: false });
 				setStore({ email: null });
 			  },
->>>>>>> login
+
 		}
 	};
 };

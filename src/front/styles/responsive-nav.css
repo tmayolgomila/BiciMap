@@ -3,7 +3,7 @@
 
 
 
-.navButton {
+.nav-item {
     font-size: 12px;
     color: #e1e1e1;
     font-family: inherit;
@@ -19,31 +19,32 @@
     
    
   }
-  .navButton a{
+  .nav-item a{
     text-decoration: none;
     color: white;
     padding: 10px;
+    background: none;
   }
   #navigation{
     font-family: 'Poppins', sans-serif;
   }
   
-  .navButton:focus,
-  .navButton:hover {
+  .nav-item:focus,
+  .nav-item:hover {
     color: #F42C04;
   }
-  .navButton a:focus,
-  .navButton a:hover {
+  .nav-item a:focus,
+  .nav-item a:hover {
     color: #F42C04;
   }
   
-  .navButton:focus:after,
-  .navButton:hover:after {
+  .nav-item:focus:after,
+  .nav-item:hover:after {
     width: 100%;
     left: 0%;
   }
   
-  .navButton:after {
+  .nav-item:after {
     content: "";
     pointer-events: none;
     bottom: -2px;
