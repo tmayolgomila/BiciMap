@@ -29,13 +29,12 @@ const injectContext = PassedComponent => {
 			 * store, instead use actions, like this:
 			 **/
 
-<<<<<<< HEAD
-=======
+
 			 // <---- calling this function from the flux.js actions
 
 			// <---- calling this function from the flux.js actions
 
->>>>>>> signup
+
 		}, []);
 
 		// The initial value for the context is not null anymore, but the current state of this component,

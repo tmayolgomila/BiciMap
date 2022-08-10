@@ -1,19 +1,11 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-<<<<<<< HEAD
 
-=======
->>>>>>> signup
 			
 		},
 		actions: {
 
-<<<<<<< HEAD
-		
-
-=======
->>>>>>> signup
 			message: null,
 			auth: false,
 			token: "bienvenido",
