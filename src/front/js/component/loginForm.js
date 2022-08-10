@@ -17,32 +17,31 @@ function LoginForm() {
   const navigate = useNavigate()
   
   return (
-      <div id="cuerpoForm">
-      
-      <div className="mb-3" id="formularioLogin">
+    <div className="container">
 
-        <label>Email</label>
-        <input onChange={(e)=>setUsername(e.target.value)} type="text" placeholder="Enter email" />
-     </div>
-      <div className="mb-3" id="formularioLogin">
-       <label>Password</label>
-       <input onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="Password" />
+
+    <div className="mb-3" id="formularioLogin">
+      <label>Email address </label>
+      <p><input type="email" id="inp" placeholder="Enter email" onChange={(e) => setEmail (e.target.value)} /></p>
     </div>
-      <button id="botonForm" variant="primary" type="submit" onClick={()=>{
-      if(email === "" || password === ""){
-      alert("campos vacios, rellenar")
-      }else{
 
-       actions.login(username,password, navigate)
 
-       actions.login(email,password, navigate)
+    <div className="mb-3" id="formularioLogin">
+      <label>Password </label>
+      <p><input type="password" id="inp" placeholder="Password" onChange={(e) => setPassword (e.target.value)}/></p>
+    </div>
 
-};
-}}>
-Login
-</button>
-      
-      </div>
+
+    <button id="botonForm" variant="primary" type="submit" onClick={()=>{ 
+        if (email === "" || password === ""){
+          alert("Username/password/email empty")
+        }else{
+          actions.signup(Nombre, email, password)
+        }
+      }}>
+      Login
+    </button>
+  </div>
   
   );
 }
