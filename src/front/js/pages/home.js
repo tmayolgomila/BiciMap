@@ -10,17 +10,11 @@ export const Home = () => {
 	return (
 		<div className="text-center mt-5">
 
-			
+<Maps />
 
 		</div>
 	);
 
-  return (
-    <div className="container text-center mt-5">
-      
-          <Maps />
-      
-    </div>
-  );
+  
 
 };
