@@ -49,7 +49,7 @@ export const SignUpForm = () => {
             actions.signup(Nombre, email, password)
           }
         }}>
-        Submit
+        Registrarse
       </button>
     </div>
   );

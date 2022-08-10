@@ -43,6 +43,7 @@
 
 #inp{
     color: #2FBF71;
+    transition: transform .2s;
 }
 
 #inp:hover{
