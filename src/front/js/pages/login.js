@@ -14,6 +14,7 @@ export const Login = () => {
 	<div className="col text-center mt-5">
 		<LoginForm/>
 	</div>
+	<hr></hr>
 	</>
 	
 		
