@@ -6,6 +6,7 @@ import "../../styles/responsive-nav.css";
 
 export const Navbar = () => {
 	return (
+
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark " id="burger">
         <a class="navbar-brand ps-2" id="burger" href="#"><button className="logo">
         <Link to="/">
@@ -18,6 +19,7 @@ export const Navbar = () => {
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <ul class="navbar-nav ms-auto pe-5" id="burger">
             <li class="nav-item" id="burger"><Link to="/login">
+
                     <a><span><ion-icon size="large" name="bicycle-outline"></ion-icon> Services</span></a>
                 </Link></li>
             <li class="nav-item"><Link to="/">
@@ -33,11 +35,7 @@ export const Navbar = () => {
     </div>
     </nav>
 		
-		
-		  
-		
-		
-	);
+    );
 };
 
  

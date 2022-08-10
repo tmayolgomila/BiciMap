@@ -2,6 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 
+
 			
 		},
 		actions: {
@@ -73,6 +74,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ auth: false });
 				setStore({ email: null });
 			  },
+
+
+			
+		},
+		actions: {
+			
+
+		
 
 		}
 	};

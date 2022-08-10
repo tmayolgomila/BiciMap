@@ -4,7 +4,8 @@ import "../../styles/home.css";
 import { Maps } from "../component/maps";
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
+
 
 	return (
 		<div className="text-center mt-5">
@@ -13,4 +14,13 @@ export const Home = () => {
 
 		</div>
 	);
+
+  return (
+    <div className="container text-center mt-5">
+      
+          <Maps />
+      
+    </div>
+  );
+
 };
