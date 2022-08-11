@@ -1,6 +1,6 @@
 import React from "react";
 
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+
 import GoogleMaps from "simple-react-google-maps"
 import { Link } from "react-router-dom";
 import "../../styles/maps.css";
