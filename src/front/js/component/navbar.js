@@ -18,9 +18,9 @@ export const Navbar = () => {
         </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <ul class="navbar-nav ms-auto pe-5" id="burger">
-            <li class="nav-item" id="burger"><Link to="/login">
+            <li class="nav-item" id="burger"><Link to="/altas">
 
-                    <a><span><ion-icon size="large" name="bicycle-outline"></ion-icon> Services</span></a>
+                    <a><span><ion-icon size="large" name="bicycle-outline"></ion-icon>Add a bike</span></a>
                 </Link></li>
             <li class="nav-item"><Link to="/">
                     <a><span><ion-icon size="large" name="locate-outline"></ion-icon> Locations</span></a>

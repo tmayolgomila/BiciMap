@@ -12,7 +12,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
 import { SignUp } from "./pages/signup";
-
+import { Altas } from "./pages/altas";
 
 import { Logo } from "./component/logo";
 
@@ -37,6 +37,7 @@ const Layout = () => {
                         <Route element={<Demo />} path="/demo" />
                         <Route element={<Login />} path="/login" />
                         <Route element={<SignUp />} path="/signUp"/>
+                        <Route element={<Altas />} path="/altas"/>
                         <Route element={<h1>Not found!</h1>} />
                         <Route element={<Footer />} path="/footer" />
                     </Routes>
