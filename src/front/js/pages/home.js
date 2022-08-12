@@ -2,7 +2,11 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Maps } from "../component/maps";
+
 import { Altas } from "./altas";
+
+import { MenuVertical } from "../component/menuVertical";
+
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -10,7 +14,7 @@ export const Home = () => {
 
 	return (
 		<div className="text-center mt-5">
-
+			<MenuVertical/>
 			<Maps />
 			
 			
