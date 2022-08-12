@@ -38,15 +38,7 @@ function FormAlquiler() {
         <label>Talla</label>
         <p><input type="text" id="inp" placeholder="Talla" onChange={(e) => setTalla(e.target.value)}/></p>
       </div>
-      <button id="botonForm3" variant="primary" type="submit" onClick={()=>{ 
-          if (tipo == "" ||  precio == "" || year == "" || talla == ""){
-            alert("Campos vacios, rellenar porfavor")
-          }else{
-            actions.signup(tipo, precio, year, talla)
-          }
-        }}>
-        Subir 
-      </button>
+      
       </div>
       <div className="container2">
       <div className="mb-3" id="formularioAltas">
@@ -63,12 +55,21 @@ function FormAlquiler() {
       </div>
       <div className="mb-3" id="formularioAltas">
         <label>Electrica</label>
-        <p><input type="checkbox"/></p>
+        <input type="checkbox"/>
       </div>
 
       
       </div>
     </div>
+    <button id="botonForm3" variant="primary" type="submit" onClick={()=>{ 
+          if (tipo == "" ||  precio == "" || year == "" || talla == ""){
+            alert("Campos vacios, rellenar porfavor")
+          }else{
+            actions.signup(tipo, precio, year, talla)
+          }
+        }}>
+        Subir 
+      </button>
     </>
 
     

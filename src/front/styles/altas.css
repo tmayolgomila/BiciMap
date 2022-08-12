@@ -6,11 +6,13 @@
 .container{
     font-family: 'Poppins', sans-serif;
     font-size: medium;
+    border-right: #ffffff;
 }
 .container2{
     font-family: 'Poppins', sans-serif;
     font-size: medium;
     display: inline-block;
+    border-left: #ffffff;
 }
 h1{
     color: #2FBF71;
@@ -112,10 +114,8 @@ hr{
     border-radius: 9px;
     background-color: #dbdbdb;
     transition: transform .2s;
-    text-align: center;
-    
-    
-    margin: 10px;
+    display: list-item;
+    margin-left: 46%;
   
 
     

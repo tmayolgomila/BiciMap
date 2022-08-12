@@ -1,17 +1,22 @@
 .todo{
     display: inline-flex;
+    margin-right: 2.5%;
 }
 
 
 .container{
     font-family: 'Poppins', sans-serif;
     font-size: medium;
+    border-right: #ffffff;
+    padding-right:10px;
     
 }
 .container2{
     font-family: 'Poppins', sans-serif;
     font-size: medium;
     display: inline-block;
+    border-left: #ffffff solid 1px;
+    padding-left: 50px;
 }
 h1{
     color: #2FBF71;
@@ -110,9 +115,9 @@ hr{
     border-radius: 9px;
     background-color: #2FBF71;
     transition: transform .2s;
-    position: relative;
-    margin-top: 100px;
-    margin-left: 60%;
+    margin-top: 50px;
+    display: list-item;
+    margin-left: 46%;
   
 
     
@@ -142,11 +147,16 @@ hr{
     border-radius: 9px;
     background-color: #2FBF71;
     transition: transform .2s;
-    position: relative;
-    margin-top: 150px;
-    margin-left: 60%;
+    margin-top: 50px;
+    display: list-item;
+    margin-left: 46%;
   
 }
 #botonForm3:hover{
     transform: scale(1.3);
+}
+#checkbox{
+    background: none;
+    color: rgb(255, 255, 255);
+    text-align: left;
 }
