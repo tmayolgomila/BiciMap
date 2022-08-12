@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import FormAlquiler from "../component/alquilerForm";
 import { Context } from "../store/appContext";
 
-import "../../styles/altas.css";
+import "../../styles/alquiler.css";
 
 
 export const AltasAlquiler = () => {
