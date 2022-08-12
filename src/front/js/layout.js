@@ -13,6 +13,8 @@ import { Footer } from "./component/footer";
 
 import { SignUp } from "./pages/signup";
 import { Altas } from "./pages/altas";
+import { AltasVender } from "./pages/altasVender";
+import { AltasAlquiler } from "./pages/altasAlquiler";
 
 import { Logo } from "./component/logo";
 
@@ -38,6 +40,8 @@ const Layout = () => {
                         <Route element={<Login />} path="/login" />
                         <Route element={<SignUp />} path="/signUp"/>
                         <Route element={<Altas />} path="/altas"/>
+                        <Route element={<AltasVender />} path="/altasvender"/>
+                        <Route element={<AltasAlquiler />} path="/altasalquiler"/>
                         <Route element={<h1>Not found!</h1>} />
                         <Route element={<Footer />} path="/footer" />
                     </Routes>

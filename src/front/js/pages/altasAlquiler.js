@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import FormAltas  from "../component/altasForm";
+import FormAlquiler from "../component/alquilerForm";
 import { Context } from "../store/appContext";
 
 import "../../styles/altas.css";
 
 
-export const Altas = () => {
+export const AltasAlquiler = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
@@ -15,10 +15,9 @@ export const Altas = () => {
 	<h1>Sube tu Bicicleta</h1>
 	<hr></hr>
 	<div className="col text-center mt-5">
-		<Link to="/altasvender"><button type="button" id="botonForm" >Vender</button></Link>
-		<Link to="/altasalquiler"><button type="button" id="botonForm">Alquilar</button></Link>
+		
 	
-	
+	<FormAlquiler/>
 
 		
 	</div>

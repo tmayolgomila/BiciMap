@@ -5,7 +5,7 @@ import "../../styles/altas.css";
 
 
 
-function FormAltas() { 
+function FormAlquiler() { 
   const {store, actions} = useContext(Context)
   const [tipo,setTipo] = useState("");
   const [precio,setPrecio] = useState("");
@@ -18,10 +18,10 @@ function FormAltas() {
   
 
   return (
-   <>
-    
-    <h4>Para vender</h4>
+   
+    <>
 
+    <h4>Para alquilar</h4>
     <div className="container">
       <div className="mb-3" id="formularioAltas" >
         <label>Tipo de bicicleta</label>
@@ -34,20 +34,6 @@ function FormAltas() {
       </div>
 
       <div className="mb-3" id="formularioAltas">
-        <label>Precio</label>
-        <p><input type="integer" id="inp" placeholder="precio" onChange={(e) => setYear (e.target.value)} /></p>
-      </div>
-
-      <div className="mb-3" id="formularioAltas">
-        <label>Año</label>
-        <p><input type="text" id="inp" placeholder="Año" onChange={(e) => setYear(e.target.value)}/></p>
-      </div>
-
-      <div className="mb-3" id="formularioAltas">
-        <label>Modificaciones/Complementos </label>
-        <p><input type="text" id="inp" placeholder=" " onChange={(e) => setModificaciones (e.target.value)}/></p>
-      </div>
-      <div className="mb-3" id="formularioAltas">
         <label>Talla</label>
         <p><input type="text" id="inp" placeholder="Talla" onChange={(e) => setTalla(e.target.value)}/></p>
       </div>
@@ -57,6 +43,10 @@ function FormAltas() {
       </div>
       <div className="mb-3" id="formularioAltas">
         <label>Observaciones del vendedor </label>
+        <p><input type="text" id="inp" placeholder=" " onChange={(e) => setObservaciones (e.target.value)}/></p>
+      </div>
+      <div className="mb-3" id="formularioAltas">
+        <label>Fecha límite de alquiler</label>
         <p><input type="text" id="inp" placeholder=" " onChange={(e) => setObservaciones (e.target.value)}/></p>
       </div>
       <div className="mb-3" id="formularioAltas">
@@ -79,5 +69,5 @@ function FormAltas() {
     
   );
 }
-export default FormAltas;
+export default FormAlquiler;
 
