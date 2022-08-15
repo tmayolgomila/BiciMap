@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import { Maps } from "../component/maps";
 
-import { Altas } from "./altas";
+
 
 import { MenuVertical } from "../component/menuVertical";
 
@@ -13,7 +13,7 @@ export const Home = () => {
 
 
 	return (
-		<div className="text-center mt-5">
+		<div className="inicio">
 			<MenuVertical/>
 			<Maps />
 			

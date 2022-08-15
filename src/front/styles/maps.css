@@ -1,4 +1,12 @@
+.inicio{
+    display: flex;
+}
 
+
+
+.container{
+    text-align: center;
+}
 #botonSignUp{
     color: rgb(0, 0, 0);
     position: relative;

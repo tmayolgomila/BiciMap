@@ -1,3 +1,39 @@
 .vertical-menu{
     text-align: left;
+    margin-top: 100px;
+    width: 10%;
+    margin-right: 0;
+    animation: aparecer1 3s ease 1 both;
 }
+@keyframes aparecer1{
+    from{
+        opacity: 0;
+        transform: translateX(0%);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(50%);
+    }
+}
+.vertical-menu p{
+    letter-spacing: 2px;
+    color:white;
+    text-align: center;
+    margin-top: 20px;
+    transition: transform .2s;
+}
+.vertical-menu p:hover{
+    color: #2FBF71;
+    transform: scale(1.2);
+}
+.vertical-menu input{
+    background: #ffffff;
+    border: none;
+    border-radius: 6px;
+    color:black;
+}
+.vertical-menu ::placeholder{
+    color: #2FBF71;
+    text-align: center;
+}
+

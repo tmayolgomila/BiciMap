@@ -64,7 +64,7 @@
   
   }
   .logo a:hover{
-    text-shadow: 1px 1px 2px rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px rgb(255, 0, 0);
     color:#F42C04;
   }
   
@@ -73,9 +73,7 @@
   transition: transform .2s;
   margin-left: 100px;
   margin-right: 400px;
-
 }
 .logo:hover{
   transform: scale(1.3);
 }
-
