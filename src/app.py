@@ -70,7 +70,7 @@ def signup():
     comprobando = User.query.filter_by(email = body["email"]).first()
     if comprobando != None:
         return "el email ya existe"
-    user = User(username = body["username"],email = body["email"], password = body["password"])
+    user = User(email = body["email"], password = body["password"])
     db.session.add(user)
     db.session.commit()
     token=create_access_token(identity=user.id)
@@ -92,7 +92,7 @@ def login():
     token=create_access_token(identity=comprobando.id)
     return jsonify(token)
 
-@app.route("/private", methods=['GET'])
+@app.route("/altas", methods=['GET'])
 @jwt_required()
 def private():
     # Accede a la identidad del usuario actual con get_jwt_identity
