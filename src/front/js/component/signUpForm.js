@@ -1,7 +1,8 @@
 import { Action } from 'history';
 import React, {useContext, useState} from 'react';
+import { Link } from 'react-router-dom';
 import { Context } from '../store/appContext';
-
+import "../../styles/signUp.css";
 
 
 export const SignUpForm = () => { 
@@ -41,7 +42,7 @@ export const SignUpForm = () => {
         <p><input type="password" id="inp" placeholder="Password" onChange={(e) => setPassword (e.target.value)}/></p>
       </div>
 
-
+      <Link to={"/"}>
       <button id="botonForm" variant="primary" type="submit" onClick={()=>{ 
           if (email == "" ||  password == "" || Nombre == "" || Apellidos == ""){
             alert("Username/password/email empty")
@@ -50,7 +51,7 @@ export const SignUpForm = () => {
           }
         }}>
         Registrarse
-      </button>
+      </button></Link>
     </div>
   );
 }

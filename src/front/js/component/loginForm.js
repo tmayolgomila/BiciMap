@@ -11,12 +11,6 @@ import "../../styles/formularioLogin.css";
 function LoginForm() {
   const{store, actions}= useContext(Context)
 
-
-
-
-
-
-
   const [email, setEmail] = useState("")
 
   const [password, setPassword] = useState("")

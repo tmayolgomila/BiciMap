@@ -28,6 +28,7 @@
 }
 #botonForm{
     color: rgb(0, 0, 0);
+    text-decoration: none;
     position: relative;
     margin-bottom: auto;
     width: 130px;
