@@ -8,13 +8,14 @@ import "../../styles/altas.css";
 function FormAltas() { 
   const {store, actions} = useContext(Context)
   const [tipo,setTipo] = useState("");
+  const [foto, setFoto] = useState("");
   const [precio,setPrecio] = useState("");
-  const [year,setYear] = useState("");
-  const [Modificaciones,setModificaciones] = useState("");
-  const [Talla,setTalla] = useState("");
-  const [Material,setMaterial] = useState("");
-  const [Observaciones,setObservaciones] = useState("");
-
+  const [año,setYear] = useState("");
+  const [modificaciones,setModificaciones] = useState("");
+  const [talla,setTalla] = useState("");
+  const [material,setMaterial] = useState("");
+  const [observaciones,setObservaciones] = useState("");
+  const [electrica,setElectrica] = useState("");
   
 
   return (
@@ -32,7 +33,7 @@ function FormAltas() {
 
       <div className="mb-3" id="formularioAltasFoto">
         <label>Foto </label>
-        <p><input type="file" id="fotoBici" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" required/></p>
+        <p><input type="file" id="fotoBici" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" onChange={(e) => setFoto(e.target.value)} required/></p>
       </div>
 
       <div className="mb-3" id="formularioAltas">
@@ -66,17 +67,19 @@ function FormAltas() {
       </div>
       <div className="mb-3" id="formularioAltas2">
         <label>Electrica</label>
-        <input type="checkbox"/>
+        <input type="checkbox" onChange={(e) => setElectrica (e.checked)}/>
       </div>
       
       
       </div>
     </div>
-    <button id="botonForm" variant="primary" type="submit" onClick={()=>{ 
-          if (tipo == "" ||  precio == "" || year == "" || talla == ""){
-            alert("Campos vacios, rellenar porfavor")
+    <button id="botonForm" variant="primary" onClick={(e)=>{ 
+          e.preventDefault()
+          console.log("asd")
+          if (tipo == ""|| precio == ""){
+           return alert("Campos vacios, rellenar porfavor")
           }else{
-            actions.signup(tipo, precio, year, talla)
+            actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones, electrica)
           }
         }}>
         Subir 

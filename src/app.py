@@ -6,7 +6,7 @@ from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
 from api.utils import APIException, generate_sitemap
-from api.models import db, User
+from api.models import db, User, Bike
 from api.admin import setup_admin
 from api.commands import setup_commands
 
@@ -112,6 +112,18 @@ def create_token():
     #Creamos un nuevo token con el id del usuario
     access_token = create_access_token( identity=user.id)
     return jsonify({"token":access_token, "user_id":user.id}), 200
+
+@app.route("/altasvender", methods = ["POST"])
+def addbike():
+    body = request.get_json()
+    comprobando = Bike.query.filter_by(foto = body["foto"]).first()
+    if comprobando != None:
+        return "esta bicicleta ya existe"
+    bike = Bike(tipo = body["tipo"], foto = body["foto"], precio = body["precio"], talla = body["talla"], material = body["material"], observaciones = body["observaciones"], electrica = body["electrica"])
+    db.session.add(bike)
+    db.session.commit()
+    token=create_access_token(identity=bike.id)
+    return jsonify(token)
 
 
 

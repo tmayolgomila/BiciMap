@@ -9,11 +9,13 @@ function FormAlquiler() {
   const {store, actions} = useContext(Context)
   const [tipo,setTipo] = useState("");
   const [precio,setPrecio] = useState("");
-  const [year,setYear] = useState("");
-  const [Modificaciones,setModificaciones] = useState("");
-  const [Talla,setTalla] = useState("");
-  const [Material,setMaterial] = useState("");
-  const [Observaciones,setObservaciones] = useState("");
+  const [año,setYear] = useState("");
+  const [modificaciones,setModificaciones] = useState("");
+  const [talla,setTalla] = useState("");
+  const [material,setMaterial] = useState("");
+  const [observaciones,setObservaciones] = useState("");
+  const [fechalimite,setLimite] = useState("");
+  const [electrica,setElectrica] = useState("");
 
   
 
@@ -51,11 +53,11 @@ function FormAlquiler() {
       </div>
       <div className="mb-3" id="formularioAltas">
         <label>Fecha límite de alquiler</label>
-        <p><input type="text" id="inp" placeholder=" " onChange={(e) => setObservaciones (e.target.value)}/></p>
+        <p><input type="text" id="inp" placeholder=" " onChange={(e) => setLimite (e.target.value)}/></p>
       </div>
       <div className="mb-3" id="formularioAltas">
         <label>Electrica</label>
-        <input type="checkbox"/>
+        <input type="checkbox" onChange={(e) => setElectrica (e.target.value)}/>
       </div>
 
       
@@ -65,7 +67,7 @@ function FormAlquiler() {
           if (tipo == "" ||  precio == "" || year == "" || talla == ""){
             alert("Campos vacios, rellenar porfavor")
           }else{
-            actions.signup(tipo, precio, year, talla)
+            actions.signup(tipo, precio, año, modificaciones, talla, material, observaciones, fechalimite, electrica)
           }
         }}>
         Subir 
