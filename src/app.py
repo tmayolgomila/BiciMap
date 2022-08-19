@@ -116,7 +116,7 @@ def create_token():
 @app.route("/altasvender", methods = ["POST"])
 def addbike():
     body = request.get_json()
-    comprobando = Bike.query.filter_by(foto = body["foto"]).first()
+    comprobando = Bike.query.filter_by(id = body["id"]).first()
     if comprobando != None:
         return "esta bicicleta ya existe"
     bike = Bike(tipo = body["tipo"], foto = body["foto"], precio = body["precio"], talla = body["talla"], material = body["material"], observaciones = body["observaciones"], electrica = body["electrica"])
