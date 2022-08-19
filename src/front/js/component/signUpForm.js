@@ -7,11 +7,11 @@ import "../../styles/signUp.css";
 
 export const SignUpForm = () => { 
   const {store, actions} = useContext(Context)
-  const [email,setEmail] = useState("");
-  const [password,setPassword] = useState("");
-  const [Nombre,setNombre] = useState("");
-  const [Apellidos,setApellidos] = useState("");
-  const [Telefono,setTelefono] = useState("");
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
+  const [nombre,setNombre] = useState("")
+  const [apellidos,setApellidos] = useState("")
+  const [telefono,setTelefono] = useState("")
 
   
 
@@ -42,16 +42,16 @@ export const SignUpForm = () => {
         <p><input type="password" id="inp" placeholder="Password" onChange={(e) => setPassword (e.target.value)}/></p>
       </div>
 
-      <Link to={"/"}>
+      
       <button id="botonForm" variant="primary" type="submit" onClick={()=>{ 
-          if (email == "" ||  password == "" || Nombre == "" || Apellidos == ""){
+          if (email == "" ||  password == "" || nombre == "" || apellidos == ""){
             alert("Username/password/email empty")
           }else{
-            actions.signup(Nombre, email, password)
+            actions.signup(nombre,apellidos, email, password, telefono)
           }
         }}>
         Registrarse
-      </button></Link>
+      </button>
     </div>
   );
 }

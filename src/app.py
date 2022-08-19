@@ -70,7 +70,7 @@ def signup():
     comprobando = User.query.filter_by(email = body["email"]).first()
     if comprobando != None:
         return "el email ya existe"
-    user = User(email = body["email"], password = body["password"])
+    user = User(email = body["email"], password = body["password"], nombre = body["nombre"], apellidos = body["apellidos"],telefono = body["telefono"]  )
     db.session.add(user)
     db.session.commit()
     token=create_access_token(identity=user.id)

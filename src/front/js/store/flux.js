@@ -5,14 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			
 		},
-		actions: {
-
-			message: null,
-			auth: false,
-			token: "bienvenido",
-			email: null,
-			
-		},
+		
 		actions: {
 			signup: async (nombre, apellidos, email, telefono, password) => {
 				try{
@@ -77,12 +70,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 
 			
-		},
-		actions: {
-			
-
-		
-
 		}
 	};
 };
