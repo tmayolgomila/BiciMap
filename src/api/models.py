@@ -34,10 +34,10 @@ class Bike(db.Model):
     material = db.Column(db.String(120), unique=True, nullable=False)
     observaciones = db.Column(db.String(200), unique=True, nullable=False)
     fechalimite = db.Column(db.Integer, unique=False, nullable=True)
-    electrica = db.Column(db.Boolean(), unique=False, nullable=False)
+    
 
     def __repr__(self):
-        return f'<Bike {self.id}>'
+        return f'<Bike {self.foto}>'
 
     def serialize(self):
         return {
@@ -51,5 +51,5 @@ class Bike(db.Model):
             "material": self.material,
             "observaciones": self.observaciones,
             "fechalimite": self.fechalimite,
-            "electrica": self.electrica,
+            
         }

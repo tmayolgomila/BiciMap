@@ -38,7 +38,7 @@ function FormAltas() {
 
       <div className="mb-3" id="formularioAltas">
         <label>Precio</label>
-        <p><input type="integer" id="inp" placeholder="precio" onChange={(e) => setYear (e.target.value)} /></p>
+        <p><input type="integer" id="inp" placeholder="precio" onChange={(e) => setPrecio (e.target.value)} /></p>
       </div>
 
       <div className="mb-3" id="formularioAltas">
@@ -65,21 +65,17 @@ function FormAltas() {
         <label>Observaciones del vendedor </label>
         <p><input size={30} type="text" id="inp" placeholder=" " onChange={(e) => setObservaciones (e.target.value)}/></p>
       </div>
-      <div className="mb-3" id="formularioAltas2">
-        <label>Electrica</label>
-        <input type="checkbox" onChange={(e) => setElectrica (e.checked)}/>
-      </div>
+      
       
       
       </div>
     </div>
     <button id="botonForm" variant="primary" onClick={(e)=>{ 
           e.preventDefault()
-          console.log("asd")
-          if (tipo == ""|| precio == ""){
+          if (tipo == " "|| foto ==" " || precio == " " || año == " "|| modificaciones ==" " || talla == " " || material == " "|| observaciones ==" "){
            return alert("Campos vacios, rellenar porfavor")
           }else{
-            actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones, electrica)
+            actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones)
           }
         }}>
         Subir 

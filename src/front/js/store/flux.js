@@ -1,7 +1,16 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-
+				auth:false,
+				tipo:null,
+				foto:null,
+				precio:null,
+				año:null,
+				modificaciones:null,
+				talla:null,
+				material:null,
+				fechalimite:null,
+				observaciones:null
 
 			
 		},
@@ -67,19 +76,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ auth: false });
 				setStore({ email: null });
 			  },
-			  addbike: async (tipo, foto, precio, año, modificaciones, talla, material, observaciones, electrica) => {
+			  addbike: async (tipo, foto, precio, año, modificaciones, talla, material, observaciones) => {
 				try {
 				  const resp = await fetch(process.env.BACKEND_URL + "/altasvender", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({tipo, foto, precio, año, modificaciones, talla, material, observaciones, electrica}),
+					body: JSON.stringify({tipo, foto, precio, año, modificaciones, talla, material, observaciones}),
 				  });
 				  if (resp.status === 401) {
 					throw "Invalid credentials";
 				  } else if (resp.status === 400) {
 					throw "Invalid format";
 				  }
-				  if (!resp.ok) throw Error("There was a problem in the login request");
+				  if (!resp.ok) throw Error("There was a problem in the request");
 				  const data = await resp.json();
 				  setStore({ tipo: tipo });
 				  setStore({ foto: foto });
@@ -89,13 +98,40 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  setStore({ talla: talla });
 				  setStore({ material: material });
 				  setStore({ observaciones: observaciones });
-				  setStore({ electrica: electrica });
+				  setStore({ auth: true });
+				  return data;
+				} catch (err) {
+				  alert(err);
+				}
+			  },
+			  rentabike: async (tipo, foto, talla, material, observaciones, fechalimite) => {
+				try {
+				  const resp = await fetch(process.env.BACKEND_URL + "/altasalquiler", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({tipo, foto, talla, material, observaciones, fechalimite}),
+				  });
+				  if (resp.status === 401) {
+					throw "Invalid credentials";
+				  } else if (resp.status === 400) {
+					throw "Invalid format";
+				  }
+				  if (!resp.ok) throw Error("There was a problem in the request");
+				  const data = await resp.json();
+				  setStore({ tipo: tipo });
+				  setStore({ foto: foto });
+				  setStore({ talla: talla });
+				  setStore({ material: material });
+				  setStore({ observaciones: observaciones });
+				  setStore({fechalimite: fechalimite})
 				  setStore({ auth: true });
 				  return data;
 				} catch (err) {
 				  alert(err);
 				}
 			  }
+
+
 
 
 			

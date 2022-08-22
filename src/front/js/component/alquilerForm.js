@@ -8,9 +8,7 @@ import "../../styles/alquiler.css";
 function FormAlquiler() { 
   const {store, actions} = useContext(Context)
   const [tipo,setTipo] = useState("");
-  const [precio,setPrecio] = useState("");
-  const [año,setYear] = useState("");
-  const [modificaciones,setModificaciones] = useState("");
+  const [foto,setFoto] = useState("");
   const [talla,setTalla] = useState("");
   const [material,setMaterial] = useState("");
   const [observaciones,setObservaciones] = useState("");
@@ -33,7 +31,7 @@ function FormAlquiler() {
 
       <div className="mb-3" id="formularioAltasFoto">
         <label>Foto </label>
-        <p><input  type="file" id="fotoBici" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" required/></p>
+        <p><input  type="file" id="fotoBici" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" onChange={(e) => setFoto(e.target.value)} required/></p>
       </div>
 
       <div className="mb-3" id="formularioAltas">
@@ -64,10 +62,10 @@ function FormAlquiler() {
       </div>
     </div>
     <button id="botonForm3" variant="primary" type="submit" onClick={()=>{ 
-          if (tipo == "" ||  precio == "" || year == "" || talla == ""){
+          if (tipo == " " ||  precio == " " || año == " " || talla == " "){
             alert("Campos vacios, rellenar porfavor")
           }else{
-            actions.signup(tipo, precio, año, modificaciones, talla, material, observaciones, fechalimite, electrica)
+            actions.signup(tipo, foto, talla, material, observaciones, fechalimite, electrica)
           }
         }}>
         Subir 
