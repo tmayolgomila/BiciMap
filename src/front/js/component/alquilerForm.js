@@ -13,7 +13,7 @@ function FormAlquiler() {
   const [material,setMaterial] = useState("");
   const [observaciones,setObservaciones] = useState("");
   const [fechalimite,setLimite] = useState("");
-  const [electrica,setElectrica] = useState("");
+
 
   
 
@@ -53,19 +53,15 @@ function FormAlquiler() {
         <label>Fecha límite de alquiler</label>
         <p><input type="text" id="inp" placeholder=" " onChange={(e) => setLimite (e.target.value)}/></p>
       </div>
-      <div className="mb-3" id="formularioAltas">
-        <label>Electrica</label>
-        <input type="checkbox" onChange={(e) => setElectrica (e.target.value)}/>
-      </div>
 
       
       </div>
     </div>
     <button id="botonForm3" variant="primary" type="submit" onClick={()=>{ 
-          if (tipo == " " ||  precio == " " || año == " " || talla == " "){
+          if (tipo == " " || foto == " "|| talla == " " || material == " "){
             alert("Campos vacios, rellenar porfavor")
           }else{
-            actions.signup(tipo, foto, talla, material, observaciones, fechalimite, electrica)
+            actions.rentabike(tipo, foto, talla, material, observaciones, fechalimite)
           }
         }}>
         Subir 

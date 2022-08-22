@@ -27,12 +27,12 @@ class Bike(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     tipo = db.Column(db.String(120), unique=False, nullable=False)
     foto = db.Column(db.String(120), unique=False)
-    precio = db.Column(db.Integer, unique=False, nullable=False)
-    año = db.Column(db.Integer, unique=False, nullable=False)
-    modificaciones = db.Column(db.String(200), unique=True, nullable=False)
-    talla = db.Column(db.String(80), unique=True, nullable=False)
-    material = db.Column(db.String(120), unique=True, nullable=False)
-    observaciones = db.Column(db.String(200), unique=True, nullable=False)
+    precio = db.Column(db.Integer)
+    año = db.Column(db.Integer)
+    modificaciones = db.Column(db.String(200))
+    talla = db.Column(db.String(80), nullable=False)
+    material = db.Column(db.String(120), nullable=False)
+    observaciones = db.Column(db.String(200))
     fechalimite = db.Column(db.Integer, unique=False, nullable=True)
     
 

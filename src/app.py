@@ -130,11 +130,11 @@ def rentabike():
     comprobando = Bike.query.filter_by(foto = body["foto"]).first()
     if comprobando != None:
         return "esta bicicleta ya existe"
-    bike = Bike(tipo = body["tipo"], foto = body["foto"], talla = body["talla"], material = body["material"], observaciones = body["observaciones"], fechalimite=body["fechalimite"], electrica = body["electrica"])
+    bike = Bike(tipo = body["tipo"], foto = body["foto"], talla = body["talla"], material = body["material"], observaciones = body["observaciones"], fechalimite=body["fechalimite"])
     db.session.add(bike)
     db.session.commit()
-    token=create_access_token(identity=bike.id)
-    return jsonify(token)
+    
+    return jsonify(), 200
 
 
 
