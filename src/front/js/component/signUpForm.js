@@ -47,7 +47,7 @@ export const SignUpForm = () => {
           if (email == "" ||  password == "" || nombre == "" || apellidos == ""){
             alert("Username/password/email empty")
           }else{
-            actions.signup(nombre,apellidos, email, password, telefono)
+            actions.signup(nombre,apellidos, email,telefono, password)
           }
         }}>
         Registrarse
