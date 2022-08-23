@@ -1,16 +1,16 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-				auth:false,
-				tipo:null,
-				foto:null,
-				precio:null,
-				año:null,
-				modificaciones:null,
-				talla:null,
-				material:null,
-				fechalimite:null,
-				observaciones:null
+			auth:false,
+			tipo:null,
+			foto:null,
+			precio:null,
+			año:null,
+			modificaciones:null,
+			talla:null,
+			material:null,
+			fechalimite:null,
+			observaciones:null,
 
 			
 		},
