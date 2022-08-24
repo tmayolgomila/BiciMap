@@ -58,22 +58,22 @@ function FormAlquiler() {
 
       <div className="mb-3" id="formularioAltas">
         <label>Talla</label>
-        <p><input type="text" id="inp" placeholder="Talla" onChange={(e) => setTalla(e.target.value)}/></p>
+        <p><input type="text" className="inp" placeholder="Talla" onChange={(e) => setTalla(e.target.value)}/></p>
       </div>
       
       </div>
       <div className="container2">
       <div className="mb-3" id="formularioAltas">
         <label>Material</label>
-        <p><input type="text" id="inp" placeholder="Material" onChange={(e) => setMaterial (e.target.value)}/></p>
+        <p><input type="text" className="inp" placeholder="Material" onChange={(e) => setMaterial (e.target.value)}/></p>
       </div>
       <div className="mb-3" id="formularioAltas">
         <label>Observaciones del vendedor </label>
-        <p><input size={25} type="text" id="inp" placeholder=" " onChange={(e) => setObservaciones (e.target.value)}/></p>
+        <p><input size={25} type="text" className="inp" placeholder=" " onChange={(e) => setObservaciones (e.target.value)}/></p>
       </div>
       <div className="mb-3" id="formularioAltas">
         <label>Fecha límite de alquiler</label>
-        <p><input type="text" id="inp" placeholder=" " onChange={(e) => setLimite (e.target.value)}/></p>
+        <p><input type="text" className="inp" placeholder=" " onChange={(e) => setLimite (e.target.value)}/></p>
       </div>
 
       
@@ -87,6 +87,7 @@ function FormAlquiler() {
         onRequestClose={toggleModal}
         contentLabel="My dialog"
         style={customStyles}
+        
       >
         <div>
           {tipo == "" || foto == "" || talla == "" || material == "" ? (

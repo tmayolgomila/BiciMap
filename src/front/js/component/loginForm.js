@@ -42,7 +42,7 @@ function LoginForm() {
         <p>
           <input
             type="email"
-            id="inp"
+            className="inp"
             placeholder="Enter email"
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -54,7 +54,7 @@ function LoginForm() {
         <p>
           <input
             type="password"
-            id="inp"
+            className="inp"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
