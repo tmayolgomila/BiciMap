@@ -1,6 +1,8 @@
 import React, { useCallback } from "react";
 import { Link } from "react-router-dom";
+import "../../styles/navbar.css";
 import "../../styles/responsive-nav.css";
+
 
 export const Navbar = () => {
   return (
@@ -29,8 +31,7 @@ export const Navbar = () => {
             <Link to="/altas">
               
                 <span>
-                  <ion-icon size="large" name="bicycle-outline"></ion-icon>Add a
-                  bike
+                  <ion-icon size="large" name="bicycle-outline"></ion-icon>
                 </span>
               
             </Link>
@@ -40,7 +41,7 @@ export const Navbar = () => {
               
                 <span>
                   <ion-icon size="large" name="locate-outline"></ion-icon>{" "}
-                  Locations
+                  
                 </span>
               
             </Link>
@@ -49,7 +50,7 @@ export const Navbar = () => {
             <Link to="/footer">
               
                 <span>
-                  <ion-icon size="large" name="call-outline"></ion-icon> Contact
+                  <ion-icon className="icono" size="large" name="call-outline"></ion-icon> 
                 </span>
               
             </Link>
@@ -62,7 +63,7 @@ export const Navbar = () => {
                     size="large"
                     name="information-circle-outline"
                   ></ion-icon>{" "}
-                  About us
+                  
                 </span>
               
             </Link>
