@@ -2,6 +2,7 @@ import { Action } from 'history';
 import React, {useContext, useState} from 'react';
 import { Context } from '../store/appContext';
 import "../../styles/altas.css";
+import Modal from "react-modal";
 
 
 
@@ -16,7 +17,29 @@ function FormAltas() {
   const [material,setMaterial] = useState("");
   const [observaciones,setObservaciones] = useState("");
   const [electrica,setElectrica] = useState("");
-  
+  const [isOpen, setIsOpen] = useState(false);
+
+  function toggleModal() {
+    actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones);
+    setIsOpen(!isOpen);
+  }
+
+  const customStyles = {
+    overlay: {
+      position: "fixed",
+      backgroundColor: "rgba(15, 26, 32, 0.75)",
+    },
+    content: {
+      top: "25%",
+      left: "50%",
+      width: "300px",
+      height: "150px",
+      transform: "translate(-50%, -50%)",
+      backgroundColor: "#0F1A20",
+      color: "white",
+      borderColor: "#2FBF71",
+    },
+  };
 
   return (
     <>
@@ -70,16 +93,27 @@ function FormAltas() {
       
       </div>
     </div>
-    <button id="botonForm" variant="primary" onClick={(e)=>{ 
-          e.preventDefault()
-          if (tipo == " "|| foto ==" " || precio == " " || año == " "|| modificaciones ==" " || talla == " " || material == " "|| observaciones ==" "){
-           return alert("Campos vacios, rellenar porfavor")
-          }else{
-            actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones)
-          }
-        }}>
+    <button id="botonForm" variant="primary" onClick={toggleModal}>
         Subir 
       </button>
+
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={toggleModal}
+        contentLabel="My dialog"
+        style={customStyles}
+      >
+        <div>
+          {tipo == ""|| foto =="" || precio == "" || año == ""|| modificaciones == "" || talla == "" || material == ""|| observaciones == "" ? (
+            <p className="ter">Campos vacios</p>
+          ) : (
+            <p className="ter">Su bicicleta de {tipo} ha sido añadida!</p>
+          )}
+        </div>
+        <button id="botonForm2" onClick={toggleModal}>
+          Close modal
+        </button>
+      </Modal>
     </>
     
   );
