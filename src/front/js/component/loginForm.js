@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
-import { Modal } from "./modal";
+import Modal from "react-modal";
 
 import "../../styles/formularioLogin.css";
 
@@ -11,6 +11,29 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+
+  function toggleModal() {
+    actions.login(email, password)
+    setIsOpen(!isOpen);
+  }
+
+  const customStyles = {
+    overlay: {
+      position: 'fixed',
+      backgroundColor: 'rgba(15, 26, 32, 0.75)'
+      
+    },
+    content: {
+      top: '25%',
+      left: '50%',
+      width: "300px",
+      height: "150px",
+      transform: 'translate(-50%, -50%)',
+      backgroundColor: "#0F1A20",
+      color: "white",
+      borderColor: "#2FBF71" 
+    },
+  };
 
   return (
     <div className="container">
@@ -42,21 +65,21 @@ function LoginForm() {
         id="botonForm"
         variant="primary"
         type="submit"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-        onClick={() => {
-          if (email === "" || password === "") {
-            //alert("Password o email vacio");
-          } else {
-            actions.login(email, password);
-            <Modal setIsOpen={setIsOpen}/>
-          }
-        }}
+        onClick={toggleModal}
       >
         Login
       </button>
 
-       
+      <Modal
+              isOpen={isOpen}
+              onRequestClose={toggleModal}
+              contentLabel="My dialog"
+              style={customStyles}
+              
+            >
+              <div>{email == "" || password == "" ? <p className="ter">Campos vacios</p> : <p className="ter">Bienvenido! {email}</p>}</div>
+              <button id="botonForm2" onClick={toggleModal}>Close modal</button>
+            </Modal>;
     </div>
   );
 }

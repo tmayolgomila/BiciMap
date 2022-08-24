@@ -59,9 +59,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					body: JSON.stringify({ email, password }),
 				  });
 				  if (resp.status === 401 || resp.status === 400 ) {
-					throw "Credenciales incorrectas";
+					//throw "Credenciales incorrectas";
 				  }			 
-				  if (!resp.ok) throw Error("There was a problem in the login request");
+				  //throw Error("There was a problem in the login request");
 				  //navigate("/private");
 				  const data = await resp.json();
 				  setStore({ email: email });
