@@ -2,7 +2,7 @@ import { Action } from 'history';
 import React, {useContext, useState} from 'react';
 import { Context } from '../store/appContext';
 import "../../styles/alquiler.css";
-
+import Modal from "react-modal";
 
 
 function FormAlquiler() { 
@@ -13,8 +13,30 @@ function FormAlquiler() {
   const [material,setMaterial] = useState("");
   const [observaciones,setObservaciones] = useState("");
   const [fechalimite,setLimite] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
 
+  function toggleModal() {
+    actions.rentabike(tipo, foto, talla, material, observaciones, fechalimite);
+    setIsOpen(!isOpen);
+  }
+
+  const customStyles = {
+    overlay: {
+      position: "fixed",
+      backgroundColor: "rgba(15, 26, 32, 0.75)",
+    },
+    content: {
+      top: "25%",
+      left: "50%",
+      width: "300px",
+      height: "150px",
+      transform: "translate(-50%, -50%)",
+      backgroundColor: "#0F1A20",
+      color: "white",
+      borderColor: "#2FBF71",
+    },
+  };
   
 
   return (
@@ -57,15 +79,26 @@ function FormAlquiler() {
       
       </div>
     </div>
-    <button id="botonForm3" variant="primary" type="submit" onClick={()=>{ 
-          if (tipo == " " || foto == " "|| talla == " " || material == " "){
-            alert("Campos vacios, rellenar porfavor")
-          }else{
-            actions.rentabike(tipo, foto, talla, material, observaciones, fechalimite)
-          }
-        }}>
+    <button id="botonForm3" variant="primary" type="submit" onClick={toggleModal}>
         Subir 
       </button>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={toggleModal}
+        contentLabel="My dialog"
+        style={customStyles}
+      >
+        <div>
+          {tipo == "" || foto == "" || talla == "" || material == "" ? (
+            <p className="ter">Campos vacios</p>
+          ) : (
+            <p className="ter">Su bicicleta de {tipo} ha sido añadida!</p>
+          )}
+        </div>
+        <button id="botonForm2" onClick={toggleModal}>
+          Close modal
+        </button>
+      </Modal>
     </>
 
     
