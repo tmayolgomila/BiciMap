@@ -13,7 +13,7 @@ export const Maps = () => {
         <div className="container">
             
             <Link to="signup"><button id="botonSignUp">SignUp</button></Link>
-            <div className="or">OR</div>
+            
             <Link to="login"><button id="botonLogin">Login</button></Link>
             
             

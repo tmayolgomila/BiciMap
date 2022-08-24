@@ -20,7 +20,6 @@ class User(db.Model):
             "nombre": self.nombre,
             "apellidos": self.apellidos, 
             "telefono": self.telefono,
-            # do not serialize the password, its a security breach
         }
     
 class Bike(db.Model):
@@ -51,5 +50,4 @@ class Bike(db.Model):
             "material": self.material,
             "observaciones": self.observaciones,
             "fechalimite": self.fechalimite,
-            
         }
