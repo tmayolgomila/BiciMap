@@ -12,7 +12,7 @@ export const Modal = ({ setIsOpen }) => {
         aria-hidden="true"
       >
         <div className="modal-dialog">
-          <div className="modal-content">
+          <div className="modal_content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">
                 Modal title
