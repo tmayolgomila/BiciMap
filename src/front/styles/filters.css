@@ -1,0 +1,18 @@
+.App {
+    color: #2FBF71;
+    margin-top: 1rem;
+  }
+  
+  .Tipo {
+    margin-top: 0.3rem;
+    margin-right:  10 px;
+    vertical-align: text-bottom;
+  }
+  
+  .result {
+    margin-top: 1rem;
+  }
+  
+  #Tipos {
+    margin-right: 10px;
+  }
