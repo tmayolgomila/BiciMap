@@ -58,9 +58,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({ email, password }),
 				  });
-				  if (resp.status === 401 || resp.status === 400 ) {
-					//throw "Credenciales incorrectas";
-				  }			 
+				  		 
 				  //throw Error("There was a problem in the login request");
 				  //navigate("/private");
 				  const data = await resp.json();
@@ -68,6 +66,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  setStore({ auth: true });
 				  localStorage.setItem("jwt-token", email);
 				  setStore({ token: email });
+				  if (resp.status === 401 || resp.status === 400 ) {
+					setStore({ auth: false });
+				  }	
 				  return data;
 				} catch (err) {
 				  alert(err);
