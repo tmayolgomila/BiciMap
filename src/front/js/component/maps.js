@@ -1,26 +1,32 @@
 import React, { useState } from "react";
 import { GoogleMap, InfoWindow, Marker } from "@react-google-maps/api";
+import { MenuVertical } from "./menuVertical";
+import "../../styles/maps.css";
+import bici from "../../img/bici.png";
+
 
 const markers = [
   {
     id: 1,
-    name: "Estación Nº1",
-    position: {lat: 37.376867, lng: -5.987328}
+    name: <MenuVertical></MenuVertical>,
+    position: {lat: 37.376867, lng: -5.987328},
+    type: "parking"
   },
   {
     id: 2,
-    name: "Estación Nº2",
+    name: <MenuVertical></MenuVertical>,
     position: {lat: 37.391200, lng: -5.975360}
   },
   {
     id: 3,
-    name: "Estación Nº3",
+    name: <MenuVertical></MenuVertical>,
     position: {lat: 37.383284, lng: -5.970637}
   },
   {
     id: 4,
-    name: "Estación Nº4",
+    name: <MenuVertical></MenuVertical>,
     position: {lat: 37.399116, lng: -5.993841}
+    
   }
 ];
 
@@ -44,10 +50,11 @@ function Map() {
     <GoogleMap
       onLoad={handleOnLoad}
       onClick={() => setActiveMarker(null)}
-      mapContainerStyle={{ width: "100vw", height: "100vh" }}
+      mapContainerStyle={{ width: "100%", height: "50vh"}}
     >
       {markers.map(({ id, name, position }) => (
         <Marker
+          options={{icon: "bici.png"}}
           key={id}
           position={position}
           onClick={() => handleActiveMarker(id)}
