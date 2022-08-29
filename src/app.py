@@ -135,6 +135,7 @@ def rentabike():
     db.session.commit()
     
     return jsonify(), 200
+
 @app.route("/estaciones", methods = ["POST"])
 def estaciones():
     body = request.get_json()
@@ -146,6 +147,17 @@ def estaciones():
     db.session.commit()
     
     return jsonify(), 200
+
+@app.route('/bikes', methods=['GET'])
+def bike_list():
+
+    bikes = Bike.query.all()
+    listBikes = list(map(lambda obj: obj.serialize(),bikes))
+    response_body = {
+        "results" : listBikes
+    }
+    return jsonify(response_body), 200
+
 
 
 if __name__ == '__main__':

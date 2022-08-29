@@ -15,7 +15,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			nombre: null,
 			apellidos: null,
 			email: null,
-			telefono: null
+			telefono: null,
+			catalogo: []
 
 		},
 		
@@ -132,7 +133,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (err) {
 				  alert(err);
 				}
-			  }
+			  },
+			  getBikeCat: async() => {
+				try{
+					const resp = await fetch(process.env.BACKEND_URL + "/bikes", {
+					  method: "GET", 
+					})
+				
+					const data = await resp.json(); 
+					setStore({ catalogo : data.results})
+					return null;
+
+				  } catch(error) {
+					  console.log(error);
+				  }
+			},
+
+			
 
 
 
@@ -140,6 +157,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			
 		}
 	};
+	
 };
 
 export default getState;
