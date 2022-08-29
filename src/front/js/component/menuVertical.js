@@ -9,7 +9,6 @@ export const MenuVertical = () => {
 
 <>
 <div className="vertical-menu">
-  <p><input type="text" name="fname" placeholder="busca tu estación"/></p>
   <p href="#">12 <ion-icon name="bicycle-outline"></ion-icon>  8 <ion-icon name="contract-outline"></ion-icon></p>
   <p href="#">Estación 18</p>
   <p href="#"><ion-icon name="bicycle-outline"></ion-icon> Nº 123<ion-icon name="shield-checkmark-outline"></ion-icon></p>
