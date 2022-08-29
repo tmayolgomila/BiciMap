@@ -1,5 +1,4 @@
 import { Component } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../styles/footer.css";
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";

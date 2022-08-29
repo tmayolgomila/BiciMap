@@ -1,16 +1,4 @@
-"""empty message
 
-<<<<<<<< HEAD:migrations/versions/ea8a8dd2b240_.py
-Revision ID: ea8a8dd2b240
-Revises: 
-Create Date: 2022-08-26 16:58:59.693926
-========
-Revision ID: 988d4deafd01
-Revises: 
-Create Date: 2022-08-26 16:56:14.480473
->>>>>>>> footer2:migrations/versions/988d4deafd01_.py
-
-"""
 from alembic import op
 import sqlalchemy as sa
 
