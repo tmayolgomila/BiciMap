@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { GoogleMap, InfoWindow, Marker } from "@react-google-maps/api";
 import { Estaciones } from "./estaciones";
 import "../../styles/maps.css";
-
+import bici from "../../img/bici.png";
 
 
 const markers = [
