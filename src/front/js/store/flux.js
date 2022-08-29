@@ -16,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			apellidos: null,
 			email: null,
 			telefono: null,
-			catalogo: []
+			bikes: []
 
 		},
 		
@@ -134,14 +134,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  alert(err);
 				}
 			  },
-			  getBikeCat: async() => {
+			  getBikes: async() => {
 				try{
 					const resp = await fetch(process.env.BACKEND_URL + "/bikes", {
 					  method: "GET", 
 					})
 				
 					const data = await resp.json(); 
-					setStore({ catalogo : data.results})
+					setStore({ bikes : data.results})
 					return null;
 
 				  } catch(error) {
