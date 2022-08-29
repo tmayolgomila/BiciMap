@@ -135,7 +135,17 @@ def rentabike():
     db.session.commit()
     
     return jsonify(), 200
-
+@app.route("/estaciones", methods = ["POST"])
+def estaciones():
+    body = request.get_json()
+    comprobando = Estaciones.query.filter_by(id = body["id"]).first()
+    if comprobando != None:
+        return "esta estación ya existe"
+    estacion = Estaciones(direccion = body["direccion"], numeroBicis = body["numeroBicis"], numeroParkings = body["numeroParkings"])
+    db.session.add(estacion)
+    db.session.commit()
+    
+    return jsonify(), 200
 
 
 if __name__ == '__main__':

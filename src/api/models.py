@@ -51,3 +51,21 @@ class Bike(db.Model):
             "observaciones": self.observaciones,
             "fechalimite": self.fechalimite,
         }
+
+class Estaciones(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    direccion = db.Column(db.String(120), unique=True, nullable=False)
+    numeroBicis = db.Column(db.Integer(80))
+    numeroParkings = db.Column(db.Integer(80))
+
+
+    def __repr__(self):
+        return f'<Estaciones {self.id}>'
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "direccion": self.direccion,
+            "numeroBicis": self.numeroBicis,
+            "numeroParkings": self.numeroParkings,
+        }

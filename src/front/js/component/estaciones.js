@@ -1,10 +1,10 @@
 import React, { useCallback } from "react";
 import { Link } from "react-router-dom";
-import "../../styles/menuVertical.css";
+import "../../styles/estaciones.css";
 
 
 
-export const MenuVertical = () => {
+export const Estaciones = () => {
 	return (
 
 <>
