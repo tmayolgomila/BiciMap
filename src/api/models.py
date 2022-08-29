@@ -6,7 +6,9 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
     password = db.Column(db.String(80), unique=False, nullable=False)
-    is_active = db.Column(db.Boolean(), unique=False, nullable=False)
+    nombre = db.Column(db.String(80), unique=False, nullable=False)
+    apellidos = db.Column(db.String(120), unique=False, nullable=False)
+    telefono = db.Column(db.Integer, unique=True, nullable=False)
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -15,5 +17,37 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
-            # do not serialize the password, its a security breach
+            "nombre": self.nombre,
+            "apellidos": self.apellidos, 
+            "telefono": self.telefono,
+        }
+    
+class Bike(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    tipo = db.Column(db.String(120), unique=False, nullable=False)
+    foto = db.Column(db.String(120), unique=False)
+    precio = db.Column(db.Integer)
+    año = db.Column(db.Integer)
+    modificaciones = db.Column(db.String(200))
+    talla = db.Column(db.String(80), nullable=False)
+    material = db.Column(db.String(120), nullable=False)
+    observaciones = db.Column(db.String(200))
+    fechalimite = db.Column(db.Integer, unique=False, nullable=True)
+    
+
+    def __repr__(self):
+        return f'<Bike {self.foto}>'
+
+    def serialize(self):
+        return {
+            "id": self.id,
+            "tipo": self.tipo,
+            "foto": self.foto,
+            "precio": self.precio, 
+            "año": self.año,
+            "modificaciones": self.modificaciones,
+            "talla": self.talla,
+            "material": self.material,
+            "observaciones": self.observaciones,
+            "fechalimite": self.fechalimite,
         }

@@ -1,0 +1,22 @@
+#formularioPago{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    
+    
+}
+#formularioPago input{
+    border-radius: 9px;
+    background: none;
+    border: 1px solid white;
+}
+#botonPago{
+    color: rgb(0, 0, 0);
+    width: 130px;
+    border: none;
+    border-radius: 9px;
+    background-color: #2FBF71;
+    transition: transform .2s;
+}
+#botonPago:hover{
+    transform: scale(1.3);
+}

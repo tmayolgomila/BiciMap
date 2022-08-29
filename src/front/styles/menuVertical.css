@@ -1,0 +1,17 @@
+.vertical-menu{
+    text-align: center;
+    width: 120px;
+    height: 300px;
+}
+
+.vertical-menu p{
+    color:rgb(0, 0, 0);
+    text-align: center;
+    transition: transform .2s;
+}
+.vertical-menu p:hover{
+    color: #2FBF71;
+    transform: scale(1.2);
+}
+
+
