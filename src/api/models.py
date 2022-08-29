@@ -34,7 +34,6 @@ class Bike(db.Model):
     observaciones = db.Column(db.String(200))
     fechalimite = db.Column(db.Integer, unique=False, nullable=True)
     
-
     def __repr__(self):
         return f'<Bike {self.foto}>'
 

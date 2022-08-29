@@ -7,6 +7,9 @@ import { FiltroCatalogo } from "../component/filters";
 
 export const Catalogo = () => {
   const { store, actions } = useContext(Context);
+
+  console.log(store.Catalogo)
+
   return (
     <div className="container text-center mt-5">
       <div className="row">

@@ -136,6 +136,15 @@ def rentabike():
     
     return jsonify(), 200
 
+@app.route('/bikes', methods=['GET'])
+def bike_list():
+
+    bikes = Bike.query.all()
+    listBikes = list(map(lambda obj: obj.serialize(),bikes))
+    response_body = {
+        "results" : listBikes
+    }
+    return jsonify(response_body), 200
 
 
 if __name__ == '__main__':
