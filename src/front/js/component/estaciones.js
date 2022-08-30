@@ -1,32 +1,30 @@
-import React, { useCallback, useContext, useEffect} from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/estaciones.css";
-
-
+import { InfoEstacion } from "./infoEstacion";
 
 export const Estaciones = () => {
-  const {store, actions} = useContext(Context);
-    useEffect(() => {
-        actions.getBikes();
-    },[]);
-    console.log(store.bikes)
-	return (
-
-<>
-<div className="vertical-menu">
-  <p href="#">Estación 1</p>
-  {store.bikes.map((bk)=> {return(
+  const { store, actions } = useContext(Context);
+  useEffect(() => {
+    actions.getBikes();
+  }, []);
+  console.log(store.bikes);
+  return (
     <>
-    {bk.id}
-     <p href="#"><ion-icon name="bicycle-outline"></ion-icon></p>
-     </>)
-    })}
- 
-  
-</div>
-
-</>
-		
-    );
+      <div className="vertical-menu">
+        <InfoEstacion />
+        {store.bikes.map((bk) => {
+          return (
+            <div id="bicisMenu">
+              <span><ion-icon name="bicycle-outline" id="iconoBici"></ion-icon></span>  Nº:  {bk.id}
+              
+                
+              
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
 };

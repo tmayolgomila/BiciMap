@@ -6,7 +6,7 @@ from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
 from api.utils import APIException, generate_sitemap
-from api.models import db, User, Bike
+from api.models import db, User, Bike, Estaciones
 from api.admin import setup_admin
 from api.commands import setup_commands
 
@@ -155,6 +155,16 @@ def bike_list():
     listBikes = list(map(lambda obj: obj.serialize(),bikes))
     response_body = {
         "results" : listBikes
+    }
+    return jsonify(response_body), 200
+
+@app.route('/estaciones', methods=['GET'])
+def estaciones_list():
+
+    estaciones = Estaciones.query.all()
+    listEstaciones = list(map(lambda obj: obj.serialize(),estaciones))
+    response_body = {
+        "results" : listEstaciones
     }
     return jsonify(response_body), 200
 

@@ -16,7 +16,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			apellidos: null,
 			email: null,
 			telefono: null,
-			bikes: []
+			bikes: [], 
+			estaciones:[]
 
 		},
 		
@@ -142,6 +143,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 				
 					const data = await resp.json(); 
 					setStore({ bikes : data.results})
+					return null;
+
+				  } catch(error) {
+					  console.log(error);
+				  }
+			},
+			getEstaciones: async() => {
+				try{
+					const resp = await fetch(process.env.BACKEND_URL + "/estaciones", {
+					  method: "GET", 
+					})
+				
+					const data = await resp.json(); 
+					setStore({ estaciones : data.results})
 					return null;
 
 				  } catch(error) {
