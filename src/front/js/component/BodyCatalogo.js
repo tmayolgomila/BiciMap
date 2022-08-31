@@ -27,12 +27,12 @@ export const CartasCatalogo = () => {
             <a
               className="btn-link"
               data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
+              data-bs-target={"#exampleModal"+i}
             >
               Detalles
             </a>
           </div>
-          <div className="modal fade backdrop-bg" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal fade backdrop-bg" id={"exampleModal"+i} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog">
               <div className="modal-content">
                 <div className="modal-header">
