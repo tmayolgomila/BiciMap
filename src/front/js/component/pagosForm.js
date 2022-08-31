@@ -1,7 +1,6 @@
-import { useNavigate } from "react-router-dom";
+
 import React,{ useContext, useState } from 'react';
 import { Context } from "../store/appContext";
-
 import "../../styles/pagos.css";
 
 
@@ -15,7 +14,7 @@ function PagosForm() {
   const [numTarjeta, setNumTarjeta] = useState("")
   const [FechaExpiracion, setExpiracion] = useState("")
   const [CVV, setCVV] = useState("")
-  const navigate = useNavigate()
+
 
   const handleCardDisplay = () => {
     const rawText = [...numTarjeta.split(' ').join('')]

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GoogleMap, InfoWindow, Marker } from "@react-google-maps/api";
-import { Estaciones } from "./estaciones";
+import InfoEstacion from "./infoEstacion";
 import "../../styles/maps.css";
 import bici from "../../img/bici.png";
 
@@ -8,23 +8,23 @@ import bici from "../../img/bici.png";
 const markers = [
   {
     id: 1,
-    name: <Estaciones></Estaciones>,
+    name: <InfoEstacion id={1}></InfoEstacion>,
     position: {lat: 37.376867, lng: -5.987328},
     type: "parking"
   },
   {
     id: 2,
-    name: <Estaciones></Estaciones>,
+    name: <InfoEstacion id={2}></InfoEstacion>,
     position: {lat: 37.391200, lng: -5.975360}
   },
   {
     id: 3,
-    name: <Estaciones></Estaciones>,
+    name: <InfoEstacion id={3}></InfoEstacion>,
     position: {lat: 37.383284, lng: -5.970637}
   },
   {
     id: 4,
-    name: <Estaciones></Estaciones>,
+    name: <InfoEstacion id={4}></InfoEstacion>,
     position: {lat: 37.399116, lng: -5.993841}
     
   }

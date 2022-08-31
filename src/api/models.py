@@ -9,8 +9,7 @@ class User(db.Model):
     nombre = db.Column(db.String(80), unique=False, nullable=False)
     apellidos = db.Column(db.String(120), unique=False, nullable=False)
     telefono = db.Column(db.Integer, unique=True, nullable=False)
-    bike_id = db.Column (db.Integer, db.Foreignkey('bike.id'))
-    bike = db.relationship('Bike', backref=db.backref('user'))
+   
 
     def __repr__(self):
         return f'<User {self.email}>'
@@ -22,7 +21,7 @@ class User(db.Model):
             "nombre": self.nombre,
             "apellidos": self.apellidos, 
             "telefono": self.telefono,
-            "bike_id": self.bike_id
+        
         }
     
 class Bike(db.Model):
@@ -36,8 +35,7 @@ class Bike(db.Model):
     material = db.Column(db.String(120), nullable=False)
     observaciones = db.Column(db.String(200))
     fechalimite = db.Column(db.Integer, unique=False, nullable=True)
-    user_email = db.Column (db.Integer, db.Foreignkey('user.email'))
-    user = db.relationship('User', backref=db.backref('bike'))
+    
 
     def __repr__(self):
         return f'<Bike {self.foto}>'
@@ -54,7 +52,7 @@ class Bike(db.Model):
             "material": self.material,
             "observaciones": self.observaciones,
             "fechalimite": self.fechalimite,
-            "user_email": self.user_email
+           
         }
 
 class Estaciones(db.Model):
