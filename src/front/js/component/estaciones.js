@@ -17,7 +17,7 @@ export const Estaciones = () => {
         {store.bikes.map((bk) => {
           return (
             <div id="bicisMenu">
-              <span><ion-icon name="bicycle-outline" id="iconoBici"></ion-icon></span>  Nº:  {bk.id}
+              <span><ion-icon name="bicycle-outline" id="iconoBici"></ion-icon></span>  Nº:  {bk.id} Talla: {bk.talla}
               
                 
               
