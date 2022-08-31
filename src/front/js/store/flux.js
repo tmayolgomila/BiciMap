@@ -53,7 +53,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				
 			  },
 
-			login: async (email, password, navigate) => {
+			login: async (email, password) => {
 				try {
 				  const resp = await fetch(process.env.BACKEND_URL + "/login", {
 					method: "POST",
@@ -86,7 +86,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  const resp = await fetch(process.env.BACKEND_URL + "/altasvender", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({tipo, foto, precio, año, modificaciones, talla, material, observaciones}),
+					body: JSON.stringify({tipo, foto, precio, año, modificaciones, talla, material, observaciones, email}),
 				  });
 				  if (resp.status === 401) {
 					throw "Invalid credentials";
