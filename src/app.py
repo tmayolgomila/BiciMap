@@ -9,6 +9,7 @@ from api.utils import APIException, generate_sitemap
 from api.models import db, User, Bike
 from api.admin import setup_admin
 from api.commands import setup_commands
+from flask import send_from_directory
 
 #from models import Person
 
@@ -41,7 +42,8 @@ setup_admin(app)
 setup_commands(app)
 
 # Add all endpoints form the API with a "api" prefix
-
+basedir = os.path.abspath(os.path.dirname(__file__))
+uploads_path = os.path.join(basedir, 'uploads')
 
 # Handle/serialize errors like a JSON object
 @app.errorhandler(APIException)
@@ -158,7 +160,22 @@ def bike_list():
     }
     return jsonify(response_body), 200
 
+@app.route('/image',methods=["POST"])
+def post_other():
+    json_data = request.get_data().decode('utf-8')
+    data = json.loads(json_data)
+    new_order = line_order(product_type="other",weight=data["weight"],note=data["note"],picture_uuid=data["uuid"],order_status="ordered",create_uid=data["userId"])
+    db.session.add(new_order)
+    db.session.commit()
+    return {'state':'00'}
 
+@app.route("/other_img",methods=["POST"])
+def post_Other_img():
+    data = request.files.get('pic')
+    print(data)
+    file_name = data.filename
+    data.save(os.path.join("/public/static/img/",file_name+".png"))
+    return {"state":"00"}
 
 if __name__ == '__main__':
     PORT = int(os.environ.get('PORT', 3001))

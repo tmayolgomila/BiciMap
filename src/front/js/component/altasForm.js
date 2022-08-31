@@ -20,7 +20,7 @@ function FormAltas() {
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleModal() {
-    actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones);
+    actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones,email);
     setIsOpen(!isOpen);
   }
 
@@ -42,7 +42,7 @@ function FormAltas() {
   };
 
   return (
-    <form>
+    <form encType="multipart/form-data">
     <h4>Para vender</h4>
    <div className='todo'>
     
