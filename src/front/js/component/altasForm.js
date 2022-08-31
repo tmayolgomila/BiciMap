@@ -42,7 +42,7 @@ function FormAltas() {
   };
 
   return (
-    <>
+    <form>
     <h4>Para vender</h4>
    <div className='todo'>
     
@@ -114,7 +114,7 @@ function FormAltas() {
           Close modal
         </button>
       </Modal>
-    </>
+    </form>
     
   );
 }

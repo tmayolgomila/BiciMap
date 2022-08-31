@@ -36,6 +36,7 @@ function LoginForm() {
   };
 
   return (
+    <form>
     <div className="container">
       <div className="mb-3" id="formularioLogin">
         <label>Email address </label>
@@ -81,6 +82,7 @@ function LoginForm() {
               <button id="botonForm2" onClick={toggleModal}>Close modal</button>
             </Modal>;
     </div>
+    </form>
   );
 }
 

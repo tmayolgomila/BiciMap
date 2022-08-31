@@ -41,7 +41,7 @@ function FormAlquiler() {
 
   return (
    
-    <>
+    <form>
 
     <h4>Para alquilar</h4>
     <div className='todo'>
@@ -100,7 +100,7 @@ function FormAlquiler() {
           Close modal
         </button>
       </Modal>
-    </>
+    </form>
 
     
   );
