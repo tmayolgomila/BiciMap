@@ -3,7 +3,7 @@ import React, {useContext, useState} from 'react';
 import { Context } from '../store/appContext';
 import "../../styles/altas.css";
 import Modal from "react-modal";
-
+import { Link } from 'react-router-dom';
 
 
 function FormAltas() { 
@@ -16,7 +16,6 @@ function FormAltas() {
   const [talla,setTalla] = useState("");
   const [material,setMaterial] = useState("");
   const [observaciones,setObservaciones] = useState("");
-  const [electrica,setElectrica] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
   function toggleModal() {
@@ -43,7 +42,7 @@ function FormAltas() {
 
   return (
     <>
-    <h4>Para vender</h4>
+    <h4>Para vender <Link to="/altasalquiler"><button type="button" id="botonForm2">Alquilar</button></Link></h4>
    <div className='todo'>
     
     
