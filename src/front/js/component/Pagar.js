@@ -5,7 +5,7 @@ const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 
 export default function Pago(){
   const [price, setPrice] = useState(0.30);
-  
+  const [opcion, setOpcion] = useState(0)
   const createOrder = (data, actions) =>{
     return actions.order.create({
       purchase_units: [
@@ -27,6 +27,9 @@ export default function Pago(){
   return(
     <>
     <h2>A pagar {price} $</h2>
+    <select>
+      <opcion></opcion>
+    </select>
     <input type="text" onChange={handleChange} value={price}></input>
     <PayPalButton
         createOrder={(data, actions) => createOrder(data, actions)}
