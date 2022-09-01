@@ -8,7 +8,7 @@ export const CartasCatalogo = () => {
   return (
     <>
     {store.bikes.length >0 ? store.bikes.map((bk,i) => {
-      return(<div className="card" key={i}>
+      return(<div className="card" key={i}>uploadImage
           <div className="header">
             <h3 className="title">{bk.tipo}</h3>
             <div className="img-box">

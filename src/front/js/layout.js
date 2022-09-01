@@ -20,7 +20,7 @@ import { SignUp } from "./pages/signup";
 import { Altas } from "./pages/altas";
 import { AltasVender } from "./pages/altasVender";
 import { AltasAlquiler } from "./pages/altasAlquiler";
-import { SubirFoto } from "./pages/subirFoto";
+
 
 import { Logo } from "./component/logo";
 
@@ -52,7 +52,7 @@ const Layout = () => {
                         <Route element={<h1>Not found!</h1>} />
                         <Route element={<Footer />} path="/footer" />
                         <Route element={<Catalogo />} path="/catalogo"/>
-                        <Route element={<SubirFoto />} path="/3"/>
+                        
                     </Routes>
                     <Footer />
                 </ScrollToTop>

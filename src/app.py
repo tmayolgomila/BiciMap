@@ -160,22 +160,7 @@ def bike_list():
     }
     return jsonify(response_body), 200
 
-@app.route('/image',methods=["POST"])
-def post_other():
-    json_data = request.get_data().decode('utf-8')
-    data = json.loads(json_data)
-    new_order = line_order(product_type="other",weight=data["weight"],note=data["note"],picture_uuid=data["uuid"],order_status="ordered",create_uid=data["userId"])
-    db.session.add(new_order)
-    db.session.commit()
-    return {'state':'00'}
 
-@app.route("/other_img",methods=["POST"])
-def post_Other_img():
-    data = request.files.get('pic')
-    print(data)
-    file_name = data.filename
-    data.save(os.path.join("/public/static/img/",file_name+".png"))
-    return {"state":"00"}
 
 if __name__ == '__main__':
     PORT = int(os.environ.get('PORT', 3001))
