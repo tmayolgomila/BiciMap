@@ -20,3 +20,10 @@
 #botonPago:hover{
     transform: scale(1.3);
 }
+h2{
+    color: #2FBF71;
+}
+input{
+    margin: 20px;
+    border-radius: 6px;
+}
