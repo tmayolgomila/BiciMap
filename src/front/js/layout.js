@@ -14,6 +14,7 @@ import { Footer } from "./component/footer";
 import { Pagos } from "./pages/pagos";
 
 
+
 import { Catalogo } from "./pages/catalago";
 
 import { SignUp } from "./pages/signup";

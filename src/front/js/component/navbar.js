@@ -31,16 +31,17 @@ export const Navbar = () => {
             <Link to="/altas">
               
                 <span>
-                  <ion-icon size="large" name="bicycle-outline"></ion-icon>
+                  <ion-icon size="large" name="add-circle-outline"></ion-icon>
+                  
                 </span>
               
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/">
+            <Link to="/catalogo">
               
                 <span>
-                  <ion-icon size="large" name="locate-outline"></ion-icon>{" "}
+                  <ion-icon size="large" name="bicycle-outline"></ion-icon>
                   
                 </span>
               
@@ -62,7 +63,7 @@ export const Navbar = () => {
                   <ion-icon
                     size="large"
                     name="information-circle-outline"
-                  ></ion-icon>{" "}
+                  ></ion-icon>
                   
                 </span>
               

@@ -1,5 +1,7 @@
 import React from "react";
 import "../../styles/ModalCat.css";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom"
 
 export const CartasCatalogo = () => {
   return (
@@ -55,9 +57,12 @@ export const CartasCatalogo = () => {
               >
                 Close
               </button>
+              <Link to="/pagos" >
               <button type="button" className="btn btn-secondary">
                 Comprar
               </button>
+              </Link>
+              
             </div>
           </div>
         </div>

@@ -1,15 +1,18 @@
 import React, {useEffect, useState} from "react";
 import ReactDOM from "react-dom"
+import "../../styles/pagos.css";
 
 const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 
 export default function Pago(){
   const [price, setPrice] = useState(0.30);
-  const [opcion, setOpcion] = useState(0.30)
+  const [opcion, setOpcion] = useState(0.30);
 
   useEffect(()=> {
-    if (opcion != "other"){
+  
+    if (opcion != "0.3"){
       setPrice(opcion);
+      
     }
   }, [opcion])
 
