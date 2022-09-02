@@ -10,7 +10,6 @@ export const CartasCatalogo = () => {
     {store.bikes.length >0 ? store.bikes.map((bk,i) => {
       return(<div className="card" key={i}>
           <div className="header">
-            <h3 className="title">{bk.tipo}</h3>
             <div className="img-box">
               <img
                 className="imgBici"
@@ -20,6 +19,7 @@ export const CartasCatalogo = () => {
           </div>
     
           <div className="content">
+            <p className="title">{bk.tipo}</p>
             <p>Talla: {bk.talla}</p>
             <p>Material: {bk.material}</p>
             <p>Año: {bk.año}</p>

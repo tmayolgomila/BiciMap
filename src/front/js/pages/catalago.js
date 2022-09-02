@@ -16,9 +16,7 @@ export const Catalogo = () => {
   return (
     <div className="container text-center mt-5">
       <div className="row">
-        <div className="col text-start"> 
         
-        <FiltroCatalogo/> </div>
         <div className="col ">
             <div className="marginCards wrapper"><CartasCatalogo /></div>          
         </div>
