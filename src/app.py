@@ -158,6 +158,17 @@ def bike_list():
     }
     return jsonify(response_body), 200
 
+@app.route('/bikes', methods=['DELETE'])
+def delete_bike(id):
+    bike= Bike.query.filter_by(bike_id=current_bike, id=id).first()
+
+    if not bike:
+        return jsonify({'message':'error'}),404
+    db.session.delete(bike)
+    db.session.commit()
+    return jsonify({}), 200
+
+
 @app.route('/estaciones', methods=['GET'])
 def estaciones_list():
 

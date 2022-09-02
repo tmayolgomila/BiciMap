@@ -9,7 +9,7 @@ export const Home = () => {
 return(
   
   <div className="container">
-       <hr id="hrInicio"></hr>     
+    
   <Link to="signup"><button id="botonSignUp">SignUp</button></Link>
   
   <Link to="login"><button id="botonLogin">Login</button></Link>

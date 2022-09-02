@@ -7,16 +7,8 @@ export default function InfoEstacion ({id})  {
   const { store, actions } = useContext(Context);
   const [estacion, setEstacion ]= useState(0)
   useEffect(() => {
-    actions.getEstaciones();
-    const idEstacion = store.estaciones.filter((est) => {
-      return est.id!=id} );
-    console.log(id, "id")
-    console.log(store.estaciones)
-   console.log(idEstacion, "idEStacion")
-    setEstacion(idEstacion)
-  }, []);
-  console.log(store.estaciones);
-  let x;
+    actions.getEstaciones()},[])
+   
   return (
 
     <>
@@ -24,15 +16,16 @@ export default function InfoEstacion ({id})  {
       
       <div id="bicisMenu">
            
-        <ul>{x = store.estaciones.find((est) => est.id==id)}
-        
-          <li>Estación:</li>
-          <li>Nº bicis disponibles: </li>
-          <li>Nº total parkings: </li>
+        <ul>{ store.estaciones.map((est) => {
+          //console.log(id, "id")
+          //console.log(est.id, "est.id")
+          (est.id===id)  ? (<div>cumple</div>) : (<p>no cumple</p>) 
+          
+        })}
         </ul>
-      </div>
+        </div>
       
-    </>
+        </>
     
   );
 };

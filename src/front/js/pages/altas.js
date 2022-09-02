@@ -21,7 +21,7 @@ export const Altas = () => {
 
 		
 	</div>
-	<hr></hr>
+	
 	</>
 	
 

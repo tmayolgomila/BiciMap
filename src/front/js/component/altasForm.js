@@ -55,7 +55,7 @@ function FormAltas() {
 
       <div className="mb-3" id="formularioAltasFoto">
         <label>Foto </label>
-        <p><input type="file" id="fotoBici" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" onChange={(e) => setFoto(e.target.value)} required/></p>
+        <p><input type="file" id="fotoBici" className="custom-file-input" accept="image/x-png,image/gif,image/jpeg" onChange={(e) => setFoto(e.target.value)} required/></p>
       </div>
 
       <div className="mb-3" id="formularioAltas">
@@ -92,7 +92,7 @@ function FormAltas() {
       
       </div>
     </div>
-    <button id="botonForm" variant="primary" onClick={toggleModal}>
+    <button id="botonForm" variant="primary" type='submit' onClick={toggleModal}>
         Subir 
       </button>
 
@@ -103,7 +103,7 @@ function FormAltas() {
         style={customStyles}
       >
         <div>
-          {tipo == ""|| foto =="" || precio == "" || año == ""|| modificaciones == "" || talla == "" || material == ""|| observaciones == "" ? (
+          {tipo == ""|| foto =="" || precio == "" || año == ""|| modificaciones == "" || talla == "" || material == "" ? (
             <p className="ter">Campos vacios</p>
           ) : (
             <p className="ter">Su bicicleta de {tipo} ha sido añadida!</p>

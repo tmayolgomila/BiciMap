@@ -13,11 +13,11 @@ export const Pagos = () => {
 
 	<>
 	<h1>Pago con tarjeta</h1>
-	<hr></hr>
+	
 	<div className="col text-center mt-5">
 		<PagosForm/>
 	</div>
-	<hr></hr>
+	
 	</>
 	
 

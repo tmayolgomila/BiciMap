@@ -17,5 +17,6 @@ font-size: 30px;
 #bicisMenu li{
     list-style: none;
     text-align: left;
+    color: black;
 }
 
