@@ -18,7 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			telefono: null,
 			bikes: [], 
 			estaciones:[]
-
+			
 		},
 		
 		actions: {

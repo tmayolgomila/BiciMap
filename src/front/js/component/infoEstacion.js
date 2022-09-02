@@ -16,13 +16,21 @@ export default function InfoEstacion ({id})  {
       
       <div id="bicisMenu">
            
-        <ul>{ store.estaciones.map((est) => {
+        
+        { store.estaciones.map((est) => {
           //console.log(id, "id")
           //console.log(est.id, "est.id")
-          (est.id===id)  ? (<div>cumple</div>) : (<p>no cumple</p>) 
+          return((est.id===id)  ? (
+            <ul>
+          <li>Calle: {est.direccion}</li>
+          <li>Estacion: {est.id}</li>
+          <li>Nº Bicis: {est.numeroBicis}</li>
+          <li>Nº Parkings: {est.numeroParkings}</li>
+          </ul> ) : "" )
+          
           
         })}
-        </ul>
+        
         </div>
       
         </>
