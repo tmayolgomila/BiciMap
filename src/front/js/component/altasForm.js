@@ -38,7 +38,7 @@ function FormAltas() {
     }
 
   function toggleModal() {
-    actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones,email);
+    actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones);
     setIsOpen(!isOpen);
   }
 
@@ -64,7 +64,7 @@ function FormAltas() {
     <>
     <h4>Para vender <Link to="/altasalquiler"><button type="button" id="botonForm2">Alquilar</button></Link></h4>
 
-    <form encType="multipart/form-data">
+    <div encType="multipart/form-data">
     
    <div className='todo'>
     
@@ -113,8 +113,6 @@ function FormAltas() {
         <p><input size={30} type="text" id="inp" placeholder=" " onChange={(e) => setObservaciones (e.target.value)}/></p>
       </div>
       
-      
-      
       </div>
     </div>
     <button id="botonForm" variant="primary" type='submit' onClick={toggleModal}>
@@ -138,7 +136,7 @@ function FormAltas() {
           Close modal
         </button>
       </Modal>
-    </form>
+    </div>
     </>
   );
 }

@@ -88,7 +88,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 
-					body: JSON.stringify({tipo, foto, precio, año, modificaciones, talla, material, observaciones, email}),
+					body: JSON.stringify({tipo, foto, precio, año, modificaciones, talla, material, observaciones}),
 
 				  });
 				  if (resp.status === 401) {

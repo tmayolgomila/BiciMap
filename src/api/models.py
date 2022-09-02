@@ -9,12 +9,7 @@ class User(db.Model):
     nombre = db.Column(db.String(80), unique=False, nullable=False)
     apellidos = db.Column(db.String(120), unique=False, nullable=False)
     telefono = db.Column(db.Integer, unique=True, nullable=False)
-<<<<<<< HEAD
-   
 
-=======
-    
->>>>>>> BicCat
     def __repr__(self):
         return f'<User {self.email}>'
 

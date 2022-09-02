@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PagosForm from "../component/pagosForm";
 import { Context } from "../store/appContext";
 
-import "../../styles/formularioLogin.css";
+import "../../styles/pagos.css";
 
 
 export const Pagos = () => {

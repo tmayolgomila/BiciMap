@@ -12,13 +12,13 @@ export const CartasCatalogo = () => {
     {store.bikes.length >0 ? store.bikes.map((bk,i) => {
       return(<div className="card" key={i}>
           <div className="header">
-            <div className="img-box">
+           
               <img
                 className="imgBici"
                 src={bk.foto}
               />
 
-            </div>
+            
           </div>
     
           <div className="content">
@@ -61,9 +61,10 @@ export const CartasCatalogo = () => {
                   >
                     Close
                   </button>
-                  <button type="button" className="btn btn-secondary">
+                <Link to="/pagos"> <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
                     Comprar
-                  </button>
+                  </button></Link>
+                 
                 </div>
               </div>
             </div>
