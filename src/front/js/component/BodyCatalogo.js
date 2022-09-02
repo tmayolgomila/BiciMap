@@ -8,13 +8,13 @@ export const CartasCatalogo = () => {
   return (
     <>
     {store.bikes.length >0 ? store.bikes.map((bk,i) => {
-      return(<div className="card" key={i}>uploadImage
+      return(<div className="card" key={i}>
           <div className="header">
             <h3 className="title">{bk.tipo}</h3>
             <div className="img-box">
               <img
                 className="imgBici"
-                src="https://graphiccloud.net/wp-content/uploads/2019/05/Bicycle-Logo-Design-Example.png"
+                src={bk.foto}
               />
             </div>
           </div>
@@ -44,7 +44,7 @@ export const CartasCatalogo = () => {
                   ></button>
                 </div>
                 <div className="modal-body">
-                  <img className="imgBici" src="https://graphiccloud.net/wp-content/uploads/2019/05/Bicycle-Logo-Design-Example.png"/></div>
+                  <img className="imgBici" src={bk.foto}/></div>
                 <div className="modal-body2">
                   <p>Tipo: {bk.tipo}</p>
                   <p>Talla: {bk.talla}</p>
