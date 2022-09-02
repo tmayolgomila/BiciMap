@@ -16,14 +16,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			apellidos: null,
 			email: null,
 			telefono: null,
-<<<<<<< HEAD
+
 			bikes: [], 
 			estaciones:[]
-			
-=======
-			bikes: []
 
->>>>>>> BicCat
 		},
 		
 		actions: {
@@ -91,11 +87,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  const resp = await fetch(process.env.BACKEND_URL + "/altasvender", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
-<<<<<<< HEAD
+
 					body: JSON.stringify({tipo, foto, precio, año, modificaciones, talla, material, observaciones, email}),
-=======
-					body: JSON.stringify({tipo, foto, precio, año, modificaciones, talla, material, observaciones,email}),
->>>>>>> BicCat
+
 				  });
 				  if (resp.status === 401) {
 					throw "Invalid credentials";
@@ -152,7 +146,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				
 					const data = await resp.json(); 
 					setStore({ bikes : data.results})
-<<<<<<< HEAD
+
 					return null;
 
 				  } catch(error) {
@@ -167,8 +161,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				
 					const data = await resp.json(); 
 					setStore({ estaciones : data.results})
-=======
->>>>>>> BicCat
+
 					return null;
 
 				  } catch(error) {
