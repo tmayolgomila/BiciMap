@@ -23,7 +23,6 @@ export const Footer = () => {
           </a>
           <span className="mb-3 mb-md-0 texto">{store.auth == false ? <></> : <p className="ter">Bienvenido! {store.email}</p>}</span>
 		  <span className="mb-3 mb-md-0 texto">{store.auth == false ? <></> : <button className="Logout" variant="primary" type="submit" onClick={actions.logout}>Logout</button>}</span>
-		  {console.log(store.auth)}
         </div>
 
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">

@@ -9,6 +9,7 @@ from api.utils import APIException, generate_sitemap
 from api.models import db, User, Bike, Estaciones
 from api.admin import setup_admin
 from api.commands import setup_commands
+from flask import send_from_directory
 
 #from models import Person
 
@@ -41,7 +42,8 @@ setup_admin(app)
 setup_commands(app)
 
 # Add all endpoints form the API with a "api" prefix
-
+basedir = os.path.abspath(os.path.dirname(__file__))
+uploads_path = os.path.join(basedir, 'uploads')
 
 # Handle/serialize errors like a JSON object
 @app.errorhandler(APIException)

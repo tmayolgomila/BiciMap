@@ -11,7 +11,7 @@
   }
   
   .card:hover {
-    height: 400px;
+    height: 340px;
     background: linear-gradient(360deg, black 60%, black 70%);
   }
   
@@ -74,6 +74,12 @@
   }
 
   .imgBici{
-    width: 190px;
+    width: 220px;
     height: 120px;
+  }
+
+  .wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem 2.5rem;
   }

@@ -14,6 +14,26 @@ function FormAlquiler() {
   const [observaciones,setObservaciones] = useState("");
   const [fechalimite,setLimite] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [loading,setLoading] = useState(false);
+ 
+  
+  const uploadImage= async e =>{
+    const files = e.target.files
+    const data = new FormData()
+    data.append("file", files[0])
+    data.append("upload_preset", "BiciMap")
+    setLoading(true)
+  
+    const res = await fetch("https://api.cloudinary.com/v1_1/naxinga/image/upload",
+    {
+      method: "POST",
+      body:data
+    })
+  
+    const file = await res.json()
+    setFoto(file.secure_url)
+    setLoading(false)
+    }
 
 
   function toggleModal() {
@@ -53,7 +73,9 @@ function FormAlquiler() {
 
       <div className="mb-3" id="formularioAltasFoto">
         <label>Foto </label>
-        <p><input  type="file" id="fotoBici" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" onChange={(e) => setFoto(e.target.value)} required/></p>
+        <p><input  type="file" name='file' id="fotoBici" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" onChange={(e) => {
+          uploadImage(e)
+          }} required/></p>
       </div>
 
       <div className="mb-3" id="formularioAltas">

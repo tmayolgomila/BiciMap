@@ -37,6 +37,7 @@ export const SignUpForm = () => {
   };
 
   return (
+    <form>
     <div className="container">
       <div className="mb-3" id="formularioSignUp">
         <label>Nombre </label>
@@ -115,6 +116,7 @@ export const SignUpForm = () => {
       </Modal>
       ;
     </div>
+    </form>
   );
 };
 

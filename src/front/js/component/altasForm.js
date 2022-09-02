@@ -17,9 +17,30 @@ function FormAltas() {
   const [material,setMaterial] = useState("");
   const [observaciones,setObservaciones] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [loading,setLoading] = useState(false);
+  const [image, setImage] = useState("")
+  
+  const uploadImage= async e =>{
+    const files = e.target.files
+    const data = new FormData()
+    data.append("file", files[0])
+    data.append("upload_preset", "BiciMap")
+    setLoading(true)
+  
+    const res = await fetch("https://api.cloudinary.com/v1_1/naxinga/image/upload",
+    {
+      method: "POST",
+      body:data
+    })
+  
+    const file = await res.json()
+    console.log(file)
+    setImage(file.secure_url)
+    setLoading(false)
+    }
 
   function toggleModal() {
-    actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones);
+    actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones,email);
     setIsOpen(!isOpen);
   }
 
@@ -41,8 +62,13 @@ function FormAltas() {
   };
 
   return (
+<<<<<<< HEAD
     <>
     <h4>Para vender <Link to="/altasalquiler"><button type="button" id="botonForm2">Alquilar</button></Link></h4>
+=======
+    <form encType="multipart/form-data">
+    <h4>Para vender</h4>
+>>>>>>> BicCat
    <div className='todo'>
     
     
@@ -55,7 +81,11 @@ function FormAltas() {
 
       <div className="mb-3" id="formularioAltasFoto">
         <label>Foto </label>
+<<<<<<< HEAD
         <p><input type="file" id="fotoBici" className="custom-file-input" accept="image/x-png,image/gif,image/jpeg" onChange={(e) => setFoto(e.target.value)} required/></p>
+=======
+        <p><input type="file" id="fotoBici" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" onChange={(e) => {setFoto(e.target.value), uploadImage}} required/></p>
+>>>>>>> BicCat
       </div>
 
       <div className="mb-3" id="formularioAltas">
@@ -113,7 +143,7 @@ function FormAltas() {
           Close modal
         </button>
       </Modal>
-    </>
+    </form>
     
   );
 }
