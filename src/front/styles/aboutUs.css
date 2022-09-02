@@ -1,0 +1,22 @@
+.container1{
+    text-align: center;
+}
+
+.fondoAboutUs{
+   display: flex;
+   justify-content: center;
+   margin: 10%;
+  
+    
+}
+
+
+#texto{
+    text-align: left;
+    color: white;
+    align-items: center;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    width: 450px;
+}

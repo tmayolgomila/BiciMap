@@ -57,7 +57,7 @@ export const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/">
+            <Link to="/aboutus">
               
                 <span>
                   <ion-icon
