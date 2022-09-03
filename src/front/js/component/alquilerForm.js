@@ -60,7 +60,20 @@ function FormAlquiler() {
   
 
   return (
-   
+    <>
+  {store.auth === false ? 
+          <div><p>Muchas gracias por confiar en nosotros! </p>
+
+<p>Pero para poder subir tu bicicleta debes entrar con tu usuario.</p>
+
+<p>Si aún no estás registrado haga click aqui</p> <p><Link to="/signup"><button id="botonSignUp">SignUp</button></Link></p>
+
+<p>Si ya estás registrado entre aquí</p> <p><Link to="/login"><button id="botonLogin">Login</button></Link></p>
+            
+          </div>
+       :
+  
+  (
     <>
 
     <h4>Para alquilar</h4>
@@ -109,7 +122,7 @@ function FormAlquiler() {
         onRequestClose={toggleModal}
         contentLabel="My dialog"
         style={customStyles}
-        
+        ariaHideApp={false}
       >
         <div>
           {tipo == "" || foto == "" || talla == "" || material == "" ? (
@@ -125,7 +138,9 @@ function FormAlquiler() {
     </>
 
     
-  );
+  )}
+   </>
+  )
 }
 export default FormAlquiler;
 

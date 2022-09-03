@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import Modal from "react-modal";
-
+import { Link } from 'react-router-dom';
 import "../../styles/formularioLogin.css";
 
 function LoginForm() {
@@ -76,10 +76,10 @@ function LoginForm() {
               onRequestClose={toggleModal}
               contentLabel="My dialog"
               style={customStyles}
-              
+              ariaHideApp={false}
             >
               <div>{email == "" || password == "" ? <p className="ter">Campos vacios</p> : <p className="ter">Bienvenido! {email}</p>}</div>
-              <button id="botonForm2" onClick={toggleModal}>Close modal</button>
+              <Link to="/altas"><button id="botonForm2" onClick={toggleModal}>Close modal</button></Link>
             </Modal>;
     </div>
     </>

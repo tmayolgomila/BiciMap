@@ -58,9 +58,21 @@ function FormAltas() {
       borderColor: "#2FBF71",
     },
   };
-
   return (
+    <>
+  {store.auth === false ? 
+          <div><p>Muchas gracias por confiar en nosotros! </p>
 
+<p>Pero para poder subir tu bicicleta debes entrar con tu usuario.</p>
+
+<p>Si aún no estás registrado haga click aqui</p> <p><Link to="/signup"><button id="botonSignUp">SignUp</button></Link></p>
+
+<p>Si ya estás registrado entre aquí</p> <p><Link to="/login"><button id="botonLogin">Login</button></Link></p>
+            
+          </div>
+       :
+  
+  (
     <>
     <h4>Para vender <Link to="/altasalquiler"><button type="button" id="botonForm2">Alquilar</button></Link></h4>
 
@@ -124,6 +136,7 @@ function FormAltas() {
         onRequestClose={toggleModal}
         contentLabel="My dialog"
         style={customStyles}
+        ariaHideApp={false}
       >
         <div>
           {tipo == ""|| foto =="" || precio == "" || año == ""|| modificaciones == "" || talla == "" || material == "" ? (
@@ -138,7 +151,9 @@ function FormAltas() {
       </Modal>
     </div>
     </>
-  );
+  )}
+  </>
+  )
 }
 export default FormAltas;
 

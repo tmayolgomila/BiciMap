@@ -102,6 +102,7 @@ export const SignUpForm = () => {
         onRequestClose={toggleModal}
         contentLabel="My dialog"
         style={customStyles}
+        ariaHideApp={false}
       >
         <div>
           {email == "" || password == "" || nombre == "" || apellidos == "" || telefono == "" ? (
