@@ -18,11 +18,6 @@ export const SignUpForm = () => {
     setIsOpen(!isOpen);
   }
 
-  const emailValidation = () =>{
-    const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2-8/
-  }
-
-
   function toggleModal() {
     actions.signup(nombre, apellidos, email, telefono, password);
     setIsOpen(!isOpen);
@@ -123,7 +118,7 @@ export const SignUpForm = () => {
                 (<p className="ter">Bienvenido! {nombre}</p>)        
           }
         </div>
-        <button id="botonForm2" onClick={cerrar}>
+        <button id="botonModal" onClick={cerrar}>
           Close modal
         </button>
       </Modal>

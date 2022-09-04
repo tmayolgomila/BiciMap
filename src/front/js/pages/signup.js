@@ -14,7 +14,6 @@ export const SignUp = () => {
             <div className="col text-center mt-3">
                     <SignUpForm/>
             </div>
-            <hr id="titulo" className="mt-5"/>
         </div>
 		
 	);

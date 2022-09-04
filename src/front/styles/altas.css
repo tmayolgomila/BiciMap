@@ -124,11 +124,13 @@ hr{
 #botonForm:hover{
     transform: scale(1.3);
 }
-#inp{
+.cajas{
     color: #2FBF71;
     transition: transform .2s;
+    width: 230px;
+    background-color: #000000;
 }
-#inp:hover{
+#cajas:hover{
     transform: scale(1.3);
 
 }
@@ -170,5 +172,22 @@ hr{
     
 }
 #botonForm2:hover{
+    transform: scale(1.3);
+}
+
+
+#botonModal{
+    color: rgb(0, 0, 0);
+    width: 130px;
+    border: none;
+    border-radius: 9px;
+    background-color: #2FBF71;
+    transition: transform .2s;
+    margin-top: 50px;
+    display: list-item;
+    margin-left: 30%;
+  
+}
+#botonModal:hover{
     transform: scale(1.3);
 }

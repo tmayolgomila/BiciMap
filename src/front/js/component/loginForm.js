@@ -50,7 +50,6 @@ function LoginForm() {
             id="inp"
             placeholder="Enter email"
             onChange={(e) => setEmail(e.target.value)}
-            pattern=".+@globex\.com" size="30" required
           />
         </p>
       </div>
@@ -84,7 +83,7 @@ function LoginForm() {
               ariaHideApp={false}
             >
               <div>{email == "" || password == "" ? <p className="ter">Campos vacios</p> : <p className="ter">Bienvenido! {email}</p>}</div>
-              <Link to="/altas"><button id="botonForm2" onClick={cerrar}>Close modal</button></Link>
+              <Link to="/altas"><button id="botonModal" onClick={cerrar}>Close modal</button></Link>
             </Modal>;
     </div>
     </>

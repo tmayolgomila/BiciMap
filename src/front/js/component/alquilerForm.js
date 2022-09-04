@@ -52,7 +52,7 @@ function FormAlquiler() {
     content: {
       top: "25%",
       left: "50%",
-      width: "300px",
+      width: "350px",
       height: "150px",
       transform: "translate(-50%, -50%)",
       backgroundColor: "#0F1A20",
@@ -84,7 +84,12 @@ function FormAlquiler() {
     <div className="container">
       <div className="mb-3" id="formularioAltas" >
         <label>Tipo de bicicleta</label>
-        <p><input type="text" id="inp" placeholder="montaña/carretera..." onChange={(e) => setTipo(e.target.value)}/></p>
+        <p>
+          <select name="select" type="text" className="cajas" placeholder="montaña/carretera..." onChange={(e) => setTipo(e.target.value)}>
+            <option value="Montaña">Montaña</option>
+            <option value="Carretera">Carretera</option>
+          </select>
+        </p>
       </div>
 
       <div className="mb-3" id="formularioAltasFoto">
@@ -96,22 +101,38 @@ function FormAlquiler() {
 
       <div className="mb-3" id="formularioAltas">
         <label>Talla</label>
-        <p><input type="text" className="inp" placeholder="Talla" onChange={(e) => setTalla(e.target.value)}/></p>
+        <p>
+          <select type="text" className="cajas" placeholder="Talla" onChange={(e) => setTalla(e.target.value)}>
+            <option value="XL">XL</option>
+            <option value="L">L</option>
+            <option value="M">M</option>
+            <option value="S">S</option>
+            <option value="XS">XS</option>
+          </select>
+        </p>
       </div>
       
       </div>
       <div className="container2">
       <div className="mb-3" id="formularioAltas">
         <label>Material</label>
-        <p><input type="text" className="inp" placeholder="Material" onChange={(e) => setMaterial (e.target.value)}/></p>
+        <p>
+          <select type="text" className="cajas" placeholder="Material" onChange={(e) => setMaterial (e.target.value)}>
+            <option value="Aluminio">Aluminio</option>
+            <option value="Acero">Acero</option>
+            <option value="Fibra de Carbono">Fibra de Carbono</option>
+            <option value="Titanio">Titanio</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </p>
       </div>
       <div className="mb-3" id="formularioAltas">
         <label>Observaciones del vendedor </label>
-        <p><input size={25} type="text" className="inp" placeholder=" " onChange={(e) => setObservaciones (e.target.value)}/></p>
+        <p><input size={25} type="text" className="cajas" placeholder=" " onChange={(e) => setObservaciones (e.target.value)}/></p>
       </div>
       <div className="mb-3" id="formularioAltas">
         <label>Fecha límite de alquiler</label>
-        <p><input type="text" className="inp" placeholder=" " onChange={(e) => setLimite (e.target.value)}/></p>
+        <p><input type="text" className="cajas" placeholder=" " onChange={(e) => setLimite (e.target.value)}/></p>
       </div>
 
       
@@ -131,10 +152,10 @@ function FormAlquiler() {
           {tipo == "" || foto == "" || talla == "" || material == "" ? (
             <p className="ter">Campos vacios</p>
           ) : (
-            <p className="ter">Su bicicleta de {tipo} ha sido añadida!</p>
+            <p className="ter">Su bicicleta para alquilar ha sido añadida!</p>
           )}
         </div>
-        <button id="botonForm2" onClick={cerrar}>
+        <button id="botonModal" onClick={cerrar}>
           Close modal
         </button>
       </Modal>

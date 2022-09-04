@@ -89,24 +89,29 @@ function FormAltas() {
     <div className="container">
       <div className="mb-3" id="formularioAltas" >
         <label>Tipo de bicicleta</label>
-        <p><input type="text" id="inp" placeholder="montaña/carretera..." onChange={(e) => setTipo(e.target.value)}/></p>
+        <p>
+          <select type="text" className="cajas" placeholder="montaña/carretera..." onChange={(e) => setTipo(e.target.value)}>
+            <option value="Montaña">Montaña</option>
+            <option value="Carretera">Carretera</option>
+          </select>
+        </p>
       </div>
 
       <div className="mb-3" id="formularioAltasFoto">
         <label>Foto </label>
 
-        <p><input type="file" id="fotoBici" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" onChange={(e) => {uploadImage(e)}} required/></p>
+        <p><input type="file" className="fotoBici" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" onChange={(e) => {uploadImage(e)}} required/></p>
 
       </div>
 
       <div className="mb-3" id="formularioAltas">
         <label>Precio</label>
-        <p><input type="integer" id="inp" placeholder="precio" onChange={(e) => setPrecio (e.target.value)} /></p>
+        <p><input type="integer" className="cajas" placeholder="precio" onChange={(e) => setPrecio (e.target.value)} /></p>
       </div>
 
       <div className="mb-3" id="formularioAltas">
         <label>Año</label>
-        <p><input type="text" id="inp" placeholder="Año" onChange={(e) => setYear(e.target.value)}/></p>
+        <p><input type="text" className="cajas" placeholder="Año" onChange={(e) => setYear(e.target.value)}/></p>
       </div>
       
       </div>
@@ -114,19 +119,35 @@ function FormAltas() {
       <div className="container2">
       <div className="mb-3" id="formularioAltas2">
         <label>Modificaciones/Complementos </label>
-        <p><input type="text" id="inp" placeholder=" " onChange={(e) => setModificaciones (e.target.value)}/></p>
+        <p><input type="text" className="cajas" placeholder=" " onChange={(e) => setModificaciones (e.target.value)}/></p>
       </div>
       <div className="mb-3" id="formularioAltas2">
         <label>Talla</label>
-        <p><input type="text" id="inp" placeholder="Talla" onChange={(e) => setTalla(e.target.value)}/></p>
+        <p>
+          <select type="text" className="cajas" placeholder="Talla" onChange={(e) => setTalla(e.target.value)}>
+            <option value="XL">XL</option>
+            <option value="L">L</option>
+            <option value="M">M</option>
+            <option value="S">S</option>
+            <option value="XS">XS</option>
+          </select>
+        </p>
       </div>
       <div className="mb-3" id="formularioAltas2">
         <label>Material</label>
-        <p><input type="text" id="inp" placeholder="Material" onChange={(e) => setMaterial (e.target.value)}/></p>
+        <p>
+          <select type="text" className="cajas" placeholder="Material" onChange={(e) => setMaterial (e.target.value)}>
+            <option value="Aluminio">Aluminio</option>
+            <option value="Acero">Acero</option>
+            <option value="Fibra de Carbono">Fibra de Carbono</option>
+            <option value="Titanio">Titanio</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </p>
       </div>
       <div className="mb-3" id="formularioAltas2">
         <label>Observaciones del vendedor </label>
-        <p><input size={30} type="text" id="inp" placeholder=" " onChange={(e) => setObservaciones (e.target.value)}/></p>
+        <p><input size={30} type="text" className="cajas" placeholder=" " onChange={(e) => setObservaciones (e.target.value)}/></p>
       </div>
       
       </div>
@@ -149,7 +170,7 @@ function FormAltas() {
             <p className="ter">Su bicicleta de {tipo} ha sido añadida!</p>
           )}
         </div>
-        <button id="botonForm2" onClick={cerrar}>
+        <button id="botonModal" onClick={cerrar}>
           Close modal
         </button>
       </Modal>
