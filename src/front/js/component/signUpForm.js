@@ -14,10 +14,20 @@ export const SignUpForm = () => {
   const [telefono, setTelefono] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
+  function cerrar (){
+    setIsOpen(!isOpen);
+  }
+
+  const emailValidation = () =>{
+    const regEx = /[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2-8/
+  }
+
+
   function toggleModal() {
     actions.signup(nombre, apellidos, email, telefono, password);
     setIsOpen(!isOpen);
   }
+
 
   const customStyles = {
     overlay: {
@@ -37,7 +47,7 @@ export const SignUpForm = () => {
   };
 
   return (
-    <form>
+    <>
     <div className="container">
       <div className="mb-3" id="formularioSignUp">
         <label>Nombre </label>
@@ -105,19 +115,21 @@ export const SignUpForm = () => {
         ariaHideApp={false}
       >
         <div>
-          {email == "" || password == "" || nombre == "" || apellidos == "" || telefono == "" ? (
-            <p className="ter">Campos vacios</p>
-          ) : (
-            <p className="ter">Bienvenido! {nombre}</p>
-          )}
+          {
+            email == "" || password == "" || nombre == "" || apellidos == "" || telefono == "" 
+              ? 
+                (<p className="ter">Campos vacios</p>) 
+              : 
+                (<p className="ter">Bienvenido! {nombre}</p>)        
+          }
         </div>
-        <button id="botonForm2" onClick={toggleModal}>
+        <button id="botonForm2" onClick={cerrar}>
           Close modal
         </button>
       </Modal>
       ;
     </div>
-    </form>
+    </>
   );
 };
 

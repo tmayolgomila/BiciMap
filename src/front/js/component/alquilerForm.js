@@ -35,6 +35,9 @@ function FormAlquiler() {
     setLoading(false)
     }
 
+  function cerrar (){
+      setIsOpen(!isOpen);
+  }
 
   function toggleModal() {
     actions.rentabike(tipo, foto, talla, material, observaciones, fechalimite);
@@ -131,7 +134,7 @@ function FormAlquiler() {
             <p className="ter">Su bicicleta de {tipo} ha sido añadida!</p>
           )}
         </div>
-        <button id="botonForm2" onClick={toggleModal}>
+        <button id="botonForm2" onClick={cerrar}>
           Close modal
         </button>
       </Modal>

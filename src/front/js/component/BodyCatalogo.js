@@ -25,7 +25,7 @@ export const CartasCatalogo = () => {
             <p className="title">{bk.tipo}</p>
             <p>Talla: {bk.talla}</p>
             <p>Material: {bk.material}</p>
-            <p>Año: {bk.año}</p>
+            { bk.año === null ? (<p>Solo alquiler</p>):(<p>Bicicleta en venta</p>)}
     
             <a
               className="btn-link"
@@ -40,7 +40,7 @@ export const CartasCatalogo = () => {
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title" id="exampleModalLabel">
-                    Mi bicicleta
+                    Detalles de la bicicleta
                   </h5>
                   <button
                     type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"
@@ -52,17 +52,17 @@ export const CartasCatalogo = () => {
                   <p>Tipo: {bk.tipo}</p>
                   <p>Talla: {bk.talla}</p>
                   <p>Material: {bk.material}</p>
-                  <p>Año: {bk.año}</p>
+                  { bk.año === null ? (<p>Dispobible hasta: {bk.fechalimite}</p>):(<p>Año: {bk.año}</p>)}
                   <p>Modificaciones: {bk.modificaciones}</p>
               </div>
                 <div className="modal-footer">
-                  <div className="price">Price: {bk.precio}</div>
+                { bk.año === null ? (<div className="price">30 céntimos el uso</div>):(<div className="price">Price: {bk.precio}</div>)}
                   <button type="button" className="btn btn-secondary" data-bs-dismiss="modal"
                   >
                     Close
                   </button>
                 <Link to="/pagos"> <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
-                    Comprar
+                { bk.año === null ? ("Alquilar"):("Comprar")}
                   </button></Link>
                  
                 </div>

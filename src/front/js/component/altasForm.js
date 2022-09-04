@@ -37,6 +37,10 @@ function FormAltas() {
     setLoading(false)
     }
 
+  function cerrar (){
+    setIsOpen(!isOpen);
+  }
+
   function toggleModal() {
     actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones);
     setIsOpen(!isOpen);
@@ -145,7 +149,7 @@ function FormAltas() {
             <p className="ter">Su bicicleta de {tipo} ha sido añadida!</p>
           )}
         </div>
-        <button id="botonForm2" onClick={toggleModal}>
+        <button id="botonForm2" onClick={cerrar}>
           Close modal
         </button>
       </Modal>

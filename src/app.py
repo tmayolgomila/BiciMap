@@ -118,9 +118,6 @@ def create_token():
 @app.route("/altasvender", methods = ["POST"])
 def addbike():
     body = request.get_json()
-    comprobando = Bike.query.filter_by(foto = body["foto"]).first()
-    if comprobando != None:
-        return "esta bicicleta ya existe"
     bike = Bike(tipo = body["tipo"], foto = body["foto"], precio = body["precio"],año = body["año"], modificaciones = body["modificaciones"], talla = body["talla"], material = body["material"], observaciones = body["observaciones"])
     db.session.add(bike)
     db.session.commit()
@@ -129,13 +126,9 @@ def addbike():
 @app.route("/altasalquiler", methods = ["POST"])
 def rentabike():
     body = request.get_json()
-    comprobando = Bike.query.filter_by(foto = body["foto"]).first()
-    if comprobando != None:
-        return "esta bicicleta ya existe"
     bike = Bike(tipo = body["tipo"], foto = body["foto"], talla = body["talla"], material = body["material"], observaciones = body["observaciones"], fechalimite=body["fechalimite"])
     db.session.add(bike)
     db.session.commit()
-    
     return jsonify(), 200
 
 @app.route("/estaciones", methods = ["POST"])

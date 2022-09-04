@@ -12,6 +12,10 @@ function LoginForm() {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
+  function cerrar (){
+    setIsOpen(!isOpen);
+}
+
   function toggleModal() {
     actions.login(email, password)
     setIsOpen(!isOpen);
@@ -46,6 +50,7 @@ function LoginForm() {
             id="inp"
             placeholder="Enter email"
             onChange={(e) => setEmail(e.target.value)}
+            pattern=".+@globex\.com" size="30" required
           />
         </p>
       </div>
@@ -79,7 +84,7 @@ function LoginForm() {
               ariaHideApp={false}
             >
               <div>{email == "" || password == "" ? <p className="ter">Campos vacios</p> : <p className="ter">Bienvenido! {email}</p>}</div>
-              <Link to="/altas"><button id="botonForm2" onClick={toggleModal}>Close modal</button></Link>
+              <Link to="/altas"><button id="botonForm2" onClick={cerrar}>Close modal</button></Link>
             </Modal>;
     </div>
     </>
