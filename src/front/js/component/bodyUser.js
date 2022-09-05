@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom"
 
 export const CartasUsers = () => {
   const { store, actions } = useContext(Context);
+  
 
   return (
     <>
@@ -65,7 +66,7 @@ export const CartasUsers = () => {
                   <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
                 Modificar
                   </button>
-                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+                <button onClick={() => actions.deleteBikes(i)} type="button" className="btn btn-secondary" data-bs-dismiss="modal">
                 Eliminar
                   </button>
                  

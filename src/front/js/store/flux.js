@@ -169,6 +169,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					  console.log(error);
 				  }
 			},
+			deleteBikes: index => {
+				const store = getStore();
+				store.bikes.splice(index,1);
+				setStore({bikes:[...store.bikes]});
+			}
 						
 		}
 	};
