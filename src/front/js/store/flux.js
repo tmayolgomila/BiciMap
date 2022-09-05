@@ -16,6 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			apellidos: null,
 			email: null,
 			telefono: null,
+			idestacion: null,
 
 			bikes: [], 
 			estaciones:[]
@@ -82,13 +83,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ auth: false });
 				setStore({ email: null });
 			  },
-			  addbike: async (tipo, foto, precio, año, modificaciones, talla, material, observaciones) => {
+			  addbike: async (tipo, foto, precio, año, modificaciones, talla, material, observaciones, email, idestacion) => {
 				try {
 				  const resp = await fetch(process.env.BACKEND_URL + "/altasvender", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 
-					body: JSON.stringify({tipo, foto, precio, año, modificaciones, talla, material, observaciones}),
+					body: JSON.stringify({tipo, foto, precio, año, modificaciones, talla, material, observaciones, email, idestacion}),
 
 				  });
 				  if (resp.status === 401) {
@@ -112,12 +113,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				  alert(err);
 				}
 			  },
-			  rentabike: async (tipo, foto, talla, material, observaciones, fechalimite) => {
+			  rentabike: async (tipo, foto, talla, material, observaciones, fechalimite, email, idestacion) => {
 				try {
 				  const resp = await fetch(process.env.BACKEND_URL + "/altasalquiler", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({tipo, foto, talla, material, observaciones, fechalimite}),
+					body: JSON.stringify({tipo, foto, talla, material, observaciones, fechalimite, email, idestacion}),
 				  });
 				  if (resp.status === 401) {
 					throw "Invalid credentials";

@@ -11,7 +11,6 @@ export const Catalogo = () => {
   useEffect( () => {
     actions.getBikes();
   }, []);
-  console.log(store.bikes)
 
   return (
     <div className="container text-center mt-5">

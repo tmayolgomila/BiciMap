@@ -1,5 +1,5 @@
 import { Action } from 'history';
-import React, {useContext, useState} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import { Context } from '../store/appContext';
 import "../../styles/altas.css";
 import Modal from "react-modal";
@@ -18,6 +18,13 @@ function FormAltas() {
   const [observaciones,setObservaciones] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [loading,setLoading] = useState(false);
+  const [idestacion, setIdestacion] = useState("")
+  const [email, setEmail] = useState("")
+
+  useEffect(() => {
+    actions.getEstaciones()
+    {setEmail(store.email)}
+  },[])
   
   const uploadImage= async e =>{
     const files = e.target.files
@@ -42,7 +49,7 @@ function FormAltas() {
   }
 
   function toggleModal() {
-    actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones);
+    actions.addbike(tipo,foto, precio, año, modificaciones, talla, material, observaciones, email, idestacion);
     setIsOpen(!isOpen);
   }
 
@@ -149,7 +156,23 @@ function FormAltas() {
         <label>Observaciones del vendedor </label>
         <p><input size={30} type="text" className="cajas" placeholder=" " onChange={(e) => setObservaciones (e.target.value)}/></p>
       </div>
-      
+
+      <div className="mb-3" id="formularioAltas">
+        <label>Estación:</label>
+        <p>
+          <select type="text" className="cajas" onChange={(e) => setIdestacion (e.target.value)}>
+          { store.estaciones.map((est, i) => {
+            return( est.id===2 ?
+              <option value={est.id} key={i} selected>{est.direccion}</option>
+              :
+              <option value={est.id} key={i}>{est.direccion}</option>
+           )
+        
+          
+        })}            
+          </select>
+        </p>
+      </div> 
       </div>
     </div>
     <button id="botonForm" variant="primary" type='submit' onClick={toggleModal}>

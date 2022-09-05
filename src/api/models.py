@@ -34,6 +34,8 @@ class Bike(db.Model):
     material = db.Column(db.String(120), nullable=False)
     observaciones = db.Column(db.String(200))
     fechalimite = db.Column(db.Integer, unique=False, nullable=True)
+    email = db.Column(db.String(120), nullable=False)
+    idestacion = db.Column(db.Integer, nullable=False)
     
 
     def __repr__(self):
@@ -51,7 +53,8 @@ class Bike(db.Model):
             "material": self.material,
             "observaciones": self.observaciones,
             "fechalimite": self.fechalimite,
-           
+            "email": self.email,
+            "idestacion": self.idestacion,
         }
 
 class Estaciones(db.Model):

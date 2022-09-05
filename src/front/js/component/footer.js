@@ -2,6 +2,7 @@ import { Component } from "react";
 import "../../styles/footer.css";
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 
 export const Footer = () => {
@@ -22,7 +23,7 @@ export const Footer = () => {
             </svg>
           </a>
           <span className="mb-3 mb-md-0 texto">{store.auth == false ? <></> : <p className="ter">Bienvenido! {store.email}</p>}</span>
-		  <span className="mb-3 mb-md-0 texto">{store.auth == false ? <></> : <button className="Logout" variant="primary" type="submit" onClick={actions.logout}>Logout</button>}</span>
+		  <span className="mb-3 mb-md-0 texto">{store.auth == false ? <></> :<> <button className="Logout" variant="primary" type="submit" onClick={actions.logout}>Logout</button><Link to="/user"><button className="Logout" variant="primary" type="submit">Editar</button></Link></>}</span>
         </div>
 
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
