@@ -8,29 +8,32 @@ export default function Contacto() {
       <div className="formularioContacto">
         <form action="https://formsubmit.co/bicimapapp@gmail.com" method="POST">
           <div class="form-group">
-            <input
+			<label>Nombre</label>
+           <p> <input
               type="text"
               id="formGroupExampleInput"
               placeholder="Nombre"
               name="name"
-            />
+            /></p>
           </div>
           <div class="form-group">
-            <input
+			<label>Email</label>
+            <p><input
               type="email"
               id="formGroupExampleInput2"
               placeholder="@Email"
               name="email"
-            />
+            /></p>
           </div>
           <div class="form-group">
-            <input
+			<label>Mensaje</label>
+            <p><input
 			  size="65" 
               type="text"
               id="formGroupExampleInput2"
               placeholder="Mensaje"
               name="message"
-            />
+            /></p>
           </div>
           <input type="submit" value="Enviar" className="botonContacto" ></input>
           <input
