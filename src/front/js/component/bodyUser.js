@@ -15,7 +15,7 @@ export const CartasUsers = () => {
           return (store.email===bk.email?
             <div className="card" key={i}>
           <div className="header">
-           
+           {console.log(bk.id, "bk.id")}
               <img
                 className="imgBici"
                 src={bk.foto}
@@ -67,7 +67,7 @@ export const CartasUsers = () => {
                   <button  type="button" className="btn btn-secondary" data-bs-dismiss="modal">
                 Modificar
                   </button>
-                <button onClick={() => actions.deleteBikes(i)} type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+                <button onClick={() => actions.deleteBikes(bk.id)} type="button" className="btn btn-secondary" data-bs-dismiss="modal">
                 Eliminar
                   </button>
                  

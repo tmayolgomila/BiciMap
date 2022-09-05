@@ -163,15 +163,16 @@ def bike_list():
 
 @app.route('/user/<int:id>', methods=['DELETE'])
 def delete_bike(id):
-    bike= Bike.query.filter_by(bike_id=current_bike, id=id).first()
+    body = request.get_json()
+    bike= Bike.query.filter_by( id = body["id"] ).first()
 
     if not bike:
         return jsonify({'message':'error'}),404
     db.session.delete(bike)
     db.session.commit()
-    return jsonify({}), 200
+    return jsonify("bike deleted"), 200
 
-
+    
 @app.route('/estaciones', methods=['GET'])
 def estaciones_list():
 

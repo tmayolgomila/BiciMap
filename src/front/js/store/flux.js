@@ -214,7 +214,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       deleteBikes: async (id) => {
         try {
-          const resp = await fetch(process.env.BACKEND_URL + "/user", {
+          const resp = await fetch(process.env.BACKEND_URL + "/user/" + id, {
             method: "DELETE",
           });
         
