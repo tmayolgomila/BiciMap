@@ -21,3 +21,18 @@ label{
     color: white;
     margin-top: 30px;
 }
+#botonModal{
+    color: rgb(0, 0, 0);
+    width: 130px;
+    border: none;
+    border-radius: 9px;
+    background-color: #2FBF71;
+    transition: transform .2s;
+    margin-top: 50px;
+    display: list-item;
+    margin-left: 30%;
+  
+}
+#botonModal:hover{
+    transform: scale(1.3);
+}
