@@ -53,6 +53,7 @@ export const CartasUsers = () => {
                   <img className="imgBici" src={bk.foto}/></div>
                 <div className="modal-body2">
                   <p>Tipo: {bk.tipo}</p>
+                 
                   <p>Talla: {bk.talla}</p>
                   <p>Material: {bk.material}</p>
                   { bk.año === null ? (<p>Dispobible hasta: {bk.fechalimite}</p>):(<p>Año: {bk.año}</p>)}
@@ -63,7 +64,7 @@ export const CartasUsers = () => {
                   >
                     Close
                   </button>
-                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+                  <button  type="button" className="btn btn-secondary" data-bs-dismiss="modal">
                 Modificar
                   </button>
                 <button onClick={() => actions.deleteBikes(i)} type="button" className="btn btn-secondary" data-bs-dismiss="modal">

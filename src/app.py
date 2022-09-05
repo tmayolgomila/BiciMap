@@ -123,6 +123,14 @@ def addbike():
     db.session.commit()
     return jsonify(), 200
 
+@app.route("/modbike", methods = ["PUT"])
+def modbike():
+    body = request.get_json()
+    bike = Bike(tipo = body["tipo"],talla = body["talla"], material = body["material"], año = body["año"], modificaciones = body["modificaciones"])
+    db.session.add(bike)
+    db.session.commit()
+    return jsonify(), 200
+
 @app.route("/altasalquiler", methods = ["POST"])
 def rentabike():
     body = request.get_json()
@@ -153,7 +161,7 @@ def bike_list():
     }
     return jsonify(response_body), 200
 
-@app.route('/bikes', methods=['DELETE'])
+@app.route('/user/<int:id>', methods=['DELETE'])
 def delete_bike(id):
     bike= Bike.query.filter_by(bike_id=current_bike, id=id).first()
 
