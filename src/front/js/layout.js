@@ -12,7 +12,7 @@ import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import AboutUs from "./pages/aboutUs";
 import { Pagos } from "./pages/pagos";
-
+import Contact from "./pages/Contact";
 
 
 import { Catalogo } from "./pages/catalago";
@@ -37,7 +37,7 @@ const Layout = () => {
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
 
-                    <Logo/ >
+                    
 
                     <Navbar />
                     
@@ -51,6 +51,7 @@ const Layout = () => {
                         <Route element={<AltasAlquiler />} path="/altasalquiler"/>
                         <Route element={<Pagos />} path="/pagos"/>
                         <Route element={<AboutUs />} path="/aboutus"/>
+                        <Route element={<Contact />} path="/contact"/>
                         <Route element={<h1>Not found!</h1>} />
                         <Route element={<Footer />} path="/footer" />
                         <Route element={<Catalogo />} path="/catalogo"/>
