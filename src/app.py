@@ -123,13 +123,24 @@ def addbike():
     db.session.commit()
     return jsonify(), 200
 
-@app.route("/modbike", methods = ["PUT"])
-def modbike():
-    body = request.get_json()
-    bike = Bike(tipo = body["tipo"],talla = body["talla"], material = body["material"], año = body["año"], modificaciones = body["modificaciones"])
-    db.session.add(bike)
+@app.route("/modbike/<int:id>", methods = ["PUT"])
+def modbike(id):
+    body = request.get_json
+    bike = Bike.query.filter_by( id = id ).first()
+    #bike = Bike(tipo = body["tipo"],talla = body["talla"], material = body["material"], año = body["año"], modificaciones = body["modificaciones"])
+    tipo = request.json["tipo"]
+    talla = request.json["talla"]
+    material = request.json["material"]
+    año = request.json["año"]
+    modificaciones = request.json["modificaciones"]
+    bike.tipo = tipo
+    bike.talla = talla
+    bike.material = material
+    bike.año = año
+    bike.modificaciones = modificaciones
+    
     db.session.commit()
-    return jsonify(), 200
+    return jsonify("updated"), 200
 
 @app.route("/altasalquiler", methods = ["POST"])
 def rentabike():
@@ -163,8 +174,7 @@ def bike_list():
 
 @app.route('/user/<int:id>', methods=['DELETE'])
 def delete_bike(id):
-    body = request.get_json()
-    bike= Bike.query.filter_by( id = body["id"] ).first()
+    bike = Bike.query.filter_by( id = id ).first()
 
     if not bike:
         return jsonify({'message':'error'}),404

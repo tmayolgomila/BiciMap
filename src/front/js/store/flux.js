@@ -227,11 +227,11 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
 
-      editUser: async (tipo, talla, material, año, modificaciones) => {
+      editUser: async (id,tipo, talla, material, año, modificaciones) => {
         try {
-          const resp = await fetch(process.env.BACKEND_URL + "/user", {
+          const resp = await fetch(process.env.BACKEND_URL + "/modbike/" + id, {
             method: "PUT",
-            body: JSON.stringify(tipo, talla, material, año, modificaciones),
+            body: JSON.stringify({id, tipo, talla, material, año, modificaciones}),
             headers: {
               "Content-Type": "application/json",
             },
@@ -241,13 +241,15 @@ const getState = ({ getStore, getActions, setStore }) => {
           } else if (resp.status === 400) {
             throw "Invalid format";
           }
+          console.log(id, tipo, talla, material, año, modificaciones, "datos editUser" )
           if (!resp.ok) throw Error("There was a problem in the request");
           const data = await resp.json();
           setStore({ tipo: tipo });
-		  setStore({ talla: talla });
-		  setStore({ material: material });
+		      setStore({ talla: talla });
+		      setStore({ material: material });
           setStore({ año: año });
           setStore({ modificaciones: modificaciones });
+          
           return data;
         } catch (err) {
           console.error(err);
