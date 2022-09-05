@@ -48,7 +48,7 @@ export const Navbar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/catalogo">
+            <Link to="/contact">
               
                 <span>
                   <ion-icon className="icono" size="large" name="call-outline"></ion-icon> 
