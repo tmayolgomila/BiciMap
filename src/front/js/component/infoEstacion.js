@@ -6,9 +6,22 @@ import "../../styles/estaciones.css";
 export default function InfoEstacion ({id})  {
   const { store, actions } = useContext(Context);
   const [estacion, setEstacion ]= useState(0)
+  //const [est, setEst] = useState([])
+  
   useEffect(() => {
-    actions.getEstaciones()},[])
-   
+    actions.getEstaciones()
+    actions.getBikes()
+    
+
+    //store.bikes.map((bk) => {
+      //setEst= [...bk.InfoEstacion]        
+    //})
+  
+  },[])
+  
+  //console.log(est,"est")
+    
+
   return (
 
     <>

@@ -58,7 +58,6 @@ export const CartasUsers = () => {
                   <p>Modificaciones: {bk.modificaciones}</p>
               </div>
                 <div className="modal-footer">
-                { bk.año === null ? (<div className="price">30 céntimos el uso</div>):(<div className="price">Price: {bk.precio}</div>)}
                   <button type="button" className="btn btn-secondary" data-bs-dismiss="modal"
                   >
                     Close
