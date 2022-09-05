@@ -31,6 +31,7 @@ export default function Contacto() {
   return (
     <div>
       <h1>Contacta con nosotros</h1>
+      <hr></hr>
       <div className="formularioContacto">
         <form action="https://formsubmit.co/bicimapapp@gmail.com" method="POST">
           <div class="form-group">
