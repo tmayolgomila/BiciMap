@@ -13,7 +13,11 @@ export const Catalogo = () => {
   }, []);
 
   return (
+<> <h1>Catálogo de bicicletas</h1>
+<hr></hr>
     <div className="container text-center mt-5">
+      
+      
       <div className="row">
         
         <div className="col ">
@@ -21,5 +25,6 @@ export const Catalogo = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
