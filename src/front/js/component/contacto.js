@@ -62,13 +62,13 @@ export default function Contacto() {
               name="message"
             /></p>
           </div>
-          <input type="submit" value="Enviar" className="botonContacto" ></input>
+          <input type="submit" value="Enviar" className="botonContacto" onClick={toggleModal}></input>
 
           <input
             type="hidden"
             name="_next"
-            value="https://3000-tmayolgomila-bicimap-auiu7gj70uc.ws-eu63.gitpod.io"
-            onClick={toggleModal}
+            value="https://3000-tmayolgomila-bicimap-t21cjcnin0c.ws-eu63.gitpod.io"
+            
           ></input>
            <Modal
         isOpen={isOpen}
@@ -79,7 +79,7 @@ export default function Contacto() {
       >
         <div>
           
-            <p className="ter">¡Mensaje realizado con éxito!</p>
+            <p className="ter">¡Mensaje enviado con éxito!</p>
           
         </div>
         <button id="botonModal" onClick={cerrar}>

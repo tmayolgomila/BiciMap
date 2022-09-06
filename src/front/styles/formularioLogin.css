@@ -96,8 +96,12 @@ hr{
     margin-top: 50px;
     display: list-item;
     margin-left: 30%;
+    text-decoration: none;
   
 }
 #botonModal:hover{
     transform: scale(1.3);
+}
+#quitarDecoracion{
+    text-decoration: none;
 }
