@@ -61,7 +61,7 @@ export const CartasCatalogo = () => {
                   >
                     Close
                   </button>
-                <Link to="/pagos"> <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+                <Link to={store.auth === false ? "/login" : "/pagos" }> <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
                 { bk.año === null ? ("Alquilar"):("Comprar")}
                   </button></Link>
                  
