@@ -11,10 +11,17 @@ export const Home = () => {
 return(
   
   <div className="container">
-    
+    <h1>Disfruta de Sevilla en bicicleta</h1>
+  <p>Para una escapada por el campo o para ir por la ciudad.</p>
+  <p>¿Tienes una bicicleta sin usar? </p>
+  <p>¿Quieres vender tu bicicleta?</p>
+  <p>Traenos tu bicicleta y nosotros lo gestionamos.</p>
   <Link to="signup"><button id="botonSignUp">SignUp</button></Link>
   
   <Link to="login"><button id="botonLogin">Login</button></Link>
+
+  
+
     <App />
   
 
