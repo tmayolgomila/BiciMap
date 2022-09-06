@@ -3,6 +3,7 @@ import React, {useContext, useState, useEffect} from 'react';
 import { Context } from '../store/appContext';
 import "../../styles/alquiler.css";
 import Modal from "react-modal";
+import { Link } from 'react-router-dom';
 
 
 function FormAlquiler() { 
@@ -101,7 +102,7 @@ function FormAlquiler() {
 
       <div className="mb-3" id="formularioAltasFoto">
         <label>Foto </label>
-        <p><input  type="file" name='file' id="fotoBici" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" onChange={(e) => {
+        <p><input  type="file" name='file'  className="fotoBici" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" onChange={(e) => {
           uploadImage(e)
           }} required/></p>
       </div>
