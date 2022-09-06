@@ -10,8 +10,11 @@ export const Home = () => {
 
 return(
   
-  <div className="container">
+  <>
     <h1>Disfruta de Sevilla en bicicleta</h1>
+    <hr></hr>
+    <div className="container">
+    
   <p>Para una escapada por el campo o para ir por la ciudad.</p>
   <p>¿Tienes una bicicleta sin usar? </p>
   <p>¿Quieres vender tu bicicleta?</p>
@@ -26,6 +29,7 @@ return(
   
 
   </div>
+  </>
 );
 }
 
