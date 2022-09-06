@@ -17,6 +17,7 @@ export const CartasCatalogo = () => {
                 <img className="imgBici" src={bk.foto} />
               </div>
 
+
               <div className="content">
                 <p className="title">{bk.tipo}</p>
                 <p>Talla: {bk.talla}</p>
@@ -70,30 +71,17 @@ export const CartasCatalogo = () => {
                       <p>Modificaciones: {bk.modificaciones}</p>
                     </div>
                     <div className="modal-footer">
-                      {bk.año === null ? (
-                        <div className="price">30 céntimos el uso</div>
-                      ) : (
-                        <div className="price">Price: {bk.precio}</div>
-                      )}
-                      <button
-                        type="button"
-                        className="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <Link to="/pagos">
-                        {" "}
-                        <button
-                          type="button"
-                          className="btn btn-secondary"
-                          data-bs-dismiss="modal"
-                        >
-                          {bk.año === null ? "Alquilar" : "Comprar"}
-                        </button>
-                      </Link>
+                { bk.año === null ? (<div className="price">30 céntimos el uso</div>):(<div className="price">Price: {bk.precio}</div>)}
+                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                <Link to={store.auth === false ? "/login" : "/pagos" }> <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+                { bk.año === null ? ("Alquilar"):("Comprar")}
+                  </button></Link>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>

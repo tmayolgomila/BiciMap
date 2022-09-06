@@ -4,56 +4,82 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
-
 export const Footer = () => {
-	const { store, actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
 
-	return(
-  <footer className="footer mt-auto py-3 text-center">
-	<hr/>
-    <div className="container">
-      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 ">
-        <div className="col-md-4 d-flex align-items-center">
-          <a
-            href="/"
-            className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"
-          >
-            <svg className="bi" width="30" height="24">
-				<i className="fa-brands fa-square-twitter"></i>
-            </svg>
-          </a>
-          <span className="mb-3 mb-md-0 texto">{store.auth == false ? <></> : <p className="ter">Bienvenido! {store.email}</p>}</span>
-		  <span className="mb-3 mb-md-0 texto">{store.auth == false ? <></> :<> <button className="Logout" variant="primary" type="submit" onClick={actions.logout}>Logout</button><Link to="/user"><button className="Logout" variant="primary" type="submit">Editar</button></Link></>}</span>
-        </div>
+  return (
+    <footer className="footer mt-auto py-3 text-center">
+      <hr />
+      <div className="container">
+        <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 ">
+          <div className="col-md-4 d-flex align-items-center">
+            <a
+              href="/"
+              className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"
+            >
+              <svg className="bi" width="30" height="24">
+                <i className="fa-brands fa-square-twitter"></i>
+              </svg>
+            </a>
+            <span className="mb-3 mb-md-0">
+              {store.auth == false ? (
+                <></>
+              ) : (
+                <div className="cardFooter">
+                  <div className="infoFooter">
+                    <p className="textoFooter">{store.email}</p>
+                  </div>
+                  <button
+                    className="Logout"
+                    variant="primary"
+                    type="submit"
+                    onClick={actions.logout}
+                  >
+                    Logout
+                  </button>
+                  <Link to="/user">
+                    <button className="Logout" variant="primary" type="submit">
+                      Editar
+                    </button>
+                  </Link>
+                </div>
+              )}
+            </span>
+          </div>
 
-        <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
-		<span className="Nosotros">Tomeu Mayol Gomila</span>
-          <li className="ms-3">
-            <a href="https://github.com/tmayolgomila">
-				<ion-icon name="logo-github" id="git"></ion-icon>
-            </a>
-          </li>
-          <li className="ms-3">
-            <a href="https://www.linkedin.com/in/tomeu-mayol-gomila-272565238/">
-			<ion-icon name="logo-linkedin" id="linkedin"></ion-icon>
-            </a>
-          </li>
-        </ul>
-		<ul className="nav col-md-4 justify-content-end list-unstyled d-flex" id="borbot">
-		<span className="Nosotros">Ignacio García-Conde Fernández</span>
-          <li className="ms-3">
-            <a href="https://github.com/naxinga">
-				<ion-icon name="logo-github" id="git"></ion-icon>
-            </a>
-          </li>
-          <li className="ms-3">
-            <a href="https://www.linkedin.com/in/nacho-garc%C3%ADa-conde-fern%C3%A1ndez-591013173/">
-			<ion-icon name="logo-linkedin" id="linkedin"></ion-icon>
-            </a>
-          </li>
-        </ul>
-      </footer>
-    </div>
-  </footer>
+          <div className="cardUs">
+            <div className="imgUs">
+            <img className="imgUs2" src="https://media-exp1.licdn.com/dms/image/D4D35AQFDV_b0zAtg1A/profile-framedphoto-shrink_800_800/0/1660923079167?e=1663063200&v=beta&t=qMzjeLERIOQBgGiEQdwH1m5UUfbewG4QJDHsMWEHcaM"></img>
+            </div>
+            <h1 className="h1Us">Tomeu Mayol</h1>
+            <p className="pUs">
+              <a href="https://www.linkedin.com/in/tomeu-mayol-gomila-272565238/" target="_blank">
+                <ion-icon name="logo-linkedin" id="linkedin"></ion-icon>
+              </a>
+
+              <a href="https://github.com/tmayolgomila" target="_blank">
+                <ion-icon name="logo-github" id="git"></ion-icon>
+              </a>
+            </p>
+          </div>
+
+          <div className="cardUs">
+            <div className="imgUs">
+              <img className="imgUs2" src="https://media-exp1.licdn.com/dms/image/C5603AQHTEjAHZUvwuQ/profile-displayphoto-shrink_800_800/0/1655376927553?e=1668038400&v=beta&t=jNyzv6Co_jv0RV5QN4S05fwE0IbfV2fTCbQl4KD1ezE"></img>
+            </div>
+            <h1 className="h1Us">Ignacio García-Conde</h1>
+            <p className="pUs">
+              <a href="https://www.linkedin.com/in/nacho-garc%C3%ADa-conde-fern%C3%A1ndez-591013173/" target="_blank">
+                <ion-icon name="logo-linkedin" id="linkedin"></ion-icon>
+              </a>
+
+              <a href="https://github.com/naxinga" target="_blank">
+                <ion-icon name="logo-github" id="git"></ion-icon>
+              </a>
+            </p>
+          </div>
+        </footer>
+      </div>
+    </footer>
   );
-	}
+};

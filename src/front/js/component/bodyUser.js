@@ -38,7 +38,7 @@ export const CartasUsers = () => {
                   data-bs-toggle="modal"
                   data-bs-target={"#exampleModal" + i}
                 >
-                  Detalles
+                  Modificar tu bicicleta
                 </a>
               </div>
               <div
