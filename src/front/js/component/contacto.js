@@ -69,10 +69,9 @@ export default function Contacto() {
           <div className="form-group">
 			<label>Mensaje</label>
             <p><input
-			  size="65" 
+			        className="textoContacto"
               type="text"
               id="formGroupExampleInput2"
-              placeholder="Mensaje"
               name="message"
             /></p>
           </div>
