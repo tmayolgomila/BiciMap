@@ -11,15 +11,11 @@ export default function InfoEstacion ({id})  {
   useEffect(() => {
     actions.getEstaciones()
     actions.getBikes()
-    
 
-    //store.bikes.map((bk) => {
-      //setEst= [...bk.InfoEstacion]        
-    //})
   
   },[])
   
-  //console.log(est,"est")
+
     
 
   return (
@@ -31,13 +27,11 @@ export default function InfoEstacion ({id})  {
            
         
         { store.estaciones.map((est) => {
-          //console.log(id, "id")
-          //console.log(est.id, "est.id")
+
           return((est.id===id)  ? (
             <ul>
           <li>Calle: {est.direccion}</li>
           <li>Estacion: {est.id}</li>
-          <li>Nº Bicis: {est.numeroBicis}</li>
           <li>Nº Parkings: {est.numeroParkings}</li>
           </ul> ) : "" )
           
