@@ -11,15 +11,27 @@ export const CartasUsers = () => {
   const [modificaciones, setModificaciones] = useState("");
   const [talla, setTalla] = useState("");
   const [material, setMaterial] = useState("");
+  const [del, setDel]= useState(false)
+  useEffect(()=>{
+      setDel(false)
+     
+  },[del])
+
+  function eliminar(id){
+    actions.deleteBikes(id)
+    setDel(true)
+  }
+
+ 
 
   return (
     <>
       {store.bikes.length > 0 ? (
         store.bikes.map((bk, i) => {
           return store.email === bk.email ? (
-            <div className="card" key={i}>
+            <div className="card2" key={i}>
               <div className="header">
-                {console.log(bk.id, "bk.id")}
+                
                 <img className="imgBici" src={bk.foto} />
               </div>
 
@@ -33,13 +45,25 @@ export const CartasUsers = () => {
                   <p>Bicicleta en venta</p>
                 )}
 
-                <a
-                  className="btn-link"
+                <button
+                  className="botonEditar"
                   data-bs-toggle="modal"
                   data-bs-target={"#exampleModal" + i}
                 >
-                  Modificar tu bicicleta
-                </a>
+                  Editar
+                </button>
+               <Link to="/user">
+                        <button
+
+                          onClick={() => eliminar(bk.id)}
+                          type="button"
+                          className="botonEliminar"
+                          
+                        >
+                          Eliminar
+                        </button>
+                        </Link>
+                     
               </div>
               <div
                 className="modal fade backdrop-bg"
@@ -169,16 +193,7 @@ export const CartasUsers = () => {
                       >
                         Modificar
                       </button>
-                      <Link to="/user">
-                        <button
-                          onClick={() => actions.deleteBikes(bk.id)}
-                          type="button"
-                          className="btn btn-secondary"
-                          data-bs-dismiss="modal"
-                        >
-                          Eliminar
-                        </button>
-                      </Link>
+                     
                     </div>
                   </div>
                 </div>
@@ -191,6 +206,7 @@ export const CartasUsers = () => {
       ) : (
         <h5 className="card-title text-light">Loading...</h5>
       )}
+   
     </>
   );
 };

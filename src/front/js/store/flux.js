@@ -221,7 +221,7 @@ const getState = ({ getStore, getActions, setStore }) => {
          const store = getStore();
          store.bikes.splice(id, 1);
          setStore({ bikes: [...store.bikes] });
-         return null;
+         return null; 
         } catch (error) {
           console.log(error);
         }

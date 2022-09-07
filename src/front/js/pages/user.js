@@ -34,7 +34,7 @@ export const VistaUser = () => {
   </span>
   </div>
     <hr></hr>
-    
+    <h3>Estas son tus bicicletas</h3>
     
       {store.auth === false ? (
         <div className="zonaPrivada">
