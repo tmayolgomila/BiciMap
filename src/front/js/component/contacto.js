@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import "../../styles/formularioContacto.css";
 import Modal from "react-modal";
+import emailjs from '@emailjs/browser';
+
 
 
 export default function Contacto() {
@@ -27,32 +29,44 @@ export default function Contacto() {
       borderColor: "#2FBF71",
     },
   };
-  
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_x2bejsy', 'template_w9h0dqa', e.target, 'pI3vVgvJ2ThE0ulBX')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+ 
+      
   return (
     <div>
       <h1>Contacta con nosotros</h1>
       <hr></hr>
+      <form  onSubmit={sendEmail}>
       <div className="formularioContacto">
-        <form action="https://formsubmit.co/bicimapapp@gmail.com" method="POST">
-          <div class="form-group">
+       
+          <div className="form-group">
 			<label>Nombre</label>
            <p> <input
               type="text"
               id="formGroupExampleInput"
               placeholder="Nombre"
-              name="name"
+              name="user_name"
             /></p>
           </div>
-          <div class="form-group">
+          <div className="form-group">
 			<label>Email</label>
             <p><input
               type="email"
               id="formGroupExampleInput2"
               placeholder="@Email"
-              name="email"
+              name="user_email"
             /></p>
           </div>
-          <div class="form-group">
+          <div className="form-group">
 			<label>Mensaje</label>
             <p><input
 			  size="65" 
@@ -64,12 +78,7 @@ export default function Contacto() {
           </div>
           <input type="submit" value="Enviar" className="botonContacto" onClick={toggleModal}></input>
 
-          <input
-            type="hidden"
-            name="_next"
-            value="https://3000-tmayolgomila-bicimap-t21cjcnin0c.ws-eu63.gitpod.io"
-            
-          ></input>
+         
            <Modal
         isOpen={isOpen}
         onRequestClose={toggleModal}
@@ -87,9 +96,10 @@ export default function Contacto() {
         </button>
       </Modal>
           
-          <input type="hidden" name="_captcha" value="false"></input>
-        </form>
+          
       </div>
+      </form>
     </div>
+    
   );
 }
