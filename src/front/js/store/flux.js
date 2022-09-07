@@ -16,6 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       email: null,
       telefono: null,
       idestacion: null,
+      precioCompra: null,
 
       bikes: [],
       estaciones: [],
@@ -251,6 +252,24 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ modificaciones: modificaciones });
           
           return data;
+        } catch (err) {
+          console.error(err);
+        }
+      },
+      pagos: async (id) =>{
+        try {
+          const resp = await fetch(process.env.BACKEND_URL + "/pagos/" + id, {
+            method: "GET",
+          });
+        
+          if (resp.status > 399 && resp.status < 600){
+            throw "Precio mal insertado"
+          }
+
+          const data = await resp.json();
+          console.log(data, "precio")  
+          setStore({precioCompra: data });
+
         } catch (err) {
           console.error(err);
         }

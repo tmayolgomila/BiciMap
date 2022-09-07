@@ -1,10 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useState, useEffect} from 'react';
+import { Context } from "../store/appContext";
 import ReactDOM from "react-dom"
 import "../../styles/pagos.css";
 
 const PayPalButton = window.paypal.Buttons.driver("react", { React, ReactDOM });
 
 export default function Pago(){
+  const { store, actions } = useContext(Context);
   const [price, setPrice] = useState(0.30);
   const [opcion, setOpcion] = useState(0.30);
 
@@ -21,7 +23,7 @@ export default function Pago(){
       purchase_units: [
         {
           amount: {
-            value: price,
+            value: store.precioCompra.precio,
           },
         },
       ],
@@ -37,15 +39,14 @@ export default function Pago(){
     setOpcion(e.target.value);
   }
 
-
   return(
     <>
-    <h2>A pagar {price} $</h2>
+    <h2>A pagar {store.precioCompra.precio} $</h2>
     <select className="selectorPago" value={opcion} onChange={handleCambio}>
       <option value="0.3">Alquila</option>
-      <option value="2000">Compra(Introducir cantidad acordada)</option>
+      <option value={store.precioCompra.precio}>Compra(Introducir cantidad acordada)</option>
     </select>
-    {opcion ==="2000" && (<input type="text" onChange={handleChange} value={price} placeholder="Introducir cantidad acordada" size={32} ></input>)}
+    {opcion ==="2000" && (<input type="text" onChange={handleChange} value={store.precioCompra.precio}  size={32} ></input>)}
     <PayPalButton
         createOrder={(data, actions) => createOrder(data, actions)}
         onApprove={(data, actions) => onApprove(data, actions)}
