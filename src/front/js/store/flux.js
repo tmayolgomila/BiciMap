@@ -16,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       email: null,
       telefono: null,
       idestacion: null,
-      precioCompra: null,
+      precioCompra: "",
 
       bikes: [],
       estaciones: [],

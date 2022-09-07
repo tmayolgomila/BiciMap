@@ -18,12 +18,21 @@ export default function Pago(){
     }
   }, [opcion])
 
+
+  const precioFinal = () => {
+    if (store.precioCompra.precio === "" || store.precioCompra.precio === null){
+      return ("value: 0.3")
+    } else {
+      return ("value: store.precioCompra.precio")
+    }
+  }
+
   const createOrder = (data, actions) =>{
     return actions.order.create({
       purchase_units: [
         {
           amount: {
-            value: store.precioCompra.precio,
+            precioFinal
           },
         },
       ],
@@ -41,11 +50,10 @@ export default function Pago(){
 
   return(
     <>
-    <h2>A pagar {store.precioCompra.precio} $</h2>
-    <select className="selectorPago" value={opcion} onChange={handleCambio}>
-      <option value="0.3">Alquila</option>
-      <option value={store.precioCompra.precio}>Compra(Introducir cantidad acordada)</option>
-    </select>
+    
+    
+    {store.precioCompra.precio === "" || store.precioCompra.precio === null ? <h2>A pagar 0.3 $</h2> : <h2>A pagar {store.precioCompra.precio} $</h2>}
+    
     {opcion ==="2000" && (<input type="text" onChange={handleChange} value={store.precioCompra.precio}  size={32} ></input>)}
     <PayPalButton
         createOrder={(data, actions) => createOrder(data, actions)}
