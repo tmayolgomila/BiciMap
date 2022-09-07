@@ -1,11 +1,11 @@
 import { Component } from "react";
 import "../../styles/footer.css";
 import React, { useContext, useState } from "react";
-import { Context } from "../store/appContext";
+
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
-  const { store, actions } = useContext(Context);
+  
 
   return (
     <footer className="footer mt-auto py-3 text-center">
@@ -21,30 +21,7 @@ export const Footer = () => {
                 <i className="fa-brands fa-square-twitter"></i>
               </svg>
             </a>
-            <span className="mb-3 mb-md-0">
-              {store.auth == false ? (
-                <></>
-              ) : (
-                <div className="cardFooter">
-                  <div className="infoFooter">
-                    <p className="textoFooter">{store.email}</p>
-                  </div>
-                  <button
-                    className="Logout"
-                    variant="primary"
-                    type="submit"
-                    onClick={actions.logout}
-                  >
-                    Logout
-                  </button>
-                  <Link to="/user">
-                    <button className="Logout" variant="primary" type="submit">
-                      Editar
-                    </button>
-                  </Link>
-                </div>
-              )}
-            </span>
+            
           </div>
 
           <div className="cardUs">

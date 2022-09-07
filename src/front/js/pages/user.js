@@ -13,8 +13,31 @@ export const VistaUser = () => {
 
   return (
     <>
+    <div className="parteUsuario">
+    <h1>Usuario {store.email}</h1>
+    <span className="mb-3 mb-md-0">
+    {store.auth == false ? (
+      <></>
+    ) : (
+      
+        <button
+          className="Logout"
+          variant="primary"
+          type="submit"
+          onClick={actions.logout}
+        >
+          Logout
+        </button>
+       
+      
+    )}
+  </span>
+  </div>
+    <hr></hr>
+    
+    
       {store.auth === false ? (
-        <div>
+        <div className="zonaPrivada">
           <p>Esta zona es solamente para usuarios registrados </p>
           <p>Si aún no estás registrado haga click aqui</p>{" "}
           <p>

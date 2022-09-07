@@ -85,3 +85,16 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1.5rem 2.5rem;
   }
+  .zonaPrivada{
+    text-align: center;
+  }
+
+.parteUsuario{
+  display: flex;
+  justify-content: center;
+}
+.Logout{
+  background-color: rgb(244, 72, 72);
+  color: white;
+  margin-left: 50px;
+ }

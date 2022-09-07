@@ -32,6 +32,7 @@ export default function InfoEstacion ({id})  {
             <ul>
           <li>Calle: {est.direccion}</li>
           <li>Estacion: {est.id}</li>
+          <li>Nº Bicis: {est.numeroBicis}</li>
           <li>Nº Parkings: {est.numeroParkings}</li>
           </ul> ) : "" )
           

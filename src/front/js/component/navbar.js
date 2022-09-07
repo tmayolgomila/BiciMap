@@ -1,10 +1,12 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
 import "../../styles/responsive-nav.css";
+import { Context } from "../store/appContext";
 
 
 export const Navbar = () => {
+  const { store, actions } = useContext(Context);
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark " id="burger">
       
@@ -69,7 +71,20 @@ export const Navbar = () => {
               
             </Link>
           </li>
+          
+          <li className="nav-item">
+            <Link to="/user">
+            
+                <span className="dropdown">
+                <ion-icon size="large" name="person-outline"></ion-icon>
+                
+                  
+                </span>
+              
+            </Link>
+          </li>
         </ul>
+       
       </div>
       
     </nav>
