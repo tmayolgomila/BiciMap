@@ -11,12 +11,10 @@
 }
 
 
-#texto{
+#texto {
     text-align: left;
     color: white;
-    align-items: center;
     display: flex;
-    height: 100px;
     justify-content: center;
     width: 450px;
 }

@@ -41,11 +41,11 @@ export default function Pago(){
   return(
     <>
     <h2>A pagar {price} $</h2>
-    <select value={opcion} onChange={handleCambio}>
+    <select className="selectorPago" value={opcion} onChange={handleCambio}>
       <option value="0.3">Alquila</option>
-      <option value="1000">Compra(Introducir cantidad acordada)</option>
+      <option value="2000">Compra(Introducir cantidad acordada)</option>
     </select>
-    {opcion ==="1000" && (<input type="text" onChange={handleChange} value={price} placeholder="Introducir cantidad acordada" size={32} ></input>)}
+    {opcion ==="2000" && (<input type="text" onChange={handleChange} value={price} placeholder="Introducir cantidad acordada" size={32} ></input>)}
     <PayPalButton
         createOrder={(data, actions) => createOrder(data, actions)}
         onApprove={(data, actions) => onApprove(data, actions)}
