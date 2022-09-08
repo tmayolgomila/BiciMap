@@ -23,7 +23,7 @@ function FormAltas() {
 
   useEffect(() => {
     actions.getEstaciones()
-    {setEmail(store.email)}
+    {setEmail(localStorage.getItem("jwt-token"))}
   },[])
   
   const uploadImage= async e =>{
@@ -71,7 +71,7 @@ function FormAltas() {
   };
   return (
     <>
-  {store.auth === false ? 
+  {localStorage.getItem("jwt-token") == null ? 
           <div><p>Muchas gracias por confiar en nosotros! </p>
 
 <p>Pero para poder subir tu bicicleta debes entrar con tu usuario.</p>

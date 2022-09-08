@@ -14,8 +14,12 @@ export const CartasUsers = () => {
   const [del, setDel]= useState(false)
   useEffect(()=>{
       setDel(false)
-     
+      
   },[del])
+
+  useEffect(()=>{
+    actions.getBikes()
+  },[])
 
   function eliminar(id){
     actions.deleteBikes(id)
@@ -28,7 +32,7 @@ export const CartasUsers = () => {
     <>
       {store.bikes.length > 0 ? (
         store.bikes.map((bk, i) => {
-          return store.email === bk.email ? (
+          return localStorage.getItem("jwt-token") === bk.email ? (
             <div className="card2" key={i}>
               <div className="header">
                 

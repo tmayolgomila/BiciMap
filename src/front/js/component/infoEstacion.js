@@ -26,10 +26,10 @@ export default function InfoEstacion ({id})  {
       <div id="bicisMenu">
            
         
-        { store.estaciones.map((est) => {
+        { store.estaciones.map((est,i) => {
 
           return((est.id===id)  ? (
-            <ul>
+            <ul key={i}>
           <li>Calle: {est.direccion}</li>
           <li>Estacion: {est.id}</li>
           <li>Nº Bicis: {est.numeroBicis}</li>

@@ -17,6 +17,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       telefono: null,
       idestacion: null,
       precioCompra: "",
+      token: "empty",
 
       bikes: [],
       estaciones: [],
@@ -70,8 +71,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             body: JSON.stringify({ email, password }),
           });
 
-          //throw Error("There was a problem in the login request");
-          //navigate("/private");
           const data = await resp.json();
           setStore({ email: email });
           setStore({ auth: true });
@@ -86,7 +85,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         }
       },
       logout: () => {
-        localStorage.removeItem("token");
+        localStorage.removeItem("jwt-token");
         setStore({ auth: false });
         setStore({ email: null });
       },
@@ -274,6 +273,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.error(err);
         }
       },
+      
     },
   };
 };

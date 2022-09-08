@@ -18,18 +18,19 @@ export const Home = () => {
         <p>¿Quieres vender tu bicicleta?</p>
         <p>Traenos tu bicicleta y nosotros lo gestionamos.</p>
         <Gallery/>
-        {store.auth === true ? (
-          <></>
-        ) : (
+        {localStorage.getItem("jwt-token") == null ? (
           <div>
-            <Link to="signup">
-              <button id="botonSignUp">SignUp</button>
-            </Link>
+          <Link to="signup">
+            <button id="botonSignUp">SignUp</button>
+          </Link>
 
-            <Link to="login">
-              <button id="botonLogin">Login</button>
-            </Link>
-          </div>
+          <Link to="login">
+            <button id="botonLogin">Login</button>
+          </Link>
+        </div>
+        ) : (
+          <>
+          <hr></hr></>
         )}
         <App />
       </div>

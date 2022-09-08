@@ -99,7 +99,7 @@ def login():
 def private():
     # Accede a la identidad del usuario actual con get_jwt_identity
     current_user_id = get_jwt_identity()
-    user = User.filter.get(current_user_id)
+    
     
     return jsonify({"id": user.id, "email": user.email }), 200
 
@@ -203,6 +203,7 @@ def pagar(id):
     }
 
     return jsonify(response_body) , 200
+
 
 
 if __name__ == '__main__':

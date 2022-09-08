@@ -77,7 +77,7 @@ export const CartasCatalogo = () => {
                   >
                     Close
                   </button>
-                <Link to={store.auth === false ? "/login" : "/pagos" }> <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => actions.pagos(bk.id)}>
+                <Link to={localStorage.getItem("jwt-token") == null ? "/login" : "/pagos" }> <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => actions.pagos(bk.id)}>
                 { bk.año === null ? ("Alquilar"):("Comprar")}
                   </button></Link>
                     </div>

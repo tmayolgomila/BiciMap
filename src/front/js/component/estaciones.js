@@ -9,7 +9,6 @@ export const Estaciones = () => {
   useEffect(() => {
     actions.getBikes();
   }, []);
-  console.log(store.bikes);
   return (
     <>
       <div className="vertical-menu">

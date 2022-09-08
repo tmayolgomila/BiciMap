@@ -16,7 +16,7 @@ export const VistaUser = () => {
     <div className="parteUsuario">
     <h1>Usuario {store.email}</h1>
     <span className="mb-3 mb-md-0">
-    {store.auth == false ? (
+    {localStorage.getItem("jwt-token") == null ? (
       <></>
     ) : (
       
@@ -34,9 +34,9 @@ export const VistaUser = () => {
   </span>
   </div>
     <hr></hr>
-    <h3>Estas son tus bicicletas</h3>
     
-      {store.auth === false ? (
+    
+      {localStorage.getItem("jwt-token") == null ? (
         <div className="zonaPrivada">
           <p>Esta zona es solamente para usuarios registrados </p>
           <p>Si aún no estás registrado haga click aqui</p>{" "}
@@ -54,6 +54,8 @@ export const VistaUser = () => {
         </div>
       ) : (
         <div className="container text-center mt-5">
+          <h3>Estas son tus bicicletas</h3>
+          
           <div className="row">
             <div className="col ">
               <div className="marginCards wrapper">
