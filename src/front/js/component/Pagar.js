@@ -10,20 +10,16 @@ export default function Pago(){
   const [price, setPrice] = useState(0.30);
   const [opcion, setOpcion] = useState(0.30);
 
-  useEffect(()=> {
-  
-    if (opcion != "0.3"){
-      setPrice(opcion);
-      
-    }
-  }, [opcion])
-
 
   const precioFinal = () => {
     if (store.precioCompra.precio === "" || store.precioCompra.precio === null){
-      return ("value: 0.3")
+      
+      return (0.3)
+
     } else {
-      return ("value: store.precioCompra.precio")
+      
+      return (store.precioCompra.precio)
+      
     }
   }
 
@@ -32,7 +28,7 @@ export default function Pago(){
       purchase_units: [
         {
           amount: {
-            precioFinal
+            value: precioFinal(),
           },
         },
       ],

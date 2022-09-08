@@ -265,8 +265,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             throw "Precio mal insertado"
           }
 
-          const data = await resp.json();
-          console.log(data, "precio")  
+          const data = await resp.json(); 
           setStore({precioCompra: data });
 
         } catch (err) {
