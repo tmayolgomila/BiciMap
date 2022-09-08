@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 import "../../styles/maps.css";
@@ -7,30 +7,31 @@ import App from "../component/App";
 import Gallery from "../component/carrousel";
 
 export const Home = () => {
-  const {store, actions} = useContext(Context)
+  const { store, actions } = useContext(Context);
   return (
     <>
       <h1>Disfruta de Sevilla en bicicleta</h1>
       <hr></hr>
+
       <div className="container">
-        <p>Para una escapada por el campo o para ir por la ciudad.</p>
-        <p>¿Tienes una bicicleta sin usar? </p>
-        <p>¿Quieres vender tu bicicleta?</p>
-        <p>Traenos tu bicicleta y nosotros lo gestionamos.</p>
-        <Gallery/>
+        <div className="galeriaCarrousel">
+          <Gallery />
+        </div>
+        <h3 className="subTitulo">Tráenos tu bici, te la gestionamos.</h3>
         {localStorage.getItem("jwt-token") == null ? (
           <div>
-          <Link to="signup">
-            <button id="botonSignUp">SignUp</button>
-          </Link>
+            <Link to="signup">
+              <button id="botonSignUp">SignUp</button>
+            </Link>
 
-          <Link to="login">
-            <button id="botonLogin">Login</button>
-          </Link>
-        </div>
+            <Link to="login">
+              <button id="botonLogin">Login</button>
+            </Link>
+          </div>
         ) : (
           <>
-          <hr></hr></>
+            <hr></hr>
+          </>
         )}
         <App />
       </div>
