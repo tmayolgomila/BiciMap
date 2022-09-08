@@ -2,31 +2,65 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/ModalCat.css";
 import { Link } from "react-router-dom";
+import Modal from "react-modal";
 import { useHistory } from "react-router-dom";
+import { func } from "prop-types";
 
 export const CartasUsers = () => {
   const { store, actions } = useContext(Context);
   const [tipo, setTipo] = useState("");
-  const [año, setYear] = useState("");
+  const [año, setYear] = useState(null);
   const [modificaciones, setModificaciones] = useState("");
   const [talla, setTalla] = useState("");
   const [material, setMaterial] = useState("");
-  const [del, setDel]= useState(false)
-  useEffect(()=>{
-      setDel(false)
-      
-  },[del])
+  const [del, setDel] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    setDel(false);
+  }, [del]);
 
-  useEffect(()=>{
-    actions.getBikes()
-  },[])
+  useEffect(() => {
+    actions.getBikes();
+  }, []);
 
-  function eliminar(id){
-    actions.deleteBikes(id)
-    setDel(true)
+  function eliminar(id) {
+    actions.deleteBikes(id);
+    setDel(true);
   }
 
- 
+  function cerrar() {
+    setIsOpen(!isOpen);
+  }
+
+  function toggleModal(id) {
+    actions.editUser(
+      id,
+      tipo,
+      talla,
+      material,
+      año,
+      modificaciones
+    
+    );
+    setIsOpen(!isOpen);
+  }
+
+  const customStyles = {
+    overlay: {
+      position: "fixed",
+      backgroundColor: "rgba(15, 26, 32, 0.75)",
+    },
+    content: {
+      top: "25%",
+      left: "50%",
+      width: "350px",
+      height: "150px",
+      transform: "translate(-50%, -50%)",
+      backgroundColor: "#0F1A20",
+      color: "white",
+      borderColor: "#2FBF71",
+    },
+  };
 
   return (
     <>
@@ -35,7 +69,6 @@ export const CartasUsers = () => {
           return localStorage.getItem("jwt-token") === bk.email ? (
             <div className="card2" key={i}>
               <div className="header">
-                
                 <img className="imgBici" src={bk.foto} />
               </div>
 
@@ -56,18 +89,15 @@ export const CartasUsers = () => {
                 >
                   Editar
                 </button>
-               <Link to="/user">
-                        <button
-
-                          onClick={() => eliminar(bk.id)}
-                          type="button"
-                          className="botonEliminar"
-                          
-                        >
-                          Eliminar
-                        </button>
-                        </Link>
-                     
+                <Link to="/user">
+                  <button
+                    onClick={() => eliminar(bk.id)}
+                    type="button"
+                    className="botonEliminar"
+                  >
+                    Eliminar
+                  </button>
+                </Link>
               </div>
               <div
                 className="modal fade backdrop-bg"
@@ -102,6 +132,9 @@ export const CartasUsers = () => {
                             placeholder={bk.tipo}
                             onChange={(e) => setTipo(e.target.value)}
                           >
+                            <option value="" selected>
+                              {" "}
+                            </option>
                             <option value="Montaña">Montaña</option>
                             <option value="Carretera">Carretera</option>
                           </select>
@@ -117,6 +150,9 @@ export const CartasUsers = () => {
                             placeholder={bk.talla}
                             onChange={(e) => setTalla(e.target.value)}
                           >
+                            <option value="" selected>
+                              {" "}
+                            </option>
                             <option value="XL">XL</option>
                             <option value="L">L</option>
                             <option value="M">M</option>
@@ -134,6 +170,9 @@ export const CartasUsers = () => {
                             placeholder={bk.material}
                             onChange={(e) => setMaterial(e.target.value)}
                           >
+                            <option value="" selected>
+                              {" "}
+                            </option>
                             <option value="Aluminio">Aluminio</option>
                             <option value="Acero">Acero</option>
                             <option value="Fibra de Carbono">
@@ -147,18 +186,17 @@ export const CartasUsers = () => {
                       {bk.año === null ? (
                         <p>Dispobible hasta: {bk.fechalimite}</p>
                       ) : (
-                        
                         <div className="mb-3" id="formularioAltas2">
-                        <label>Año </label>
-                        <p>
-                          <input
-                            type="text"
-                            className="cajas"
-                            placeholder={bk.año}
-                            onChange={(e) => setYear(e.target.value)}
-                          />
-                        </p>
-                      </div>
+                          <label>Año </label>
+                          <p>
+                            <input
+                              type="text"
+                              className="cajas"
+                              placeholder={bk.año}
+                              onChange={(e) => setYear(e.target.value)}
+                            />
+                          </p>
+                        </div>
                       )}
                       <div className="mb-3" id="formularioAltas2">
                         <label>Modificaciones/Complementos </label>
@@ -181,23 +219,36 @@ export const CartasUsers = () => {
                         Cerrar
                       </button>
                       <button
-                        onClick={() =>
-                          actions.editUser(
-                            bk.id,
-                            tipo,
-                            talla,
-                            material,
-                            año,
-                            modificaciones
-                          )
-                        }
+                        onClick={() => toggleModal(bk.id)}
+                        
                         type="button"
                         className="btn btn-secondary"
                         data-bs-dismiss="modal"
                       >
                         Modificar
                       </button>
-                     
+                      <Modal
+                        isOpen={isOpen}
+                        onRequestClose={() => toggleModal(bk.id)}
+                        contentLabel="My dialog"
+                        style={customStyles}
+                        ariaHideApp={false}
+                      >
+                        <div>
+                          {tipo == "" ||
+                          talla == "" ||
+                          material == "" ? (
+                            <p className="ter">Campos vacios</p>
+                          ) : (
+                            <p className="ter">
+                              Los datos de su bicicleta han sido modificados!
+                            </p>
+                          )}
+                        </div>
+                        <button id="botonModal" onClick={cerrar}>
+                          Cerrar
+                        </button>
+                      </Modal>
                     </div>
                   </div>
                 </div>
@@ -210,7 +261,6 @@ export const CartasUsers = () => {
       ) : (
         <h5 className="card-title text-light">Loading...</h5>
       )}
-   
     </>
   );
 };

@@ -98,7 +98,8 @@ function FormAltas() {
         <label>Tipo de bicicleta</label>
         <p>
           <select type="text" className="cajas" placeholder="montaña/carretera..." onChange={(e) => setTipo(e.target.value)}>
-            <option value="Montaña">Montaña</option>
+            <option value="" selected> </option>
+            <option Value="Montaña">Montaña</option>
             <option value="Carretera">Carretera</option>
           </select>
         </p>
@@ -132,6 +133,7 @@ function FormAltas() {
         <label>Talla</label>
         <p>
           <select type="text" className="cajas" placeholder="Talla" onChange={(e) => setTalla(e.target.value)}>
+            <option value="" selected> </option>
             <option value="XL">XL</option>
             <option value="L">L</option>
             <option value="M">M</option>
@@ -144,6 +146,7 @@ function FormAltas() {
         <label>Material</label>
         <p>
           <select type="text" className="cajas" placeholder="Material" onChange={(e) => setMaterial (e.target.value)}>
+            <option value="" selected> </option>
             <option value="Aluminio">Aluminio</option>
             <option value="Acero">Acero</option>
             <option value="Fibra de Carbono">Fibra de Carbono</option>
@@ -161,9 +164,10 @@ function FormAltas() {
         <label>Estación:</label>
         <p>
           <select type="text" className="cajas" onChange={(e) => setIdestacion (e.target.value)}>
+          <option value="" selected> </option>
           { store.estaciones.map((est, i) => {
             return( est.id===2 ?
-              <option value={est.id} key={i} selected>{est.direccion}</option>
+              <option value={est.id} key={i} >{est.direccion}</option>
               :
               <option value={est.id} key={i}>{est.direccion}</option>
            )

@@ -137,7 +137,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ auth: true });
           return data;
         } catch (err) {
-          alert(err);
+          console.log(err)
         }
       },
       rentabike: async (
@@ -181,7 +181,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ auth: true });
           return data;
         } catch (err) {
-          alert(err);
+          console.log(err)
         }
       },
       getBikes: async () => {
@@ -241,9 +241,9 @@ const getState = ({ getStore, getActions, setStore }) => {
           } else if (resp.status === 400) {
             throw "Invalid format";
           }
-          console.log(id, tipo, talla, material, año, modificaciones, "datos editUser" )
           if (!resp.ok) throw Error("There was a problem in the request");
           const data = await resp.json();
+          if (tipo != "")
           setStore({ tipo: tipo });
 		      setStore({ talla: talla });
 		      setStore({ material: material });
