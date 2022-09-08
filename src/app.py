@@ -193,6 +193,16 @@ def estaciones_list():
     }
     return jsonify(response_body), 200
 
+@app.route('/pagos/<int:id>', methods=['GET'])
+def pagar(id):
+    bike = Bike.query.filter_by( id = id ).first()
+
+    precio = bike.precio
+    response_body = {
+        "precio" : precio
+    }
+
+    return jsonify(response_body) , 200
 
 
 if __name__ == '__main__':

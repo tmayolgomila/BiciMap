@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, {useContext, useState, useEffect} from 'react';
 import { Context } from "../store/appContext";
 import "../../styles/ModalCat.css";
 import { Link } from "react-router-dom";
@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 export const CartasCatalogo = () => {
   const { store, actions } = useContext(Context);
 
+ 
   return (
     <>
       {store.bikes.length > 0 ? (
@@ -76,7 +77,7 @@ export const CartasCatalogo = () => {
                   >
                     Close
                   </button>
-                <Link to={store.auth === false ? "/login" : "/pagos" }> <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
+                <Link to={store.auth === false ? "/login" : "/pagos" }> <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => actions.pagos(bk.id)}>
                 { bk.año === null ? ("Alquilar"):("Comprar")}
                   </button></Link>
                     </div>
