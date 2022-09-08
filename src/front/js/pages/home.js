@@ -4,6 +4,7 @@ import "../../styles/home.css";
 import "../../styles/maps.css";
 import { Link } from "react-router-dom";
 import App from "../component/App";
+import Gallery from "../component/carrousel";
 
 export const Home = () => {
   const {store, actions} = useContext(Context)
@@ -16,7 +17,7 @@ export const Home = () => {
         <p>¿Tienes una bicicleta sin usar? </p>
         <p>¿Quieres vender tu bicicleta?</p>
         <p>Traenos tu bicicleta y nosotros lo gestionamos.</p>
-
+        <Gallery/>
         {store.auth === true ? (
           <></>
         ) : (

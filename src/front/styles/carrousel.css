@@ -1,0 +1,11 @@
+.laCartaFoto{
+    position: relative;    
+    display: inline-block;
+}
+.elTituloFoto{
+    position: absolute; 
+    text-align: center;   
+    top: 50%;             
+    margin-left: 50%;
+    color: white;
+}
