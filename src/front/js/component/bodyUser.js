@@ -178,7 +178,7 @@ export const CartasUsers = () => {
                         className="btn btn-secondary"
                         data-bs-dismiss="modal"
                       >
-                        Close
+                        Cerrar
                       </button>
                       <button
                         onClick={() =>

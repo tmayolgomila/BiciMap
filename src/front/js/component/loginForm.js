@@ -83,7 +83,7 @@ function LoginForm() {
               ariaHideApp={false}
             >
               <div>{email == "" || password == "" ? <p className="ter">Campos vacios</p> : <p className="ter">Bienvenido! {email}</p>}</div>
-              <Link to="/altas" id="quitarDecoracion"><button id="botonModal" onClick={cerrar}>Close modal</button></Link>
+              <Link to="/altas" id="quitarDecoracion"><button id="botonModal" onClick={cerrar}>Cerrar</button></Link>
             </Modal>
     </div>
     </>

@@ -180,7 +180,7 @@ function FormAlquiler() {
           )}
         </div>
         <button id="botonModal" onClick={cerrar}>
-          Close modal
+          Cerrar
         </button>
       </Modal>
     </>
