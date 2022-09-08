@@ -14,7 +14,7 @@ export const VistaUser = () => {
   return (
     <>
     <div className="parteUsuario">
-    <h1>Usuario {store.email}</h1>
+    <h1>Usuario {localStorage.getItem("jwt-token")}</h1>
     <span className="mb-3 mb-md-0">
     {localStorage.getItem("jwt-token") == null ? (
       <></>
