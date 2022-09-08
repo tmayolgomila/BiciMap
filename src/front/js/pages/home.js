@@ -12,12 +12,12 @@ export const Home = () => {
     <>
       <h1>Disfruta de Sevilla en bicicleta</h1>
       <hr></hr>
-      <h3 className='subTitulo'>Tráenos tu bici, te la gestionamos.</h3>
+      
       <div className="container">
         <div className='galeriaCarrousel'>
         <Gallery/>
         </div>
-        
+        <h3 className='subTitulo'>Tráenos tu bici, te la gestionamos.</h3>
         {store.auth === true ? (
           <></>
         ) : (
