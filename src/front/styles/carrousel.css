@@ -1,11 +1,25 @@
+.cajaDeFoto{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
 .laCartaFoto{
     position: relative;    
     display: inline-block;
+    
 }
 .elTituloFoto{
     position: absolute; 
     text-align: center;   
-    top: 50%;             
-    margin-left: 50%;
+    top:15%; 
+    right:1.5rem;            
     color: white;
+    letter-spacing: -.06em;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    padding: 0 12px;
+    place-content: center;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
