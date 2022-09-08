@@ -25,12 +25,14 @@ export default function Gallery() {
         <h1 className='elTituloFoto'>Vende o alquila tu bici</h1>
         </div>
       </Carousel.Item>
+      
       <Carousel.Item>
         <div className='laCartaFoto'>
         <img className='laFoto' width="100%" src="https://images.pexels.com/photos/210117/pexels-photo-210117.jpeg?cs=srgb&dl=pexels-pixabay-210117.jpg&fm=jpg" />
         <h1 className='elTituloFoto'>Descubre nuestro catálogo</h1>
         </div>
       </Carousel.Item>
+      
       
 
     </Carousel>
