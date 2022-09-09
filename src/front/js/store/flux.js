@@ -78,6 +78,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           setStore({ token: email });
           if (resp.status > 399 && resp.status < 600) {
             setStore({ auth: false });
+            localStorage.removeItem("jwt-token");
           }
           return data;
         } catch (err) {
