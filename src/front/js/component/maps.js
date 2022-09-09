@@ -27,6 +27,24 @@ const markers = [
     name: <InfoEstacion id={4}></InfoEstacion>,
     position: {lat: 37.399116, lng: -5.993841}
     
+  },
+  {
+    id: 5,
+    name: <InfoEstacion id={5}></InfoEstacion>,
+    position: {lat: 37.398611, lng: -6.007222}
+    
+  },
+  {
+    id: 6,
+    name: <InfoEstacion id={6}></InfoEstacion>,
+    position: {lat: 37.3614499, lng: -5.9815814}
+    
+  },
+  {
+    id: 7,
+    name: <InfoEstacion id={7}></InfoEstacion>,
+    position: {lat:37.334670, lng: -5.932810}
+    
   }
 ];
 

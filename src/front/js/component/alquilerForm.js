@@ -21,7 +21,7 @@ function FormAlquiler() {
   useEffect(() => {
     actions.getEstaciones();
     {
-      setEmail(store.email);
+      setEmail(localStorage.getItem("jwt-token"));
     }
   }, []);
 

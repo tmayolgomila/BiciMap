@@ -191,7 +191,7 @@ function FormAltas() {
         ariaHideApp={false}
       >
         <div>
-          {tipo == ""|| foto =="" || precio == "" || año == ""|| modificaciones == "" || talla == "" || material == "" ? (
+          {tipo == ""|| foto =="" || precio == "" || año == ""|| talla == "" || material == "" ? (
             <p className="ter">Campos vacios</p>
           ) : (
             <p className="ter">Su bicicleta de {tipo} ha sido añadida!</p>
