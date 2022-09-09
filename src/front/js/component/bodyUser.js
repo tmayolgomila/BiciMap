@@ -259,7 +259,7 @@ export const CartasUsers = () => {
           );
         })
       ) : (
-        <h5 className="card-title text-light">Loading...</h5>
+        <h5 className="card-title text-light">Aún no ha subido ninguna bicicleta.</h5>
       )}
     </>
   );
