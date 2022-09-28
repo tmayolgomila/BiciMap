@@ -1,5 +1,7 @@
 .navbar{
   display:flex;
+  justify-content: right;
+
 }
 .nav-item {
   color: #e1e1e1;
@@ -12,8 +14,7 @@
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: color;
-  
- 
+  margin: 1em;
 }
 .nav-item a{
   text-decoration: none;
@@ -21,7 +22,6 @@
   background: none;
 }
 
-.nav-item:focus,
 .nav-item:hover {
   color: #F42C04;
 }
@@ -30,7 +30,6 @@
   color: #F42C04;
 }
 
-.nav-item:focus:after,
 .nav-item:hover:after {
   width: 100%;
   left: 0%;
