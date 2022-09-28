@@ -1,35 +1,25 @@
 import React, { useCallback, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../../styles/navbar.css";
-import "../../styles/responsive-nav.css";
 import { Context } from "../store/appContext";
 
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark " id="burger">
-      
-        <button className="logo">
-          <Link to="/">
-            BiciMap
-          </Link>
-        </button>
-     
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarTogglerDemo01"
-        aria-controls="navbarTogglerDemo01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <ul className="navbar-nav ms-auto pe-5" id="burger">
-          <li className="nav-item" id="burger">
+    <nav className="navbar">
+
+        <a className="nav-item" id="burger">
+            <Link to="/">
+              
+                <span>
+                <ion-icon size="large" name="home-outline"></ion-icon>
+                  
+                </span>
+              
+            </Link>
+          </a>
+          <a className="nav-item" id="burger">
             <Link to="/altas">
               
                 <span>
@@ -38,8 +28,8 @@ export const Navbar = () => {
                 </span>
               
             </Link>
-          </li>
-          <li className="nav-item">
+          </a>
+          <a className="nav-item">
             <Link to="/catalogo">
               
                 <span>
@@ -48,8 +38,8 @@ export const Navbar = () => {
                 </span>
               
             </Link>
-          </li>
-          <li className="nav-item">
+          </a>
+          <a className="nav-item">
             <Link to="/contact">
               
                 <span>
@@ -57,8 +47,8 @@ export const Navbar = () => {
                 </span>
               
             </Link>
-          </li>
-          <li className="nav-item">
+          </a>
+          <a className="nav-item">
             <Link to="/aboutus">
               
                 <span>
@@ -70,22 +60,19 @@ export const Navbar = () => {
                 </span>
               
             </Link>
-          </li>
+          </a>
           
-          <li className="nav-item">
+          <a className="nav-item">
             <Link to="/user">
             
-                <span className="dropdown">
+                <span>
                 <ion-icon size="large" name="person-outline"></ion-icon>
                 
                   
                 </span>
               
             </Link>
-          </li>
-        </ul>
-       
-      </div>
+          </a>
       
     </nav>
     

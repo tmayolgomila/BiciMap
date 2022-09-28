@@ -10,14 +10,12 @@ export const Home = () => {
   const { store, actions } = useContext(Context);
   return (
     <>
-      <h1>Disfruta de Sevilla en bicicleta</h1>
-      <hr></hr>
-
+      <h1 className="logo">BiciMap</h1>
+      <h3 className="subLogo" >Compra, alquila y vende tu bici</h3>
       <div className="container">
         <div className="galeriaCarrousel">
           <Gallery />
         </div>
-        <h3 className="subTitulo">Tráenos tu bici, te la gestionamos.</h3>
         {localStorage.getItem("jwt-token") == null ? (
           <div>
             <Link to="signup">
