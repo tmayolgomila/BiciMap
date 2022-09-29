@@ -25,5 +25,10 @@ div#slider figure {
 100% { left: -400%; }
 }
 .cajaCarrousel{
-  width: 80%;
+  width: 100%;
+}
+@media screen and (min-width: 1025px) {
+  .cajaCarrousel{
+    width: 80%;
+  }
 }
