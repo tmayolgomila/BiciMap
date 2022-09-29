@@ -33,15 +33,7 @@ export const CartasUsers = () => {
   }
 
   function toggleModal(id) {
-    actions.editUser(
-      id,
-      tipo,
-      talla,
-      material,
-      año,
-      modificaciones
-    
-    );
+    actions.editUser(id, tipo, talla, material, año, modificaciones);
     setIsOpen(!isOpen);
   }
 
@@ -89,15 +81,33 @@ export const CartasUsers = () => {
                 >
                   Editar
                 </button>
-                <Link to="/user">
-                  <button
-                    onClick={() => eliminar(bk.id)}
-                    type="button"
-                    className="botonEliminar"
-                  >
-                    Eliminar
-                  </button>
-                </Link>
+
+                <button
+                  onClick={() => eliminar(bk.id)}
+                  type="button"
+                  className="botonEliminar"
+                  data-bs-toggle="modal"
+                  data-bs-target={"#exampleModal"}
+                >
+                  Eliminar
+                </button>
+
+                <div
+                  className="modal fade backdrop-bg"
+                  id={"exampleModal"}
+                  tabIndex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h4>Su bicicleta ha sido eliminada con éxito</h4>
+                      </div>
+                     
+                    </div>
+                  </div>
+                </div>
               </div>
               <div
                 className="modal fade backdrop-bg"
@@ -220,7 +230,6 @@ export const CartasUsers = () => {
                       </button>
                       <button
                         onClick={() => toggleModal(bk.id)}
-                        
                         type="button"
                         className="btn btn-secondary"
                         data-bs-dismiss="modal"
@@ -235,9 +244,7 @@ export const CartasUsers = () => {
                         ariaHideApp={false}
                       >
                         <div>
-                          {tipo == "" ||
-                          talla == "" ||
-                          material == "" ? (
+                          {tipo == "" || talla == "" || material == "" ? (
                             <p className="ter">Campos vacios</p>
                           ) : (
                             <p className="ter">
@@ -259,7 +266,9 @@ export const CartasUsers = () => {
           );
         })
       ) : (
-        <h5 className="card-title text-light">Aún no ha subido ninguna bicicleta.</h5>
+        <h5 className="card-title text-light">
+          Aún no ha subido ninguna bicicleta.
+        </h5>
       )}
     </>
   );

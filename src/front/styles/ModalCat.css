@@ -2,6 +2,7 @@
     background-color: black;
     text-align: center;
     color: #2FBF71;
+    border-radius: 2px;
 }
 
 .modal-header {
@@ -19,6 +20,12 @@
     margin-top: 20px;
     text-align: left;
     margin-left: 25%;
+}
+
+.modal-dialog {
+  border-width: 3px;
+  border-style: solid;
+  border-color: #2FBF71;
 }
 
 .btn {
