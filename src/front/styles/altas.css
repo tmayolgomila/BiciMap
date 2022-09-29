@@ -111,6 +111,7 @@ hr{
     color: rgb(0, 0, 0);
     text-decoration: none;
     width: 130px;
+    height: 50px;
     border: none;
     border-radius: 9px;
     background-color: #dbdbdb;
@@ -161,6 +162,7 @@ hr{
 #botonForm2{
     color: rgb(0, 0, 0);
     width: 130px;
+    height: 50px;
     border: none;
     border-radius: 9px;
     background-color: #2FBF71;
