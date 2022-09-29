@@ -26,7 +26,7 @@ export const Footer = () => {
 
           <div className="cardUs">
             <div className="imgUs">
-            <img className="imgUs2" src="https://media-exp1.licdn.com/dms/image/D4D35AQFDV_b0zAtg1A/profile-framedphoto-shrink_800_800/0/1660923079167?e=1663063200&v=beta&t=qMzjeLERIOQBgGiEQdwH1m5UUfbewG4QJDHsMWEHcaM"></img>
+            <img className="imgUs2" src="https://media-exp1.licdn.com/dms/image/D4D35AQFDV_b0zAtg1A/profile-framedphoto-shrink_800_800/0/1660923079167?e=1665054000&v=beta&t=KTUCt2d5FgF8hQs_20FKgMIfo1153p2JAP8gyhdBEK8"></img>
             </div>
             <h1 className="h1Us">Tomeu Mayol</h1>
             <p className="pUs">
@@ -42,7 +42,7 @@ export const Footer = () => {
 
           <div className="cardUs">
             <div className="imgUs">
-              <img className="imgUs2" src="https://media-exp1.licdn.com/dms/image/C5603AQHTEjAHZUvwuQ/profile-displayphoto-shrink_800_800/0/1655376927553?e=1668038400&v=beta&t=jNyzv6Co_jv0RV5QN4S05fwE0IbfV2fTCbQl4KD1ezE"></img>
+              <img className="imgUs2" src="https://media-exp1.licdn.com/dms/image/C4D03AQH9fR7d-9iDTQ/profile-displayphoto-shrink_800_800/0/1663233815444?e=1669852800&v=beta&t=Y1KHSLAZFPkLYq1k8GcEig2P2LHs3xHihljYKg1i10k"></img>
             </div>
             <h1 className="h1Us">Ignacio García-Conde</h1>
             <p className="pUs">

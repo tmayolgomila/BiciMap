@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import "../../styles/ModalCat.css";
 import { Link } from "react-router-dom";
@@ -7,36 +7,28 @@ import { useHistory } from "react-router-dom";
 export const CartasCatalogo = () => {
   const { store, actions } = useContext(Context);
 
- 
   return (
     <>
       {store.bikes.length > 0 ? (
         store.bikes.map((bk, i) => {
           return (
             <div className="card" key={i}>
-              <div className="header">
-                <img className="imgBici" src={bk.foto} />
-              </div>
+              <a data-bs-toggle="modal" data-bs-target={"#exampleModal" + i}>
+                <div className="header">
+                  <img className="imgBici" src={bk.foto} />
+                </div>
 
-
-              <div className="content">
-                <p className="title">{bk.tipo}</p>
-                <p>Talla: {bk.talla}</p>
-                <p>Material: {bk.material}</p>
-                {bk.año === null ? (
-                  <p>Solo alquiler</p>
-                ) : (
-                  <p>Bicicleta en venta</p>
-                )}
-
-                <a
-                  className="btn-link"
-                  data-bs-toggle="modal"
-                  data-bs-target={"#exampleModal" + i}
-                >
-                  Detalles
-                </a>
-              </div>
+                <div className="content">
+                  <p className="title">{bk.tipo}</p>
+                  <p>Talla: {bk.talla}</p>
+                  <p>Material: {bk.material}</p>
+                  {bk.año === null ? (
+                    <p>Solo alquiler</p>
+                  ) : (
+                    <p>Bicicleta en venta</p>
+                  )}                 
+                </div>
+              </a>
               <div
                 className="modal fade backdrop-bg"
                 id={"exampleModal" + i}
@@ -72,17 +64,37 @@ export const CartasCatalogo = () => {
                       <p>Modificaciones: {bk.modificaciones}</p>
                     </div>
                     <div className="modal-footer">
-                { bk.año === null ? (<div className="price">30 céntimos el uso</div>):(<div className="price">Price: {bk.precio}</div>)}
-                  <button type="button" className="btn btn-secondary" data-bs-dismiss="modal"
-                  >
-                    Cerrar
-                  </button>
-                <Link to={localStorage.getItem("jwt-token") == null ? "/login" : "/pagos" }> <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => actions.pagos(bk.id)}>
-                { bk.año === null ? ("Alquilar"):("Comprar")}
-                  </button></Link>
+                      {bk.año === null ? (
+                        <div className="price">30 céntimos el uso</div>
+                      ) : (
+                        <div className="price">Price: {bk.precio}</div>
+                      )}
+                      <button
+                        type="button"
+                        className="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Cerrar
+                      </button>
+                      <Link
+                        to={
+                          localStorage.getItem("jwt-token") == null
+                            ? "/login"
+                            : "/pagos"
+                        }
+                      >
+                        {" "}
+                        <button
+                          type="button"
+                          className="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                          onClick={() => actions.pagos(bk.id)}
+                        >
+                          {bk.año === null ? "Alquilar" : "Comprar"}
+                        </button>
+                      </Link>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
