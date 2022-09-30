@@ -11,14 +11,14 @@ from api.admin import setup_admin
 from api.commands import setup_commands
 
 
-app = Blueprint('app', __name__)
+api = Blueprint('api', __name__)
 
 #from models import Person
 
 ENV = os.getenv("FLASK_ENV")
 static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../public/')
 app = Flask(__name__)
-app.register_blueprint(app)
+app.register_blueprint(api)
 app.url_map.strict_slashes = False
 
 app.config["JWT_SECRET_KEY"] = "supersecreto"  # Change this "super secret" with something else!
