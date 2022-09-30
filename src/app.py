@@ -11,14 +11,14 @@ from api.admin import setup_admin
 from api.commands import setup_commands
 
 
-api = Blueprint('api', __name__)
+app = Blueprint('app', __name__)
 
 #from models import Person
 
 ENV = os.getenv("FLASK_ENV")
 static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../public/')
 app = Flask(__name__)
-app.register_blueprint(api)
+app.register_blueprint(app)
 app.url_map.strict_slashes = False
 
 app.config["JWT_SECRET_KEY"] = "supersecreto"  # Change this "super secret" with something else!
@@ -49,19 +49,19 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 uploads_path = os.path.join(basedir, 'uploads')
 
 # Handle/serialize errors like a JSON object
-@api.errorhandler(APIException)
+@app.errorhandler(APIException)
 def handle_invalid_usage(error):
     return jsonify(error.to_dict()), error.status_code
 
 # generate sitemap with all your endpoints
-@api.route('/')
+@app.route('/')
 def sitemap():
     if ENV == "development":
         return generate_sitemap(app)
     return send_from_directory(static_file_dir, 'index.html')
 
 # any other endpoint will try to serve it like a static file
-@api.route('/<path:path>', methods=['GET'])
+@app.route('/<path:path>', methods=['GET'])
 def serve_any_other_file(path):
     if not os.path.isfile(os.path.join(static_file_dir, path)):
         path = 'index.html'
@@ -69,7 +69,7 @@ def serve_any_other_file(path):
     response.cache_control.max_age = 0 # avoid cache memory
     return response
 
-@api.route("/signup", methods = ["POST"])
+@app.route("/signup", methods = ["POST"])
 def signup():
     body = request.get_json()
     comprobando = User.query.filter_by(email = body["email"]).first()
@@ -81,7 +81,7 @@ def signup():
     token=create_access_token(identity=user.id)
     return jsonify(token)
 
-@api.route("/login", methods = ["POST"])
+@app.route("/login", methods = ["POST"])
 def login():
     body = request.get_json()
     email= body["email"]
@@ -97,7 +97,7 @@ def login():
     token=create_access_token(identity=comprobando.id)
     return jsonify(token)
 
-@api.route("/altas", methods=['GET'])
+@app.route("/altas", methods=['GET'])
 @jwt_required()
 def private():
     # Accede a la identidad del usuario actual con get_jwt_identity
@@ -106,7 +106,7 @@ def private():
     
     return jsonify({"id": user.id, "email": user.email }), 200
 
-@api.route('/token', methods=['POST'])
+@app.route('/token', methods=['POST'])
 def create_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
@@ -118,7 +118,7 @@ def create_token():
     access_token = create_access_token( identity=user.id)
     return jsonify({"token":access_token, "user_id":user.id}), 200
 
-@api.route("/altasvender", methods = ["POST"])
+@app.route("/altasvender", methods = ["POST"])
 def addbike():
     body = request.get_json()
     bike = Bike(tipo = body["tipo"], foto = body["foto"], precio = body["precio"],año = body["año"], modificaciones = body["modificaciones"], talla = body["talla"], material = body["material"], observaciones = body["observaciones"], email = body["email"], idestacion = body["idestacion"] )
@@ -126,7 +126,7 @@ def addbike():
     db.session.commit()
     return jsonify(), 200
 
-@api.route("/modbike/<int:id>", methods = ["PUT"])
+@app.route("/modbike/<int:id>", methods = ["PUT"])
 def modbike(id):
     body = request.get_json
     bike = Bike.query.filter_by( id = id ).first()
@@ -145,7 +145,7 @@ def modbike(id):
     db.session.commit()
     return jsonify("updated"), 200
 
-@api.route("/altasalquiler", methods = ["POST"])
+@app.route("/altasalquiler", methods = ["POST"])
 def rentabike():
     body = request.get_json()
     bike = Bike(tipo = body["tipo"], foto = body["foto"], talla = body["talla"], material = body["material"], observaciones = body["observaciones"], fechalimite=body["fechalimite"], email = body["email"], idestacion = body["idestacion"])
@@ -153,7 +153,7 @@ def rentabike():
     db.session.commit()
     return jsonify(), 200
 
-@api.route("/estaciones", methods = ["POST"])
+@app.route("/estaciones", methods = ["POST"])
 def estaciones():
     body = request.get_json()
     comprobando = Estaciones.query.filter_by(id = body["id"]).first()
@@ -165,7 +165,7 @@ def estaciones():
     
     return jsonify(), 200
 
-@api.route('/bikes', methods=['GET'])
+@app.route('/bikes', methods=['GET'])
 def bike_list():
 
     bikes = Bike.query.all()
@@ -175,7 +175,7 @@ def bike_list():
     }
     return jsonify(response_body), 200
 
-@api.route('/user/<int:id>', methods=['DELETE'])
+@app.route('/user/<int:id>', methods=['DELETE'])
 def delete_bike(id):
     bike = Bike.query.filter_by( id = id ).first()
 
@@ -186,7 +186,7 @@ def delete_bike(id):
     return jsonify("bike deleted"), 200
 
     
-@api.route('/estaciones', methods=['GET'])
+@app.route('/estaciones', methods=['GET'])
 def estaciones_list():
 
     estaciones = Estaciones.query.all()
@@ -196,7 +196,7 @@ def estaciones_list():
     }
     return jsonify(response_body), 200
 
-@api.route('/pagos/<int:id>', methods=['GET'])
+@app.route('/pagos/<int:id>', methods=['GET'])
 def pagar(id):
     bike = Bike.query.filter_by( id = id ).first()
 
