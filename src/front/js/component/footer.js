@@ -26,7 +26,7 @@ export const Footer = () => {
 
           <div className="cardUs">
             <div className="imgUs">
-            <img className="imgUs2" src="https://media-exp1.licdn.com/dms/image/D4D35AQFDV_b0zAtg1A/profile-framedphoto-shrink_800_800/0/1660923079167?e=1665054000&v=beta&t=KTUCt2d5FgF8hQs_20FKgMIfo1153p2JAP8gyhdBEK8"></img>
+            <img className="imgUs2" src="https://media-exp1.licdn.com/dms/image/D4D35AQFDV_b0zAtg1A/profile-framedphoto-shrink_800_800/0/1660923079167?e=1666623600&v=beta&t=cVGJI_Wnne02kdrcNkmHk_T3ZW-_hynNdjeSi1tzBN4"></img>
             </div>
             <h1 className="h1Us">Tomeu Mayol</h1>
             <p className="pUs">
