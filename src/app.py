@@ -1,7 +1,7 @@
 import os
 from flask_jwt_extended import JWTManager
 from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
-from flask import Flask, request, jsonify, url_for, send_from_directory
+from flask import Flask, request, jsonify, url_for, send_from_directory, Blueprint
 from flask_migrate import Migrate
 from flask_swagger import swagger
 from flask_cors import CORS
@@ -9,13 +9,16 @@ from api.utils import APIException, generate_sitemap
 from api.models import db, User, Bike, Estaciones
 from api.admin import setup_admin
 from api.commands import setup_commands
-from flask import send_from_directory
+
+
+api = Blueprint('api', __name__)
 
 #from models import Person
 
 ENV = os.getenv("FLASK_ENV")
 static_file_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '../public/')
 app = Flask(__name__)
+app.register_blueprint(api)
 app.url_map.strict_slashes = False
 
 app.config["JWT_SECRET_KEY"] = "supersecreto"  # Change this "super secret" with something else!

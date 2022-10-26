@@ -5,7 +5,6 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./pages/home";
 import { Login } from "./pages/login";
 import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -24,8 +23,6 @@ import { AltasAlquiler } from "./pages/altasAlquiler";
 import { VistaUser } from "./pages/user";
 
 
-import { Logo } from "./component/logo";
-
 
 //create your first component
 const Layout = () => {
@@ -37,8 +34,6 @@ const Layout = () => {
         <div>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
-
-                    
 
                     <Navbar />
                     

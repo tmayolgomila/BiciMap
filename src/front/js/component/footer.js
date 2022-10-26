@@ -26,7 +26,11 @@ export const Footer = () => {
 
           <div className="cardUs">
             <div className="imgUs">
+
             <img className="imgUs2" src="https://media-exp1.licdn.com/dms/image/D4D35AQFDV_b0zAtg1A/profile-framedphoto-shrink_800_800/0/1660923079167?e=1667404800&v=beta&t=bzWoxG5w32cLlzxRzW-dB0Rt1ixzPGs_zjRBLTvggiQ"></img>
+
+            
+
             </div>
             <h1 className="h1Us">Tomeu Mayol</h1>
             <p className="pUs">
